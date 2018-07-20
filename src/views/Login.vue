@@ -1,7 +1,10 @@
 <template>
   <div class="login">
+
     <Nav/>
+
     <Login/>
+    
   </div>
 </template>
 
@@ -12,9 +15,6 @@ import Nav from "@/components/login/nav.vue";
 
 export default {
   name: "login",
-  components: {
-    Login,
-    Nav
-  }
+  components: { Login,Nav }
 };
 </script>
