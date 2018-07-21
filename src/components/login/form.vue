@@ -73,7 +73,7 @@ export default {
       this.$http(options).then(
         response => {
           this.$auth.setToken(response.body);
-          
+          this.$router.push("/dashboard");
         },
         response => {
           alert(this.$auth.isAuthenticated());

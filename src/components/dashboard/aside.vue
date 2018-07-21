@@ -17,36 +17,48 @@
                             <a class="is-active">Seguridad</a>
                         </li>
 
-                        <li>
-                            <a class="">Usuarios</a>
+                        <li> 
+                            <router-link to="users">
+                                Usuarios
+                            </router-link>
                         </li>
 
 
-                        <li>
-                            <a class="">Permisos</a>
+                        <li> 
+                            <router-link to="permissions">
+                                Permisos
+                            </router-link>
+                        </li>
+
+                        <li> 
+                            <router-link to="user">
+                                Roles de laboratorio
+                            </router-link>
+                        </li>
+
+                        <li> 
+                            <router-link to="user">
+                                Puestos
+                            </router-link>
                         </li>
 
 
-                        <li>
-                            <a class="">Roles de laboratorio</a>
+                        <li> 
+                            <router-link to="user">
+                                Consecutivos
+                            </router-link>
                         </li>
 
-
-                        <li>
-                            <a class="">Puestos</a>
+                        <li> 
+                            <router-link to="user">
+                                Tipo de Consecutivos
+                            </router-link>
                         </li>
 
-
-                        <li>
-                            <a class="">Consecutivos</a>
-                        </li>
-
-                        <li>
-                            <a class="">Tipo de Consecutivos</a>
-                        </li>
-
-                        <li>
-                            <a class="">Nivel Academico</a>
+                        <li> 
+                            <router-link to="user">
+                                Nivel Academico
+                            </router-link>
                         </li>
 
                     </ul>
@@ -121,9 +133,8 @@ body {
 
 ul,
 li {
-  margin-top: 8px;
+  margin-top: 1px;
 }
-
 
 .aside {
   display: block;
@@ -147,7 +158,4 @@ li {
   padding: 20px;
   color: #6f7b7e;
 }
-
-
-
 </style>

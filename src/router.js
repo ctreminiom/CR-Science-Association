@@ -8,6 +8,8 @@ import auth from './packages/token/app.js'
 
 import login from './views/Login.vue'
 import dashboard from './views/Dashboard.vue'
+import users from './components/dashboard/users/user.vue'
+
 
 
 
@@ -31,9 +33,21 @@ export default new Router({
       name: 'dashboard',
       component: dashboard,
       beforeEnter: (to, from, next) => {
-        if (Vue.auth.isAuthenticated()){
+        if (Vue.auth.isAuthenticated()) {
           next()
-        }else {
+        } else {
+          next("/")
+        }
+      }
+    },
+    {
+      path: '/dashboard/users',
+      name: 'users',
+      component: users,
+      beforeEnter: (to, from, next) => {
+        if (Vue.auth.isAuthenticated()) {
+          next()
+        } else {
           next("/")
         }
       }
