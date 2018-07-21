@@ -1,111 +1,22 @@
 <template>
-    
-        <div class="column is-10">
 
-            <div class="row">
-                <div class="card">
-                    <div>
-                        <nav class="breadcrumb" aria-label="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <a href="#">Bulma</a>
-                                </li>
-                                <li>
-                                    <a href="#">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="#">Components</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-
-            <div class="columns">
-
-                <div class="column is-2">
-                    <a class="button is-dark is-fullwidth">Agregar</a>
-                </div>
-                <div class="column is-9">
-                    <div class="field">
-                        <div class="field">
-                            <p class="control">
-                                <input id="test" class="input" placeholder="Find a repository" type="text">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="columns">
-                <div class="column is-12">
-                    <table class="table is-hoverable is-fullwidth">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Consecutivo</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Usuario</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
-                                <td>
-                                    <a onclick="executeModal()" class="button is-link">Ver</a>
-                                    <a class="button is-dark">Contrasena</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
-                                <td>
-                                    <a class="button is-link">Ver</a>
-                                    <a class="button is-dark">Contrasena</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
-                                <td>
-                                    <a class="button is-link">Ver</a>
-                                    <a class="button is-dark">Contrasena</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
-
+            <div id="da" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button onclick="executeModal()" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button onclick="executeModal()" class="button">Cancel</button>
+            </footer>
         </div>
+    </div>
+
 
 </template>
 
