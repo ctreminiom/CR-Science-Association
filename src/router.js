@@ -9,6 +9,9 @@ import auth from './packages/token/app.js'
 import login from './views/Login.vue'
 import dashboard from './views/Dashboard.vue'
 
+
+
+
 Vue.use(Resource)
 Vue.use(Router)
 Vue.use(auth)
@@ -20,15 +23,20 @@ export default new Router({
   routes: [{
       path: '/',
       name: 'Login',
-      component: login,
-      meta: {
-        forVisitors: true
-      }
+      component: login
+
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: dashboard
+      component: dashboard,
+      beforeEnter: (to, from, next) => {
+        if (Vue.auth.isAuthenticated()){
+          next()
+        }else {
+          next("/")
+        }
+      }
     }
   ]
 })

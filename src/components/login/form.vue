@@ -72,12 +72,11 @@ export default {
 
       this.$http(options).then(
         response => {
-        console.log(response)
           this.$auth.setToken(response.body);
-          this.$router.push("/dashboard");
+          
         },
         response => {
-          alert("No sirver");
+          alert(this.$auth.isAuthenticated());
         }
       );
     }
