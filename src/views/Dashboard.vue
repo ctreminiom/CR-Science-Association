@@ -6,8 +6,6 @@
         <Aside/>
 
         <Content/>
-
-          
     </div>  
 
     <Footer/>

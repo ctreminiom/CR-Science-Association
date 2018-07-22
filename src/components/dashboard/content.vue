@@ -1,34 +1,8 @@
 <template>
-    
-        <div class="column is-10">
-
-            <div class="row">
-                <div class="card">
-                    <div>
-                        <nav class="breadcrumb" aria-label="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <a href="#">Bulma</a>
-                                </li>
-                                <li>
-                                    <a href="#">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="#">Components</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-
-
-            <router-view></router-view>
-
-
-        </div>
+  <div class="column is-10">
+    <router-view/>
+  <router-view name="helper"/>
+  </div>
 
 </template>
 
@@ -50,10 +24,6 @@ body {
   background-color: #fff;
 }
 
-ul,
-li {
-  margin-top: 8px;
-}
 
 .is-active {
   background-color: rebeccapurple;

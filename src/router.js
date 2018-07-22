@@ -32,6 +32,12 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: dashboard,
+
+      children: [{
+        path: 'users',
+        component: users
+
+      }],
       beforeEnter: (to, from, next) => {
         if (Vue.auth.isAuthenticated()) {
           next()

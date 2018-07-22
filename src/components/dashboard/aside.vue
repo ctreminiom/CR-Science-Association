@@ -18,7 +18,7 @@
                         </li>
 
                         <li> 
-                            <router-link to="users">
+                            <router-link to="/dashboard/users">
                                 Usuarios
                             </router-link>
                         </li>
