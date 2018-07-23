@@ -1,29 +1,132 @@
 <template>
 
-            <div id="da" class="modal">
+<div>
+      <div id="da" class="modal" :class="open">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Modal title</p>
-                <button onclick="executeModal()" class="delete" aria-label="close"></button>
+                <button @click="close()"  class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <!-- Content ... -->
+
+
+                <div class="field">
+                    <label class="label">Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Last Name</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Phone</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Username</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input" type="password" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Role</label>
+                        <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                    </select>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Academic Level</label>
+                        <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                    </select>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Laboratory Scope</label>
+                        <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                    </select>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="file has-name is-centered is-boxed">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                            <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Choose a file…
+                            </span>
+                            </span>
+                        <span class="file-name">
+                        Screen Shot 2017-07-29 at 15.54.25.png
+                        </span>
+                    </label>
+                </div>
+
+
+
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
-                <button onclick="executeModal()" class="button">Cancel</button>
+                <button @click="close()" class="button">Cancel</button>
             </footer>
         </div>
     </div>
-
-
+</div>
 </template>
 
 
 
 <script>
-export default {};
+export default {
+  props: ["open"],
+  data() {
+    return {
+      closae: ""
+    };
+  },
+  methods: {
+    close() {
+      this.$emit("closeModal");
+    }
+  }
+};
 </script>
 
 
@@ -36,52 +139,5 @@ body {
   line-height: 1.5;
   height: 100%;
   background-color: #fff;
-}
-
-ul,
-li {
-  margin-top: 8px;
-}
-
-.is-active {
-  background-color: rebeccapurple;
-}
-
-.aside {
-  display: block;
-  background-color: #f9f9f9;
-  border-right: 1px solid #dedede;
-}
-
-.aside .compose {
-  height: 40px;
-  margin: 0 -10px;
-  padding: 10px 30px;
-}
-.aside .compose .button {
-  color: #f6f7f7;
-}
-.aside .compose .button .compose {
-  font-size: 14px;
-  font-weight: 700;
-}
-.aside .main {
-  padding: 20px;
-  color: #6f7b7e;
-}
-
-.module {
-  margin-left: 2px;
-}
-
-div[class="card"] {
-  margin-top: 20px;
-  margin-right: 10px;
-  padding-left: 20px;
-  padding-bottom: 15px;
-}
-
-#test {
-  margin-left: 10px;
 }
 </style>

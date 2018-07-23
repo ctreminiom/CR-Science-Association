@@ -1,20 +1,19 @@
 <template>
 
-<div>
-    <div class="">
-                <div class="row">
+    <div>
+            <div class="row">
                 <div class="card">
                     <div>
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a>Bulma</a>
+                                    <a>Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Documentation</a>
+                                    <a href="#">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#">Components</a>
+                                    <a href="#">Users</a>
                                 </li>
                             </ul>
                         </nav>
@@ -27,8 +26,9 @@
             <div class="columns">
 
                 <div class="column is-2">
-                    <a class="button is-dark is-fullwidth">Agregar</a>
+                    <a @click="openAdd()" class="button is-dark is-fullwidth">Agregar</a>
                 </div>
+
                 <div class="column is-9">
                     <div class="field">
                         <div class="field">
@@ -39,12 +39,14 @@
                     </div>
                 </div>
 
-
             </div>
 
             <div class="columns">
+
                 <div class="column is-12">
+
                     <table class="table is-hoverable is-fullwidth">
+
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -55,40 +57,17 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+
+                        <tbody v-for="item in data" :key="item.ID">
 
                             <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
-                                <td>
-                                    <a onclick="executeModal()" class="button is-link">Ver</a>
-                                    <a class="button is-dark">Contrasena</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
 
-                            </tr>
-                            <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
-                                <td>
-                                    <a class="button is-link">Ver</a>
-                                    <a class="button is-dark">Contrasena</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
+                                <td>{{item.ID}}</td>
+                                <td>{{item.Consecutive}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.Surname + " " + item.SecondSurname}}</td>
+                                <td>{{item.Username}}</td>
 
-                            </tr>
-                            <tr>
-                                <td>10000</td>
-                                <td>Usuario</td>
-                                <td>Carlos</td>
-                                <td>Treminio</td>
-                                <td>ctreminio</td>
                                 <td>
                                     <a class="button is-link">Ver</a>
                                     <a class="button is-dark">Contrasena</a>
@@ -98,38 +77,75 @@
                             </tr>
 
                         </tbody>
+
                     </table>
                 </div>
 
-
             </div>
-</div>
-</div>
 
 
+    <Add :open="addActive" @closeModal="close"/>
+
+
+    </div>
 
 </template>
 
 
 
 <script>
-export default {};
+
+import Add from "./modal.vue"
+
+export default {
+  data() {
+    return {
+      data: null,
+      addActive: ""
+    };
+  },
+  components: {
+      Add
+  },
+  mounted() {
+    var options = {
+      url: "http://localhost:8080/api/v1/module/users",
+      method: "GET"
+    };
+
+    this.$http(options).then(
+      response => {
+        this.data = response.body;
+      },
+      response => {
+        alert("NO");
+      }
+    );
+  },
+  methods: {
+      openAdd() {
+          this.addActive = 'is-active'
+      },
+      close() {
+          this.addActive = ''
+      }
+  }
+};
 </script>
 
 
 
 <style scoped>
 
-
 ul,
 li {
   margin-top: 8px;
 }
 
-
-
-
-
+td,
+a {
+    margin: 2px;
+}
 
 div[class="card"] {
   margin-top: 20px;
@@ -137,6 +153,4 @@ div[class="card"] {
   padding-left: 20px;
   padding-bottom: 15px;
 }
-
-
 </style>
