@@ -14,35 +14,35 @@
                 <div class="field">
                     <label class="label">Name</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input  v-model="name" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Last Name</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input v-model="last_name" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Phone</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input v-model="phone" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Username</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input v-model="username" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Password</label>
                         <div class="control">
-                            <input class="input" type="password" placeholder="Text input">
+                            <input v-model="password" class="input" type="password" placeholder="Text input">
                         </div>
                 </div>
 
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="field">
-                    <label class="label">Academic Level</label>
+                    <label class="label">Laboratorie Scope</label>
                         <div class="control">
                                 <div class="select is-fullwidth">
                                     <select>
@@ -71,12 +71,13 @@
                 </div>
 
                 <div class="field">
-                    <label class="label">Laboratory Scope</label>
+                    <label class="label">Academic Level</label>
                         <div class="control">
                                 <div class="select is-fullwidth">
                                     <select>
-                                        <option>Select dropdown</option>
-                                        <option>With options</option>
+                                        <option v-for="item in data00" :key="item.ID">
+                                            {{item.Grade}}
+                                        </option>
                                     </select>
                                 </div>
                         </div>
@@ -118,13 +119,34 @@ export default {
   props: ["open"],
   data() {
     return {
-      closae: ""
+      data00: null,
+      name: "",
+      last_name: "",
+      phone: "",
+      username: "",
+      password: ""
+
     };
   },
   methods: {
     close() {
       this.$emit("closeModal");
     }
+  },
+  mounted() {
+    var options = {
+      url: "http://localhost:8080/api/v1/module/academic/level",
+      method: "GET"
+    };
+
+    this.$http(options).then(
+      response => {
+        this.data00 = response.body;
+      },
+      response => {
+        alert("NO");
+      }
+    );
   }
 };
 </script>
