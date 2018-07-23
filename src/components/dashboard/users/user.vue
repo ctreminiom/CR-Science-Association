@@ -69,7 +69,7 @@
                                 <td>{{item.Username}}</td>
 
                                 <td>
-                                    <a class="button is-link">Ver</a>
+                                    <a @click="openView()" class="button is-link">Ver</a>
                                     <a class="button is-dark">Contrasena</a>
                                     <a class="button is-danger">Eliminar</a>
                                 </td>
@@ -83,8 +83,11 @@
 
             </div>
 
-
     <Add :open="addActive" @closeModal="close"/>
+
+    <test :open="viewActive" @closeModalView="closeView"/>
+
+
 
 
     </div>
@@ -94,18 +97,19 @@
 
 
 <script>
-
-import Add from "./modal.vue"
+import Add from "./add.vue";
+import test from "./view.vue";
 
 export default {
   data() {
     return {
       data: null,
-      addActive: ""
+      addActive: "",
+      viewActive: ""
     };
   },
   components: {
-      Add
+      test,Add
   },
   mounted() {
     var options = {
@@ -123,12 +127,19 @@ export default {
     );
   },
   methods: {
-      openAdd() {
-          this.addActive = 'is-active'
-      },
-      close() {
-          this.addActive = ''
-      }
+    openAdd() {
+      this.addActive = "is-active";
+    },
+    openView() {
+      this.viewActive = "is-active";
+    },
+    close() {
+      this.addActive = "";
+    },
+    closeView() {
+      this.viewActive = "";
+    }
+
   }
 };
 </script>
@@ -136,7 +147,6 @@ export default {
 
 
 <style scoped>
-
 ul,
 li {
   margin-top: 8px;
@@ -144,7 +154,7 @@ li {
 
 td,
 a {
-    margin: 2px;
+  margin: 2px;
 }
 
 div[class="card"] {
