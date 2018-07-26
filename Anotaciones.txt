@@ -3,3 +3,6 @@ Cambiar la linea 8 y poner "CR-Science"
 Cambiar el path que se pone despues de la linea 85 al correcto
 Agregarle a todos los forms de create/add el boton de limpiar los campos
 Eliminar el footer
+
++
+Eliminar la clase/pagina Tipo de Consecutivos = Porque esta incluida dentro de Crear Consecutivos
