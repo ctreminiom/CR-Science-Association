@@ -10,7 +10,10 @@
                                     <a>Seguridad</a>
                                 </li>
                                 <li>
-                                    <a href="#">Consecutivos</a>
+                                    <a>Usuarios</a>
+                                </li>
+                                <li>
+                                    <a href="#">Puesto</a>
                                 </li>
                             </ul>
                         </nav>
@@ -23,7 +26,7 @@
             <div class="columns">
 
                 <div class="column is-2">
-                    <a class="button is-dark is-fullwidth">Agregar</a>
+                    <a @click="openAdd()" class="button is-dark is-fullwidth">Agregar</a>
                 </div>
 
                 <div class="column is-9">
@@ -46,10 +49,11 @@
 
                         <thead>
                             <tr>
-                                <th>Codigo ID</th>
+                                <th>ID</th>
                                 <th>Consecutivo</th>
                                 <th>Nombre</th>
-                                <th>Prefijo</th>
+                                <th>Description</th>
+                                <th>Rol de laboratorio</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -60,11 +64,12 @@
 
                                 <td>{{item.ID}}</td>
                                 <td>{{item.Consecutive}}</td>
-                                <td>{{item.Type}}</td>
-                                <td>{{item.Prefix}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.Description}}</td>
+                                <td>{{item.Lab}}</td>
 
                                 <td>
-                                    <a class="button is-link">Ver/ Editar</a>
+                                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
                                     <a class="button is-danger">Eliminar</a>
                                 </td>
 
@@ -80,6 +85,7 @@
     <Add :open="addActive" @closeModal="close"/>
 
     <test :open="viewActive" @closeModalView="closeView"/>
+
 
 
 
@@ -106,7 +112,7 @@ export default {
   },
   mounted() {
     var options = {
-      url: "http://192.168.43.192:8080/api/v1/module/consecutives",
+      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/jobs",
       method: "GET"
     };
 

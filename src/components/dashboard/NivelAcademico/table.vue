@@ -10,7 +10,7 @@
                                     <a >Seguridad</a>
                                 </li>
                                 <li>
-                                    <a >Crear Nivel Academico</a>
+                                    <a >Nivel Academico</a>
                                 </li>
                             </ul>
                         </nav>

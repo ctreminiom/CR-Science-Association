@@ -7,13 +7,10 @@
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a>Home</a>
+                                    <a>Administracion</a>
                                 </li>
                                 <li>
-                                    <a href="#">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#">Users</a>
+                                    <a href="#">Proyectos</a>
                                 </li>
                             </ul>
                         </nav>
@@ -111,7 +108,7 @@ export default {
   },
   mounted() {
     var options = {
-      url: "http://localhost:8080/api/v1/module/users", //Poner el path correcto
+      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/users", //PONER EL PATH CORRECTO
       method: "GET"
     };
 

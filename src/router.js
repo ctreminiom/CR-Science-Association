@@ -18,6 +18,8 @@ import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
 import Projects from './components/dashboard/Proyectos/table.vue'
 import Permisos from './components/dashboard/Permiso/table.vue'
 import LabRoles from './components/dashboard/RolesLab/table.vue'
+import Jobs from './components/dashboard/Puesto/table.vue'
+
 
 
 Vue.use(Resource)
@@ -62,6 +64,10 @@ export default new Router({
         path: 'LabRoles',
         component: LabRoles
 
+      },
+      {
+        path: 'Jobs',
+        component: Jobs
       },
       {
         path: 'Projects',
@@ -110,15 +116,20 @@ export default new Router({
   },
 
   {
-    path: 'dashboard/Permisos',
+   path: 'dashboard/Permisos',
     name: 'Permisos',
-    component: Permisos
+   component: Permisos
   },
 
   {
     path: 'dashboard/LabRoles',
     name: 'LabRoles',
     component: LabRoles
+  },
+  {
+    path: 'dashboard/Jobs',
+    name: 'Jobs',
+    component: Jobs
   }
   
 

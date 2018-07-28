@@ -25,19 +25,19 @@
 
 
                         <li> 
-                            <router-link to="p">
+                            <router-link to="/dashboard/Permisos">
                                 Permisos
                             </router-link>
                         </li>
 
                         <li> 
-                            <router-link to="user">
+                            <router-link to="/dashboard/LabRoles">
                                 Roles de Laboratorio
                             </router-link>
                         </li>
 
                         <li> 
-                            <router-link to="user">
+                            <router-link to="/dashboard/Jobs">
                                 Puestos
                             </router-link>
                         </li>
@@ -49,14 +49,9 @@
                             </router-link>
                         </li>
 
-                        <li> 
-                            <router-link to="user">
-                                Tipo de Consecutivos
-                            </router-link>
-                        </li>
 
                         <li> 
-                            <router-link to="dashboard/AcademicLevel">
+                            <router-link to="/dashboard/AcademicLevel">
                                 Niveles Academicos
                             </router-link>
                         </li>

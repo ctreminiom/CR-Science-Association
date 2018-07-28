@@ -72,9 +72,6 @@
 
             </div>
 
-    <Add :open="addActive" @closeModal="close"/>
-
-    <test :open="viewActive" @closeModalView="closeView"/>
 
 
 
@@ -98,11 +95,11 @@ export default {
     };
   },
   components: {
-      test,Add
+      test
   },
   mounted() {
     var options = {
-      url: "http://localhost:8080/api/v1/module/users", //Poner el path correcto
+      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/users", //Poner el path correcto
       method: "GET"
     };
 
