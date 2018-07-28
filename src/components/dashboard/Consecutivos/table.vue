@@ -23,7 +23,7 @@
             <div class="columns">
 
                 <div class="column is-2">
-                    <a @click="openAdd()" class="button is-dark is-fullwidth">Agregar</a>
+                    <a class="button is-dark is-fullwidth">Agregar</a>
                 </div>
 
                 <div class="column is-9">
@@ -64,7 +64,7 @@
                                 <td>{{item.Prefix}}</td>
 
                                 <td>
-                                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
+                                    <a class="button is-link">Ver/ Editar</a>
                                     <a class="button is-danger">Eliminar</a>
                                 </td>
 
@@ -77,11 +77,6 @@
 
             </div>
 
-    <Add :open="addActive" @closeModal="close"/>
-
-    <test :open="viewActive" @closeModalView="closeView"/>
-
-
 
 
     </div>
@@ -91,52 +86,15 @@
 
 
 <script>
-import Add from "./add.vue";
-import test from "./view.vue";
-
 export default {
-  data() {
-    return {
-      data: null,
-      addActive: "",
-      viewActive: ""
-    };
-  },
-  components: {
-      test,Add
-  },
-  mounted() {
-    var options = {
-      url: "http://localhost:8080/api/v1/module/consecutives",
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
-  },
-  methods: {
-    openAdd() {
-      this.addActive = "is-active";
-    },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
+    data() {
+        return {
+            data: null
+        }
     }
-
-  }
-};
+}
 </script>
+
 
 
 

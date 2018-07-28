@@ -12,6 +12,12 @@ import users from './components/dashboard/users/user.vue'
 
 
 
+//
+import consecutives from './components/dashboard/Consecutivos/table.vue'
+
+
+
+
 
 
 Vue.use(Resource)
@@ -23,40 +29,54 @@ export default new Router({
   mode: 'history',
 
   routes: [{
-      path: '/',
-      name: 'Login',
-      component: login
+    path: '/',
+    name: 'Login',
+    component: login
 
-    },
-    {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: dashboard,
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: dashboard,
 
-      children: [{
+    children: [
+      {
         path: 'users',
         component: users
-
-      }],
-      beforeEnter: (to, from, next) => {
-        if (Vue.auth.isAuthenticated()) {
-          next()
-        } else {
-          next("/")
-        }
+      },
+      {
+        path: 'consecutives',
+        component: consecutives
       }
-    },
-    {
-      path: '/dashboard/users',
-      name: 'users',
-      component: users,
-      beforeEnter: (to, from, next) => {
-        if (Vue.auth.isAuthenticated()) {
-          next()
-        } else {
-          next("/")
-        }
+    ],
+    beforeEnter: (to, from, next) => {
+      if (Vue.auth.isAuthenticated()) {
+        next()
+      } else {
+        next("/")
       }
     }
+  },
+  {
+    path: '/dashboard/users',
+    name: 'users',
+    component: users,
+    beforeEnter: (to, from, next) => {
+      if (Vue.auth.isAuthenticated()) {
+        next()
+      } else {
+        next("/")
+      }
+    }
+  },
+
+  {
+    path: '/dashboard/consecutives',
+    name: 'consecutives',
+    component: consecutives
+  }
+
+
+
   ]
 })
