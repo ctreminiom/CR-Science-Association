@@ -19,7 +19,14 @@
                 </div>
 
                 <div class="field">
-                    <label class="label">Last Name</label>
+                    <label class="label">SurName</label>
+                        <div class="control">
+                            <input v-model="last_name" class="input" type="text" placeholder="Text input">
+                        </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Second SurName</label>
                         <div class="control">
                             <input v-model="last_name" class="input" type="text" placeholder="Text input">
                         </div>
@@ -50,9 +57,10 @@
                     <label class="label">Role</label>
                         <div class="control">
                                 <div class="select is-fullwidth">
-                                    <select>
-                                        <option>Select dropdown</option>
-                                        <option>With options</option>
+                                   <select v-model="role_selected">
+                                        <option v-for="item in roles" :key="item.ID">
+                                            {{item.Name}}
+                                        </option>
                                     </select>
                                 </div>
                         </div>
@@ -62,9 +70,10 @@
                     <label class="label">Laboratorie Scope</label>
                         <div class="control">
                                 <div class="select is-fullwidth">
-                                    <select>
-                                        <option>Select dropdown</option>
-                                        <option>With options</option>
+                                   <select>
+                                        <option v-for="item in laboratory" :key="item.ID">
+                                            {{item.Name}}
+                                        </option>
                                     </select>
                                 </div>
                         </div>
@@ -75,7 +84,7 @@
                         <div class="control">
                                 <div class="select is-fullwidth">
                                     <select>
-                                        <option v-for="item in data00" :key="item.ID">
+                                        <option v-for="item in academic" :key="item.ID">
                                             {{item.Grade}}
                                         </option>
                                     </select>
@@ -119,34 +128,71 @@ export default {
   props: ["open"],
   data() {
     return {
-      data00: null,
+      academic: null,
+      laboratory: null,
+      roles: null,
+      role_selected: '',
       name: "",
       last_name: "",
       phone: "",
       username: "",
       password: ""
-
     };
   },
   methods: {
     close() {
       this.$emit("closeModal");
+    },
+    fetchAcademics() {
+      var options = {
+        url: "http://localhost:8080/api/v1/module/academic/level",
+        method: "GET"
+      };
+
+      this.$http(options).then(
+        response => {
+          this.academic = response.body;
+        },
+        response => {
+          alert("NO");
+        }
+      );
+    },
+    fetchLaboratories() {
+      var options = {
+        url: "http://localhost:8080/api/v1/module/jobs",
+        method: "GET"
+      };
+
+      this.$http(options).then(
+        response => {
+          this.laboratory = response.body;
+        },
+        response => {
+          alert("NO");
+        }
+      );
+    },
+    fetchRoles() {
+      var options = {
+        url: "http://localhost:8080/api/v1/module/user/roles",
+        method: "GET"
+      };
+
+      this.$http(options).then(
+        response => {
+          this.roles = response.body;
+        },
+        response => {
+          alert("NO");
+        }
+      );
     }
   },
-  mounted() {
-    var options = {
-      url: "http://localhost:8080/api/v1/module/academic/level",
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data00 = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
+  created() {
+    this.fetchAcademics();
+    this.fetchLaboratories();
+    this.fetchRoles();
   }
 };
 </script>
