@@ -25,14 +25,14 @@
 
 
                         <li> 
-                            <router-link to="permissions">
+                            <router-link to="p">
                                 Permisos
                             </router-link>
                         </li>
 
                         <li> 
                             <router-link to="user">
-                                Roles de laboratorio
+                                Roles de Laboratorio
                             </router-link>
                         </li>
 
@@ -57,7 +57,7 @@
 
                         <li> 
                             <router-link to="dashboard/AcademicLevel">
-                                Nivel Academico
+                                Niveles Academicos
                             </router-link>
                         </li>
 
@@ -76,7 +76,9 @@
 
 
                         <li>
-                            <a class="">Projectos</a>
+                             <router-link to="dashboard/Projects">
+                                Proyectos
+                            </router-link>
                         </li>
 
 

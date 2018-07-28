@@ -15,9 +15,9 @@ import users from './components/dashboard/users/user.vue'
 //
 import consecutives from './components/dashboard/Consecutivos/table.vue'
 import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
-
-
-
+import Projects from './components/dashboard/Proyectos/table.vue'
+import Permisos from './components/dashboard/Permiso/table.vue'
+import LabRoles from './components/dashboard/RolesLab/table.vue'
 
 
 Vue.use(Resource)
@@ -52,6 +52,20 @@ export default new Router({
         path: 'AcademicLevel',
         component: AcademicLevel
 
+      },
+      {
+        path: 'Permisos',
+        component: Permisos
+
+      },
+      {
+        path: 'LabRoles',
+        component: LabRoles
+
+      },
+      {
+        path: 'Projects',
+        component: Projects
       }
 
     ],
@@ -86,6 +100,25 @@ export default new Router({
     path: '/dashboard/AcademicLevel',
     name: 'AcademicLevel',
     component: AcademicLevel
+  },
+
+  {
+    path: 'dashboard/Projects',
+    name: 'Projects',
+    component: Projects
+
+  },
+
+  {
+    path: 'dashboard/Permisos',
+    name: 'Permisos',
+    component: Permisos
+  },
+
+  {
+    path: 'dashboard/LabRoles',
+    name: 'LabRoles',
+    component: LabRoles
   }
   
 
