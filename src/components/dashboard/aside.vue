@@ -44,7 +44,7 @@
 
 
                         <li> 
-                            <router-link to="user">
+                            <router-link to="/dashboard/Conescutivos">
                                 Consecutivos
                             </router-link>
                         </li>

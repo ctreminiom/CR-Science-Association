@@ -1,7 +1,7 @@
 <template>
 
                      <div>
-                        <div id="NewProject" class="modal" :class="open">
+                        <div id="NewAcademico" class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
