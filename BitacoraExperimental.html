@@ -12,7 +12,7 @@
 
     <!-- Bulma Version 0.7.1-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/laborato.css">
+    <link rel="stylesheet" tyape="text/css" href="css/laborato.css">
 
 
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
@@ -22,7 +22,7 @@
 
 
     <div class="columns">
-                    <!--***************************INCIO DEL SIDEBAR*************************-->
+        <!--***************************INCIO DEL SIDEBAR*************************-->
 
         <aside class="column is-2 aside hero is-fullheight">
             <div>
@@ -37,36 +37,68 @@
                     <p class="menu-label">CR Science Association</p>
 
                     <ul class="menu-list">
-                        <li> <a class="is-active">Seguridad</a></li>
+                        <li>
+                            <a class="is-active">Seguridad</a>
+                        </li>
 
-                        <li><a class="">Usuarios</a> </li>
-                        <li><a class="">Permisos</a></li>
-                        <li><a class="">Roles de laboratorio</a></li>
-                        <li><a class="">Puestos</a></li>
-                        <li><a class="">Consecutivos</a></li>
-                        <li><a class="">Tipo de Consecutivos</a></li>
-                        <li><a class="">Nivel Academico</a></li>
+                        <li>
+                            <a class="">Usuarios</a>
+                        </li>
+                        <li>
+                            <a class="">Permisos</a>
+                        </li>
+                        <li>
+                            <a class="">Roles de laboratorio</a>
+                        </li>
+                        <li>
+                            <a class="">Puestos</a>
+                        </li>
+                        <li>
+                            <a class="">Consecutivos</a>
+                        </li>
+                        <li>
+                            <a class="">Tipo de Consecutivos</a>
+                        </li>
+                        <li>
+                            <a class="">Nivel Academico</a>
+                        </li>
 
                     </ul>
 
                     <br>
 
                     <ul class="menu-list">
-                        <li><a class="is-active">Administracion</a></li>
+                        <li>
+                            <a class="is-active">Administracion</a>
+                        </li>
 
-                        <li><a class="">Ramas Cientificas</a> </li>
-                        <li> <a class="">Projectos</a></li>
-                        <li><a class="">Bitacoras Cientificas</a></li>
+                        <li>
+                            <a class="">Ramas Cientificas</a>
+                        </li>
+                        <li>
+                            <a class="">Projectos</a>
+                        </li>
+                        <li>
+                            <a class="">Bitacoras Cientificas</a>
+                        </li>
 
                     </ul>
 
 
                     <ul class="menu-list">
-                        <li><a class="is-active">Consultas</a></li>
+                        <li>
+                            <a class="is-active">Consultas</a>
+                        </li>
 
-                        <li><a class="">Bitacora</a></li>
-                        <li><a class="">Errores</a></li>
-                        <li><a class="">Descargas</a></li>
+                        <li>
+                            <a class="">Bitacora</a>
+                        </li>
+                        <li>
+                            <a class="">Errores</a>
+                        </li>
+                        <li>
+                            <a class="">Descargas</a>
+                        </li>
 
                     </ul>
 
@@ -74,41 +106,41 @@
             </div>
         </aside>
 
-                    <!--***************************FIN DEL SIDEBAR***************************-->
+        <!--***************************FIN DEL SIDEBAR***************************-->
 
         <div class="column is-10">
 
-                    <!--***************************INCIO DEL SITEMAP**************************-->
+            <!--***************************INCIO DEL SITEMAP**************************-->
             <div class="row">
                 <div class="card">
                     <div>
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a >Bulma</a>
+                                    <a>Bulma</a>
                                 </li>
                                 <li>
-                                    <a >Administracion</a>
+                                    <a>Administracion</a>
                                 </li>
                                 <li>
-                                    <a >Bitacora Experimental</a>
+                                    <a>Bitacora Experimental</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
-                    <!--***************************FIN DEL SITEMAP***************************-->
+            <!--***************************FIN DEL SITEMAP***************************-->
 
 
 
             <br>
 
-                    <!--***************************INICIO DEL MAIN BOX***************************-->
+            <!--***************************INICIO DEL MAIN BOX***************************-->
             <div class="columns">
 
                 <div class="column is-5">
-                    <a class="button is-dark is-fullwidth" onclick="executeModal()">Agregar</a>
+                    <a class="button is-dark is-fullwidth" onclick="executeModalAdd()">Agregar</a>
                 </div>
                 <div class="column is-7">
                     <div class="field">
@@ -122,45 +154,45 @@
 
 
             </div>
-                                <!--***************************INICIO DE LA TABLA***************************-->
+            <!--***************************INICIO DE LA TABLA***************************-->
             <div class="columns">
                 <div class="column is-12">
-                        <table class="table is-hoverable is-fullwidth">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Experimento</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Usuario</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-    
-                                <tr>
-                                    <td>10000</td>
-                                    <td>R5</td>
-                                    <td>Stefan</td>
-                                    <td>von Schroter</td>
-                                    <td>svonschroter</td>
-                                    <td>
-                                        <a onclick="executeModal()" class="button is-link">Ver</a>
-                                        <a class="button is-dark">Registrar</a>
-                                        <a class="button is-danger">Eliminar</a>
-                                    </td>
-    
-                                </tr>
-        
-                                </tbody>
-                            </table>
+                    <table class="table is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Experimento</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Usuario</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>10000</td>
+                                <td>R5</td>
+                                <td>Stefan</td>
+                                <td>von Schroter</td>
+                                <td>svonschroter</td>
+                                <td>
+                                    <a onclick="executeModalView()" class="button is-link">Ver</a>
+                                    <a class="button is-dark">Registrar</a>
+                                    <a class="button is-danger">Eliminar</a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
 
 
             </div>
-                                <!--***************************FIN DE LA TABLA***************************-->
+            <!--***************************FIN DE LA TABLA***************************-->
 
-                    <!--***************************FIN DEL MAIN BOX***************************-->
+            <!--***************************FIN DEL MAIN BOX***************************-->
         </div>
 
 
@@ -169,13 +201,70 @@
 
 
 
-                    <!--***************************INICIO DEL MODAL***************************-->
+    <!--***************************INICIO DEL MODAL***************************-->
     <div id="da" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Crear nueva Bitacora</p>
-                <button onclick="executeModal()" class="delete" aria-label="close"></button>
+                <button onclick="executeModalAdd()" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <div class="field">
+                    <label class="label">Experimento</label>
+                    <div class="control">
+                        <input class="input is-small" type="text" placeholder="Nombre del Experimento">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Usuario</label>
+                    <div class="control">
+                        <input class="input is-small" type="text" placeholder="Nombre del Usuario">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Notas</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Texto"></textarea>
+                    </div>
+                </div>
+
+                <div class="file has-name is-boxed">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Elejir un archivo
+                            </span>
+                        </span>
+                        <span class="file-name">
+                            Firma.png
+                        </span>
+                    </label>
+                </div>
+
+
+
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-black">Save changes</button>
+                <button onclick="executeModalAdd()" class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="ver" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Informacion de la bitacora</p>
+                <button onclick="executeModalView()" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
 
@@ -198,41 +287,47 @@
 
                 <div class="file has-name is-boxed">
                     <label class="file-label">
-                      <input class="file-input" type="file" name="resume">
-                      <span class="file-cta">
-                        <span class="file-icon">
-                          <i class="fas fa-upload"></i>
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Elejir un archivo
+                            </span>
                         </span>
-                        <span class="file-label">
-                          Elejir un archivo
+                        <span class="file-name">
+                            Firma.png
                         </span>
-                      </span>
-                      <span class="file-name">
-                        Firma.png
-                      </span>
                     </label>
-                  </div>
-
-
+                </div>
 
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-black">Save changes</button>
-                <button onclick="executeModal()" class="button">Cancel</button>
+                <button onclick="executeModalView()" class="button">Cancel</button>
             </footer>
         </div>
     </div>
 
-                    <!--***************************FIN DEL MODAL***************************-->
 
-                    <!--***************************INICIO DE LOS SCRIPTS***************************-->
+
+    <!--***************************FIN DEL MODAL***************************-->
+
+    <!--***************************INICIO DE LOS SCRIPTS***************************-->
     <script>
-        function executeModal() {
+        function executeModalAdd() {
             var element = document.getElementById("da");
             element.classList.toggle("is-active");
         }
+
+
+        function executeModalView() {
+            var element = document.getElementById("ver");
+            element.classList.toggle("is-active");
+        }
     </script>
-                    <!--***************************FIN DE LOS SCRIPT***************************-->
+    <!--***************************FIN DE LOS SCRIPT***************************-->
 </body>
 
 </html>

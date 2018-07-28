@@ -22,7 +22,7 @@
 
 
     <div class="columns">
-                    <!--***************************INCIO DEL SIDEBAR*************************-->
+        <!--***************************INCIO DEL SIDEBAR*************************-->
 
         <aside class="column is-2 aside hero is-fullheight">
             <div>
@@ -37,36 +37,68 @@
                     <p class="menu-label">CR Science Association</p>
 
                     <ul class="menu-list">
-                        <li> <a class="is-active">Seguridad</a></li>
+                        <li>
+                            <a class="is-active">Seguridad</a>
+                        </li>
 
-                        <li><a class="">Usuarios</a> </li>
-                        <li><a class="">Permisos</a></li>
-                        <li><a class="">Roles de laboratorio</a></li>
-                        <li><a class="">Puestos</a></li>
-                        <li><a class="">Consecutivos</a></li>
-                        <li><a class="">Tipo de Consecutivos</a></li>
-                        <li><a class="">Nivel Academico</a></li>
+                        <li>
+                            <a class="">Usuarios</a>
+                        </li>
+                        <li>
+                            <a class="">Permisos</a>
+                        </li>
+                        <li>
+                            <a class="">Roles de laboratorio</a>
+                        </li>
+                        <li>
+                            <a class="">Puestos</a>
+                        </li>
+                        <li>
+                            <a class="">Consecutivos</a>
+                        </li>
+                        <li>
+                            <a class="">Tipo de Consecutivos</a>
+                        </li>
+                        <li>
+                            <a class="">Nivel Academico</a>
+                        </li>
 
                     </ul>
 
                     <br>
 
                     <ul class="menu-list">
-                        <li><a class="is-active">Administracion</a></li>
+                        <li>
+                            <a class="is-active">Administracion</a>
+                        </li>
 
-                        <li><a class="">Ramas Cientificas</a> </li>
-                        <li> <a class="">Projectos</a></li>
-                        <li><a class="">Bitacoras Cientificas</a></li>
+                        <li>
+                            <a class="">Ramas Cientificas</a>
+                        </li>
+                        <li>
+                            <a class="">Projectos</a>
+                        </li>
+                        <li>
+                            <a class="">Bitacoras Cientificas</a>
+                        </li>
 
                     </ul>
 
 
                     <ul class="menu-list">
-                        <li><a class="is-active">Consultas</a></li>
+                        <li>
+                            <a class="is-active">Consultas</a>
+                        </li>
 
-                        <li><a class="">Bitacora</a></li>
-                        <li><a class="">Errores</a></li>
-                        <li><a class="">Descargas</a></li>
+                        <li>
+                            <a class="">Bitacora</a>
+                        </li>
+                        <li>
+                            <a class="">Errores</a>
+                        </li>
+                        <li>
+                            <a class="">Descargas</a>
+                        </li>
 
                     </ul>
 
@@ -74,46 +106,48 @@
             </div>
         </aside>
 
-                    <!--***************************FIN DEL SIDEBAR***************************-->
+        <!--***************************FIN DEL SIDEBAR***************************-->
 
         <div class="column is-10">
 
-                    <!--***************************INCIO DEL SITEMAP**************************-->
+            <!--***************************INCIO DEL SITEMAP**************************-->
             <div class="row">
                 <div class="card">
                     <div>
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a >Bulma</a>
+                                    <a>Bulma</a>
                                 </li>
                                 <li>
-                                    <a >Administracion</a>
+                                    <a>Administracion</a>
                                 </li>
                                 <li>
-                                    <a >Ramas Cientificas</a>
+                                    <a>Ramas Cientificas</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
-                    <!--***************************FIN DEL SITEMAP***************************-->
+            <!--***************************FIN DEL SITEMAP***************************-->
 
 
 
             <br>
 
-                    <!--***************************INICIO DEL MAIN BOX***************************-->
+            <!--***************************INICIO DEL MAIN BOX***************************-->
             <div class="columns">
-
                 <div class="column">
-                    <a class="button is-dark" onclick="executeModal()">Actualizar</a>
+                    <a class="button is-dark" onclick="executeModalAdd()">Agregar</a>
                 </div>
                 <div class="column">
-                    <a class="button is-light" onclick="executeModal()">Limpear</a>
+                    <a class="button is-primary" onclick="executeModalUpdate()">Actualizar</a>
                 </div>
                 <div class="column">
+                    <a class="button is-light" onclick="executeModalClean()">Limpear</a>
+                </div>
+                <div class="column is-10">
                     <div class="field">
                         <div class="field">
                             <p class="control">
@@ -122,137 +156,119 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-                                <!--***************************INICIO DE LA TABLA***************************-->
+
+
+            <!--***************************INICIO DE LA TABLA***************************-->
             <div class="columns">
                 <div class="column is-12">
-                        <table class="table is-hoverable is-fullwidth">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Caja de Codigo</th>
-                                        <th>Nombre</th>
-                                        <th>Prefijo</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-        
-                                    <tr>
-                                        <td>1</td>
-                                        <td>99</td>
-                                        <td>Proyecto</td>
-                                        <td>PRO</td>
-                                        <td>
-                                            <div class="field is-grouped">
-                                                <p class="control">
-                                                    <a class="button is-link" data-target="modal">
-                                                        Guardar / Editar
-                                                    </a>
-                                                </p>
-                                                <p class="control">
-                                                    <a class="button is-danger">
-                                                        Eliminar
-                                                    </a>
-                                                </p>
-                                            </div>
-                                        </td>
-                                    </tr>
-        
-                                </tbody>
-                            </table>
+                    <table class="table is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Caja de Codigo</th>
+                                <th>Nombre</th>
+                                <th>Prefijo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>99</td>
+                                <td>Proyecto</td>
+                                <td>PRO</td>
+                                <td>
+                                    <div class="field is-grouped">
+                                        <p class="control">
+                                            <a class="button is-link" data-target="modal">
+                                                Guardar / Editar
+                                            </a>
+                                        </p>
+                                        <p class="control">
+                                            <a class="button is-danger">
+                                                Eliminar
+                                            </a>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
 
 
             </div>
-                                <!--***************************FIN DE LA TABLA***************************-->
+            <!--***************************FIN DE LA TABLA***************************-->
 
-                    <!--***************************FIN DEL MAIN BOX***************************-->
+            <!--***************************FIN DEL MAIN BOX***************************-->
+
+
+            <div id="da" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Crear nueva Rama Cientifica</p>
+                        <button onclick="executeModalAdd()" class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+
+                        <div class="field">
+                            <label class="label">Rama Cientifica</label>
+                            <div class="control">
+                                <input class="input is-small" type="text" placeholder="Nombre del la Rama Cientifica">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Usuario</label>
+                            <div class="control">
+                                    <textarea class="textarea" placeholder="svonschroter"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Notas</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Texto"></textarea>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-black">Save changes</button>
+                        <button onclick="executeModalAdd()" class="button">Cancel</button>
+                    </footer>
+                </div>
+            </div>
         </div>
 
 
 
-    </div>
+            <!--***************************INICIO DEL MODAL***************************-->
 
 
 
-                    <!--***************************INICIO DEL MODAL***************************-->
-  
-                    <div>
-                        <div id="test" class="modal" :class="open">
-                          <div class="modal-background"></div>
-                          <div class="modal-card">
-                              <header class="modal-card-head">
-                                  <p class="modal-card-title">Nuevo Proyecto</p>
-                                  <button @click="close()"  class="delete" aria-label="close"></button>
-                              </header>
-                              <section class="modal-card-body">
-                  
-                             <div class="field">
-                                      <label class="label">Tipo de Consecutivo</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select>
-                                                        <option v-for="item in data00" :key="item.ID">
-                                                            {{item.Grade}}
-                                                        </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Prefijo</label>
-                                          <div class="control">
-                                              <input  v-model="prefix" class="input " type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Descripcion</label>
-                                          <div class="control">
-                                              <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Rango</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select> <!--Estas opciones se pueden poner en una tabla-->
-                                                        <option>1-100 </option>
-                                                        <option>1-1000 </option>
-                                                        <option>1-10000 </option>
-                                                        <option>1-100000 </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
+            <!--***************************FIN DEL MODAL***************************-->
 
-                  
-                              </section>
-                              <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button id="BTN_Limpiar" class="button is-warning" type="reset">Limpiar</button> <!--No hace nada-->
-                                  <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
-                              </footer>
-                          </div>
-                      </div>
-                  </div>
+            <!--***************************INICIO DE LOS SCRIPTS***************************-->
+            <script>
+                function executeModalUpdate() {
+                    var element = document.getElementById("test");
+                    element.classList.toggle("is-active");
+                }
+                function executeModalClean() {
+                    var element = document.getElementById("test");
+                    element.classList.toggle("is-active");
+                }
+                function executeModalAdd() {
+                    var element = document.getElementById("test");
+                    element.classList.toggle("is-active");
+                }
 
-                    <!--***************************FIN DEL MODAL***************************-->
-
-                    <!--***************************INICIO DE LOS SCRIPTS***************************-->
-    <script>
-        function executeModal() {
-            var element = document.getElementById("test");
-            element.classList.toggle("is-active");
-        }
-    </script>
-                    <!--***************************FIN DE LOS SCRIPT***************************-->
+            </script>
+            <!--***************************FIN DE LOS SCRIPT***************************-->
 </body>
 
 </html>
