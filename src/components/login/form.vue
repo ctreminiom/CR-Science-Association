@@ -61,7 +61,7 @@ export default {
   methods: {
     login() {
       var options = {
-        url: "http://localhost:8080/api/v1/module/login",
+        url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/login",
         method: "GET",
         headers: {
           Authorization:
