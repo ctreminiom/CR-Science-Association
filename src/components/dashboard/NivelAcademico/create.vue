@@ -1,7 +1,7 @@
 <template>
 
-                     <div>
-                        <div id="NewAcademico" class="modal" :class="open">
+            <div>
+                <div id="NewAcademico" class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
@@ -26,7 +26,6 @@
                                   <div class="field">
                                       <label class="label">Nombre de carrera</label>
                                           <div class="control">
-                                              <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
                                               <input v-model="career" class="input " type="text" placeholder="Text input">
                                           </div>
                                   </div>

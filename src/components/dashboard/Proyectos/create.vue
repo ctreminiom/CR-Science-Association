@@ -22,7 +22,7 @@
                                       <label class="label">Descripcion</label>
                                           <div class="control">
                                               <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
+                                              <!--<input v-model="desc" class="input " type="text" placeholder="Text input" rows="10">-->
                                           </div>
                                   </div>
                   

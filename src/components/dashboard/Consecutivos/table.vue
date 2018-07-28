@@ -23,7 +23,7 @@
             <div class="columns">
 
                 <div class="column is-2">
-                    <a class="button is-dark is-fullwidth">Agregar</a>
+                    <a a @click="openCreate()" class="button is-dark is-fullwidth">Agregar</a>
                 </div>
 
                 <div class="column is-9">
@@ -120,7 +120,7 @@ export default {
     );
   },
   methods: {
-    openAdd() {
+    openCreate() {
       this.addActive = "is-active";
     },
     openView() {

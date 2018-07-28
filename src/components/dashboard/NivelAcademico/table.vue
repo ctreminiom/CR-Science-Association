@@ -23,7 +23,7 @@
             <div class="columns">
 
                 <div class="column is-5">
-                    <a @click="openAdd()" class="button is-dark is-fullwidth">Agregar</a>
+                    <a @click="openCreate()" class="button is-dark is-fullwidth">Agregar</a>
                 </div>
 
                 <div class="column is-7">
@@ -64,7 +64,7 @@
                                 <td>{{item.Description}}</td>
 
                                 <td>
-                                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
+                                    <a @click="openEdit()" class="button is-link">Ver/ Editar</a>
                                     <a class="button is-danger">Eliminar</a>
                                 </td>
 
@@ -121,16 +121,16 @@ export default {
     );
   },
   methods: {
-    openAdd() {
+    openCreate() {
       this.addActive = "is-active";
     },
-    openView() {
+    openEdit() {
       this.viewActive = "is-active";
     },
     close() {
       this.addActive = "";
     },
-    closeView() {
+    closeEdit() {
       this.viewActive = "";
     }
 

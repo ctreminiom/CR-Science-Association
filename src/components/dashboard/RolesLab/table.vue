@@ -7,13 +7,13 @@
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a>Home</a>
+                                    <a>Seguridad</a>
                                 </li>
                                 <li>
-                                    <a href="#">Dashboard</a>
+                                    <a href="#">Usuario</a>
                                 </li>
                                 <li>
-                                    <a href="#">Users</a>
+                                    <a href="#">Roles de Laboratorio</a>
                                 </li>
                             </ul>
                         </nav>
@@ -26,7 +26,7 @@
             <div class="columns">
 
                 <div class="column is-2">
-                    <a @click="openAdd()" class="button is-dark is-fullwidth">Agregar</a>
+                    <a @click="openCreate()" class="button is-dark is-fullwidth">Agregar</a>
                 </div>
 
                 <div class="column is-9">
@@ -107,7 +107,7 @@ export default {
   },
   mounted() {
     var options = {
-      url: "http://localhost:8080/api/v1/module/laboratory/roles",
+      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/laboratory/roles",
       method: "GET"
     };
 
@@ -121,7 +121,7 @@ export default {
     );
   },
   methods: {
-    openAdd() {
+    openCreate() {
       this.addActive = "is-active";
     },
     openView() {
