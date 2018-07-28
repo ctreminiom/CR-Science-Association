@@ -87,6 +87,7 @@ export default new Router({
     name: 'AcademicLevel',
     component: AcademicLevel
   }
+  
 
   ]
 })
