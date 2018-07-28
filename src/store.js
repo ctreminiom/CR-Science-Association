@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     isLogged: false,
     token: "",
-    users: null
+    users: null,
+    consecutives: null
   },
   mutations: {
 
@@ -23,7 +24,7 @@ export default new Vuex.Store({
         }
       )
     },
-    fetchUsers: (state) => {
+    fetchUsers: (state, options) => {
 
       this.$http(options).then(
         response => {
@@ -33,23 +34,18 @@ export default new Vuex.Store({
           console.log("ERROR PIDIENDO USUARIOS")
         }
       )
+    },
 
+    fetchConsecutives: (state, options) => {
 
-
-      var options = {
-        url: "http://localhost:8080/api/v1/module/users",
-        method: "GET"
-      };
-  
       this.$http(options).then(
         response => {
-          this.data = response.body;
+          this.$store.consecutives = response.body
         },
         response => {
-          alert("NO");
+          console.log("ERROR PIDIENDO CONSECTIVEPS")
         }
-      );
-
+      )
     }
 
   },
@@ -72,9 +68,31 @@ export default new Vuex.Store({
     users: (context, token) => {
       let options = {
         url: "http://localhost:8080/api/v1/module/users",
-        method: "GET"
-      }
+        method: "GET",
+        headers: {
+          Authorization:
+          "Bearer" + token
+        }
+      };
+
+      context.commit("fetchUsers", options);
+    },
+
+    consecutives: (context, token) => {
+      let options = {
+        url: "http://localhost:8080/api/v1/module/users",
+        method: "GET",
+        headers: {
+          Authorization:
+          "Bearer" + token
+        }
+      };
+
+
+      context.commit("fetchConsecutives", options);
     }
+
+
 
 
 
