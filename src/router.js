@@ -14,7 +14,7 @@ import users from './components/dashboard/users/user.vue'
 
 //
 import consecutives from './components/dashboard/Consecutivos/table.vue'
-
+import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
 
 
 
@@ -47,7 +47,13 @@ export default new Router({
       {
         path: 'consecutives',
         component: consecutives
+      },
+      {
+        path: 'AcademicLevel',
+        component: AcademicLevel
+
       }
+
     ],
     beforeEnter: (to, from, next) => {
       if (Vue.auth.isAuthenticated()) {
@@ -74,9 +80,13 @@ export default new Router({
     path: '/dashboard/consecutives',
     name: 'consecutives',
     component: consecutives
+  },
+
+  {
+    path: '/dashboard/AcademicLevel',
+    name: 'AcademicLevel',
+    component: AcademicLevel
   }
-
-
 
   ]
 })
