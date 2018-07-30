@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Store from './store'
+
 import Resource from 'vue-resource' // Setup HTTP requested funcionality
 
 import auth from './packages/token/app.js'
@@ -8,7 +10,9 @@ import auth from './packages/token/app.js'
 
 import login from './views/Login.vue'
 import dashboard from './views/Dashboard.vue'
-import users from './components/dashboard/users/user.vue'
+//import users from './components/dashboard/users/user.vue'
+
+import users from "./views/user.vue"
 
 
 
@@ -26,14 +30,40 @@ Vue.use(Resource)
 Vue.use(Router)
 Vue.use(auth)
 
+
+const ifNotAuthenticated = (to, from, next) => {
+
+  if (!Store.getters.isAuthenticated) {
+    next()
+    return
+  }
+
+  next("/")
+}
+
+
+const ifAuthenticated = (to, from, next) => {
+
+  if (Store.getters.isAuthenticated) {
+    next("/dashboard")
+    return
+  }
+
+  next("/")
+}
+
+
+
+
 export default new Router({
 
   mode: 'history',
 
   routes: [{
+
     path: '/',
     name: 'Login',
-    component: login
+    component: login,
 
   },
   {
