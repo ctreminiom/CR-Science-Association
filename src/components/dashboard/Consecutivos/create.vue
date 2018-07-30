@@ -5,7 +5,7 @@
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Nuevo Proyecto</p>
+                                  <p class="modal-card-title">Nuevo Consecutivo</p>
                                   <button @click="close()"  class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
@@ -26,15 +26,15 @@
                                   <div class="field">
                                       <label class="label">Prefijo</label>
                                           <div class="control">
-                                              <input  v-model="prefix" class="input " type="text" placeholder="Text input">
+                                              <input  v-model="prefix" class="input " id="myInput" type="text" placeholder="Text input">
                                           </div>
                                   </div>
                   
                                   <div class="field">
                                       <label class="label">Descripcion</label>
                                           <div class="control">
-                                              <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
+                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
+                                            <!--  <input v-model="desc" class="input " id="myInput" type="text" placeholder="Text input">-->
                                           </div>
                                   </div>
                   
@@ -56,7 +56,7 @@
                               </section>
                               <footer class="modal-card-foot">
                                   <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button id="BTN_Limpiar" class="button is-warning" type="reset">Limpiar</button> <!--No hace nada-->
+                                  <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button><!--Validar que limpie varios campos-->
                                   <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
                               </footer>
                           </div>

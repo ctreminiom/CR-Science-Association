@@ -14,14 +14,14 @@
                                   <div class="field">
                                       <label class="label">Nombre de Proyecto</label>
                                           <div class="control">
-                                              <input  v-model="name" class="input " type="text" placeholder="Text input">
+                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
                                           </div>
                                   </div>
                   
                                   <div class="field">
                                       <label class="label">Descripcion</label>
                                           <div class="control">
-                                              <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
+                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
                                               <!--<input v-model="desc" class="input " type="text" placeholder="Text input" rows="10">-->
                                           </div>
                                   </div>
@@ -42,7 +42,7 @@
                               </section>
                               <footer class="modal-card-foot">
                                   <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button id="BTN_Limpiar" class="button is-warning" type="reset">Limpiar</button> <!--No hace nada-->
+                                   <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button> <!--Validar todos los fields-->
                                   <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
                               </footer>
                           </div>

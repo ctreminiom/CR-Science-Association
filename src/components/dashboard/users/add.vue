@@ -14,21 +14,21 @@
                 <div class="field">
                     <label class="label">Name</label>
                         <div class="control">
-                            <input  v-model="name" class="input" type="text" placeholder="Text input">
+                            <input  v-model="name" id="myInput" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">SurName</label>
                         <div class="control">
-                            <input v-model="last_name" class="input" type="text" placeholder="Text input">
+                            <input v-model="last_name" id="myInput2" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Second SurName</label>
                         <div class="control">
-                            <input v-model="last_name" class="input" type="text" placeholder="Text input">
+                            <input v-model="last_name2" class="input" type="text" placeholder="Text input">
                         </div>
                 </div>
 
@@ -114,7 +114,9 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
-                <button @click="close()" class="button">Cancel</button>
+                <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button> <!--Validar que limpie varios campos-->
+                <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
+    
             </footer>
         </div>
     </div>
