@@ -105,21 +105,16 @@ export default {
   components: {
       test,Add
   },
-  mounted() {
-    var options = {
-      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/laboratory/roles",
-      method: "GET"
-    };
 
-    this.$http(options).then(
-      response => {
-        this.data = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
+  created() {
+
+      this.$store.dispatch('lab').then(response => {
+            this.data = this.$store.getters.lab
+        }, error => {
+            alert("ERROR PIDIENDO LOS USUARIOS")
+        })
   },
+
   methods: {
     openCreate() {
       this.addActive = "is-active";

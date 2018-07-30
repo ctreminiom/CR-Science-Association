@@ -8,7 +8,8 @@ export default new Vuex.Store({
     isLoggedIn: !!localStorage.getItem("token"),
     users: null,
     consecutives: null,
-    grants: null
+    grants: null,
+    lab: null
   },
   mutations: {
     SAVE_TOKEN: (state, token) => {
@@ -22,7 +23,10 @@ export default new Vuex.Store({
     },
     SAVE_GRANT_JSON: (state, json) => {
       state.grants = json
-    }
+    },
+     SAVE_LAB_JSON: (state, json) => {
+       state.lab = json
+     }
   },
   actions: {
     login(context, user) {
@@ -93,6 +97,29 @@ export default new Vuex.Store({
           reject(false);
         })
       })
+    },
+
+    lab(context) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://localhost:8080/api/v1/module/laboratory/roles",
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_LAB_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
     }
 
   },
@@ -101,7 +128,8 @@ export default new Vuex.Store({
   getters: {
     isAuthenticated: state => {return state.isLoggedIn},
     users: state => {return state.users},
-    grants: state => {return state.grants}
+    grants: state => {return state.grants},
+    lab: state => {return state.lab}
   }
 
 })
