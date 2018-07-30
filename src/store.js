@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     isLoggedIn: !!localStorage.getItem("token"),
     users: null,
-    consecutives: null
+    consecutives: null,
+    grants: null
   },
   mutations: {
     SAVE_TOKEN: (state, token) => {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     SAVE_USER_JSON: (state, json) => {
       state.users = json
+    },
+    SAVE_GRANT_JSON: (state, json) => {
+      state.grants = json
     }
   },
   actions: {
@@ -66,13 +70,38 @@ export default new Vuex.Store({
           reject(false);
         })
       })
+    },
+
+    grants(context, user) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://localhost:8080/api/v1/module/grants",
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_GRANT_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
     }
+
   },
 
 
   getters: {
     isAuthenticated: state => {return state.isLoggedIn},
-    users: state => {return state.users}
+    users: state => {return state.users},
+    grants: state => {return state.grants}
   }
 
 })

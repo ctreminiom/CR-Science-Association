@@ -25,7 +25,6 @@
 
             <div class="columns">
 
-
                 <div class="column is-9">
                     <div class="field">
                         <div class="field">
@@ -100,20 +99,13 @@ export default {
   components: {
       test
   },
-  mounted() {
-    var options = {
-      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/users", //Poner el path correcto
-      method: "GET"
-    };
+  created() {
 
-    this.$http(options).then(
-      response => {
-        this.data = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
+      this.$store.dispatch('grants').then(response => {
+          this.data = this.$store.getters.grants
+      }, error => {
+          alert("ERROR PIDINDO LOS PERMISOS")
+      })
   },
   methods: {
     openAdd() {
