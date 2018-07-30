@@ -26,15 +26,16 @@
                                   <div class="field">
                                       <label class="label">Nombre de carrera</label>
                                           <div class="control">
-                                              <input v-model="career" class="input " type="text" placeholder="Text input">
+                                              <input v-model="career" id="myInput" class="input " type="text" placeholder="Text input">
                                           </div>
                                   </div>
-                  
+
                               </section>
                               <footer class="modal-card-foot">
                                   <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button id="BTN_Limpiar" class="button is-warning" type="reset">Limpiar</button> <!--No hace nada-->
+                                    <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button>
                                   <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
+                           
                               </footer>
                           </div>
                       </div>

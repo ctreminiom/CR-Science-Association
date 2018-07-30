@@ -13,13 +13,13 @@
               <div class="field">
                     <label class="label">Nombre de rol</label>
                     <div class="control">
-                    <input v-model="career" class="input " type="text" placeholder="Text input">
+                    <input v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
                     </div>
             </div>
             <div class="field">
                     <label class="label">Descripcion del rol</label>
                     <div class="control">
-                    <input v-model="career" class="input " type="text" placeholder="Text input">
+                    <input v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
                     </div>
             </div>
                                   
@@ -27,6 +27,7 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
+                <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Clear</button>
                 <button @click="close()" class="button">Cancel</button>
             </footer>
         </div>

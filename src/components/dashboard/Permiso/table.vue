@@ -7,10 +7,13 @@
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a>Administracion</a>
+                                    <a>Seguridad</a>
                                 </li>
                                 <li>
-                                    <a>>Crear Permiso</a>
+                                    <a>Usuario</a>
+                                </li>
+                                <li>
+                                    <a>Permisos (Roles Simples)</a>
                                 </li>
                             </ul>
                         </nav>

@@ -7,13 +7,13 @@
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li>
-                                    <a>Home</a>
+                                    <a>Seguridad</a>
                                 </li>
                                 <li>
-                                    <a href="#">Dashboard</a>
+                                    <a>Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="#">Users</a>
+                                    <a>Usuarios</a>
                                 </li>
                             </ul>
                         </nav>
