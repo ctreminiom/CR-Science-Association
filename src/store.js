@@ -18,6 +18,7 @@ export default new Vuex.Store({
     LOGOUT: (state) => {
       localStorage.removeItem("token")
     },
+    
     SAVE_USER_JSON: (state, json) => {
       state.users = json
     },
@@ -26,14 +27,28 @@ export default new Vuex.Store({
     },
      SAVE_LAB_JSON: (state, json) => {
        state.lab = json
-     }
+     },
+     SAVE_JOB_JSON: (state, json) => {
+      state.job = json
+    },
+    SAVE_CONSECUTIVE_JSON: (state, json) => {
+      state.consecutives = json
+    },
+    SAVE_ACADEMIC_JSON: (state, json) => {
+      state.academic = json
+    },
+
+    SAVE_PROYECTO_JSON: (state, json) => {
+      state.proyecto = json
+    },
+
   },
   actions: {
     login(context, user) {
       return new Promise((resolve, reject) => {
 
         let options = {
-          url: "http://localhost:8080/api/v1/module/login",
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/login",
           method: "GET",
           headers: {
             Authorization:
@@ -57,7 +72,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
 
         let options = {
-          url: "http://localhost:8080/api/v1/module/users",
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/users",
           method: "GET",
           headers: {
             Authorization:
@@ -75,12 +90,13 @@ export default new Vuex.Store({
         })
       })
     },
+   // 
 
     grants(context, user) {
       return new Promise((resolve, reject) => {
 
         let options = {
-          url: "http://localhost:8080/api/v1/module/grants",
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/grants",
           method: "GET",
           headers: {
             Authorization:
@@ -103,7 +119,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
 
         let options = {
-          url: "http://localhost:8080/api/v1/module/laboratory/roles",
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/laboratory/roles",
           method: "GET",
           headers: {
             Authorization:
@@ -120,16 +136,117 @@ export default new Vuex.Store({
           reject(false);
         })
       })
-    }
+    },
+
+    job(context) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/laboratory/roles",
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_LAB_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
+    },
+  
+    consecutives(context) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/grants",//Cambiar la ruta
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_GRANT_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
+    },
+
+    academic(context) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/grants",//Cambiar la ruta
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_GRANT_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
+    },
+
+  
+    proyecto(context) {
+      return new Promise((resolve, reject) => {
+
+        let options = {
+          url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/grants",//Cambiar la ruta
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer " + localStorage.getItem("token")
+          }
+        };
+
+        Vue.http(options).then(response => {
+          console.log("PASA")
+          context.commit('SAVE_GRANT_JSON', response.body)
+          resolve(true);  
+        }, error => {
+          console.log("NO PASA")
+          reject(false);
+        })
+      })
+    },
+
+
 
   },
 
 
   getters: {
     isAuthenticated: state => {return state.isLoggedIn},
+
     users: state => {return state.users},
     grants: state => {return state.grants},
-    lab: state => {return state.lab}
+    lab: state => {return state.lab},
+    job: state => {return state.job},
+    consecutives: state => {return state.consecutives},
+    academic: state => {return state.academic},
+
+    proyecto: state => {return state.proyecto},
   }
 
 })

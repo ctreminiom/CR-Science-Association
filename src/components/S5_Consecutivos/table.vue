@@ -1,46 +1,6 @@
 <template>
 
-    <div>
-            <div class="row">
-                <div class="card">
-                    <div>
-                        <nav class="breadcrumb" aria-label="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <a>Seguridad</a>
-                                </li>
-                                <li>
-                                    <a href="#">Consecutivos</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-                        <br>
-
-
-            <div class="columns">
-
-                <div class="column is-2">
-                    <a a @click="openCreate()" class="button is-dark is-fullwidth">Agregar</a>
-                </div>
-
-                <div class="column is-9">
-                    <div class="field">
-                        <div class="field">
-                            <p class="control">
-                                <input id="test" class="input" placeholder="Find a repository" type="text">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="columns">
-
-                <div class="column is-12">
+<div class="column is-12">
 
                     <table class="table is-hoverable is-fullwidth">
 
@@ -75,23 +35,13 @@
                     </table>
                 </div>
 
-            </div>
-
-    <Add :open="addActive" @closeModal="close"/>
-
-    <test :open="viewActive" @closeModalView="closeView"/>
-
-
-
-    </div>
-
 </template>
 
 
 
 <script>
-import Add from "./create.vue";
-import test from "./edit.vue";
+import Open from "@/components/S5_Consecutivos/Modals/delete.vue";
+import Delete from "@/components/S5_Consecutivos/Modals/delete.vue";
 
 export default {
   data() {

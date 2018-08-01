@@ -17,12 +17,21 @@ import users from "./views/user.vue"
 
 
 //
-import consecutives from './components/dashboard/Consecutivos/table.vue'
-import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
-import Projects from './components/dashboard/Proyectos/table.vue'
-import Permisos from './components/dashboard/Permiso/table.vue'
-import LabRoles from './components/dashboard/RolesLab/table.vue'
-import Jobs from './components/dashboard/Puesto/table.vue'
+import Projects from './views/Proyecto.vue'
+import Permiso from './views/Permiso.vue'
+import LabRoles from './views/LabRoles.vue'
+import Jobs from './views/Jobs.vue'
+import Consecutives from './views/Consecutives.vue'
+import AcademicLevel from './views/AcademicLevel.vue'
+
+
+//                          ------OLD ROUNTING------
+//import consecutives from './components/dashboard/Consecutivos/table.vue'
+//import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
+//import Projects from './components/dashboard/Proyectos/table.vue'
+//import Permisos from './components/dashboard/Permiso/table.vue'
+//import LabRoles from './components/dashboard/RolesLab/table.vue'
+//import Jobs from './components/dashboard/Puesto/table.vue'
 
 
 
@@ -77,8 +86,8 @@ export default new Router({
         component: users
       },
       {
-        path: 'consecutives',
-        component: consecutives
+        path: 'Consecutives',
+        component: Consecutives
       },
       {
         path: 'AcademicLevel',
@@ -86,8 +95,8 @@ export default new Router({
 
       },
       {
-        path: 'Permisos',
-        component: Permisos
+        path: 'Permiso',
+        component: Permiso
 
       },
       {
@@ -127,8 +136,8 @@ export default new Router({
   },
 
   {
-    path: '/dashboard/consecutives',
-    name: 'consecutives',
+    path: '/dashboard/Consecutives',
+    name: 'Consecutives',
     component: consecutives
   },
 
@@ -148,7 +157,7 @@ export default new Router({
   {
    path: 'dashboard/Permisos',
     name: 'Permisos',
-   component: Permisos
+   component: Permiso
   },
 
   {
