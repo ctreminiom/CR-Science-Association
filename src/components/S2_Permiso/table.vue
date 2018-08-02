@@ -28,7 +28,7 @@
 
     </table>
  </div>
-
+<!---->
 </template>
 
 
@@ -46,7 +46,7 @@ export default {
     };
   },
   components: {
-      test
+      open
   },
   created() {
 

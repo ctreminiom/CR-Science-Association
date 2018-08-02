@@ -30,6 +30,8 @@
         </table>
     </div>
 
+<!--Hacer el modals-->
+
 </template>
 
 

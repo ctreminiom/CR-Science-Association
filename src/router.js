@@ -138,7 +138,7 @@ export default new Router({
   {
     path: '/dashboard/Consecutives',
     name: 'Consecutives',
-    component: consecutives
+    component: Consecutives
   },
 
   {
