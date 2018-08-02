@@ -25,19 +25,19 @@
 
 
                         <li> 
-                            <router-link to="permissions">
+                            <router-link to="/dashboard/Permisos">
                                 Permisos
                             </router-link>
                         </li>
 
                         <li> 
-                            <router-link to="user">
-                                Roles de laboratorio
+                            <router-link to="/dashboard/LabRoles">
+                                Roles de Laboratorio
                             </router-link>
                         </li>
 
                         <li> 
-                            <router-link to="user">
+                            <router-link to="/dashboard/Jobs">
                                 Puestos
                             </router-link>
                         </li>
@@ -49,15 +49,10 @@
                             </router-link>
                         </li>
 
-                        <li> 
-                            <router-link to="user">
-                                Tipo de Consecutivos
-                            </router-link>
-                        </li>
 
                         <li> 
-                            <router-link to="user">
-                                Nivel Academico
+                            <router-link to="/dashboard/AcademicLevel">
+                                Niveles Academicos
                             </router-link>
                         </li>
 
@@ -76,7 +71,9 @@
 
 
                         <li>
-                            <a class="">Projectos</a>
+                             <router-link to="dashboard/Projects">
+                                Proyectos
+                            </router-link>
                         </li>
 
 
@@ -130,18 +127,15 @@ body {
   line-height: 1.5;
   height: 100%;
 }
-
 ul,
 li {
   margin-top: 1px;
 }
-
 .aside {
   display: block;
   background-color: #f9f9f9;
   border-right: 1px solid #dedede;
 }
-
 .aside .compose {
   height: 40px;
   margin: 0 -10px;

@@ -6,3 +6,8 @@ Eliminar el footer
 
 +
 Eliminar la clase/pagina Tipo de Consecutivos = Porque esta incluida dentro de Crear Consecutivos
+________
+28/Julio
+
+Falta validar en los modals que se ingrese toda la informacion
+Falta logica en los botones de los modals

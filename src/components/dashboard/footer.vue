@@ -36,19 +36,15 @@ body {
   line-height: 1.5;
   height: 100%;
 }
-
 ul,
 li {
   margin-top: 8px;
 }
-
-
 .aside {
   display: block;
   background-color: #f9f9f9;
   border-right: 1px solid #dedede;
 }
-
 .aside .compose {
   height: 40px;
   margin: 0 -10px;
@@ -65,7 +61,4 @@ li {
   padding: 20px;
   color: #6f7b7e;
 }
-
-
-
 </style>

@@ -23,18 +23,14 @@ body {
   height: 100%;
   background-color: #fff;
 }
-
-
 .is-active {
   background-color: rebeccapurple;
 }
-
 .aside {
   display: block;
   background-color: #f9f9f9;
   border-right: 1px solid #dedede;
 }
-
 .aside .compose {
   height: 40px;
   margin: 0 -10px;
@@ -51,18 +47,15 @@ body {
   padding: 20px;
   color: #6f7b7e;
 }
-
 .module {
   margin-left: 2px;
 }
-
 div[class="card"] {
   margin-top: 20px;
   margin-right: 10px;
   padding-left: 20px;
   padding-bottom: 15px;
 }
-
 #test {
   margin-left: 10px;
 }
