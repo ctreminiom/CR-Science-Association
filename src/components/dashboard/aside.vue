@@ -114,7 +114,13 @@
 
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            data: null
+        }
+    }
+};
 </script>
 
 

@@ -65,8 +65,14 @@
                     username: this.username,
                     password: this.password
                 }
-    
+
                 this.$store.dispatch('login', user).then(response => {
+
+
+
+                    //Get alls users
+                    this.$store.dispatch('fetchUsers')
+
     
                     this.$router.push("/dashboard");
     

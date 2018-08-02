@@ -1,6 +1,5 @@
 <template>
         <div class="column is-12">
-    
             <table class="table is-hoverable is-fullwidth">
     
                 <thead>
@@ -48,10 +47,20 @@ import Delete from "@/components/users/modals/delete.vue";
 export default {
     data() {
         return {
-            data: null,
             add_active: ""
         }
     },
+
+    computed: {
+
+        data() {
+            return this.$store.getters.users
+        }
+
+    },
+
+
+
     created() {
 
         this.$store.dispatch('users').then(response => {

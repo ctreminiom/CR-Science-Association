@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Store from './store'
+import Store from './vuex/index'
 
 import Resource from 'vue-resource' // Setup HTTP requested funcionality
-
-import auth from './packages/token/app.js'
 
 
 import login from './views/Login.vue'
@@ -37,7 +35,6 @@ import AcademicLevel from './views/AcademicLevel.vue'
 
 Vue.use(Resource)
 Vue.use(Router)
-Vue.use(auth)
 
 
 const ifNotAuthenticated = (to, from, next) => {
@@ -113,26 +110,12 @@ export default new Router({
         component: Projects
       }
 
-    ],
-    beforeEnter: (to, from, next) => {
-      if (Vue.auth.isAuthenticated()) {
-        next()
-      } else {
-        next("/")
-      }
-    }
+    ]
   },
   {
     path: '/dashboard/users',
     name: 'users',
     component: users,
-    beforeEnter: (to, from, next) => {
-      if (Vue.auth.isAuthenticated()) {
-        next()
-      } else {
-        next("/")
-      }
-    }
   },
 
   {
