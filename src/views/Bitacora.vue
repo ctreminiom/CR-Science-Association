@@ -22,12 +22,12 @@
 
 
 <script>
-import breadcrumbs from "@/components/S4_Puesto/breadcrumbs.vue";
-import search from "@/components/S4_Puesto/search.vue";
-import users from "@/components/S4_Puesto/table.vue";
+import breadcrumbs from "@/components/C1_Bitacora/breadcrumbs.vue";
+import search from "@/components/C1_Bitacora/search.vue";
+import users from "@/components/C1_Bitacora/table.vue";
 
 export default {
-  name: "Jobs", //Revisar esta linea
+  name: "Bitacora", //Revisar esta linea
   components: {
     breadcrumbs,
     search,

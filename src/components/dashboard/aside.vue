@@ -90,17 +90,22 @@
                         </li>
 
                         <li>
-                            <a class="">Bitacora</a>
+                             <router-link to="dashboard/Bitacoras">
+                                Bitacoras
+                            </router-link>
+                        </li>
+
+                        <li>
+                            <router-link to="dashboard/Errores">
+                                Errores
+                            </router-link>
                         </li>
 
 
                         <li>
-                            <a class="">Errores</a>
-                        </li>
-
-
-                        <li>
-                            <a class="">Descargas</a>
+                            <router-link to="dashboard/Descargas">
+                                Descargas
+                            </router-link>
                         </li>
 
                     </ul>

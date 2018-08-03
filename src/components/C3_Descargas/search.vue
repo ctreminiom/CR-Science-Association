@@ -1,10 +1,12 @@
 <template>
     <div class="columns">
         <div class="column is-2">
-            <a @click="open()" class="button is-dark is-fullwidth">Agregar</a>
+            
+            <input id="datepicker" class="input" type="date">
+            
         </div>
     
-        <div class="column is-9">
+        <div class="column is-12">
             <div class="field">
                 <div class="field">
                     <p class="control">
@@ -19,31 +21,6 @@
     </div>
 </template>
 
-
-<script>
-import Add from "@/components/S4_Puesto/Modals/create.vue";
-
-export default {
-  data() {
-    return {
-      add_active: ""
-    };
-  },
-
-  components: {
-    Add
-  },
-
-  methods: {
-    open() {
-      this.add_active = "is-active";
-    },
-    close() {
-      this.add_active = "";
-    }
-  }
-};
-</script>
 
 <style scoped>
 </style>
