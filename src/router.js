@@ -11,12 +11,6 @@ import dashboard from './views/Dashboard.vue'
 //import users from './components/dashboard/users/user.vue'
 
 import users from "./views/user.vue"
-
-
-
-//
-
-
 import Permiso from './views/Permiso.vue'
 import LabRoles from './views/LabRoles.vue'
 import Jobs from './views/Jobs.vue'
@@ -27,13 +21,9 @@ import Ramas from './views/Ramas.vue'
 import BitacoraCi from './views/BitacoraCi.vue'
 import Projects from './views/Proyecto.vue'
 
-
 import Bitacora from './views/Bitacora.vue'
 import Descargas from './views/Descargas.vue'
 import Errores from './views/Errores.vue'
-
-
-
 
 
 Vue.use(Resource)

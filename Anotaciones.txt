@@ -39,3 +39,19 @@ ________
 4/Agosto
 
 Cambiar actions.js, getters.js, mutation.js  al path correcto
+______________
+*************A entregar el Lunes*************
+
+Stefan:
+Los modals de Create, Delete, Edit para Ramas Cientificas
+La pagina que permite ver todas la bitacora y agregar nueva para Proyectos
+Los modals de Create, Delete, Edit para Bitacora Cientificas
+
+Rodrigo:
+Va a hacer todas la validaciones de los campos (formularios) de todo el proyecto. (si es texto o numero etc) eso aplica para todos los forms de modals
+Hacer funcion de clear para todos los modals que sea necesario
+
+*************A entregar el Lunes*************
+
+
+

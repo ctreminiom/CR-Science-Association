@@ -81,8 +81,6 @@
 
 
 <script>
-import Add from "./create.vue";
-import test from "./edit.vue";
 
 export default {
   data() {
@@ -92,9 +90,7 @@ export default {
       viewActive: ""
     };
   },
-  components: {
-      test,Add
-  },
+
 
   created() {
 

@@ -4,9 +4,10 @@
 
                         <thead>
                             <tr>
+                                <th>ID</th>
+                                <th>Consecutivo</th>
                                 <th>Usuario</th>
                                 <th>Fecha</th>
-                                <th>Consecutivo</th>
                                 <th>Descripcion</th>
                                 <th>Accion hecha</th>
                             </tr>
@@ -17,11 +18,11 @@
                             <tr>
 
                                 <td>{{item.ID}}</td>
-                                <td>{{item.Fecha}}</td>\\Revisar este
                                 <td>{{item.Consecutive}}</td>
+                                <td>{{item.user}}</td>\\Revisar este
+                                <td>{{item.fecha}}</td>
                                 <td>{{item.Descripcion}}</td>
                                 <td>{{item.Accion}}</td>
-
 
                             </tr>
 

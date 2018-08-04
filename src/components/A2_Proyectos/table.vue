@@ -19,7 +19,7 @@
                     <td>{{item.Name}}</td>
                     <td>{{item.Name}}</td> <!--Cambiarlo por la ruta de la rama cientifica-->
                     <td>
-                        <a @click="openView()" class="button is-link">Ver/ Editar</a>
+                        <a @click="openView()" class="button is-link">Ver</a>  <!--lo manda a /dashboard/proyecto/ID // Una pagina con toda lo del pryecto--> 
                         <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
                       
                     </td>
@@ -38,7 +38,6 @@
 
 <script>
 import Remove from "@/components/A2_Proyectos/Modals/delete.vue";
-import Open from "@/components/A2_Proyectos/Modals/edit.vue";
 
 export default {
   data() {
@@ -49,7 +48,7 @@ export default {
     };
   },
   components: {
-      Remove,Open
+      Remove
   },
   created() {
 

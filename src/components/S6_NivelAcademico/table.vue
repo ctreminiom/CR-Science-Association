@@ -5,7 +5,7 @@
     <table class="table is-hoverable is-fullwidth">
         <thead>
             <tr>
-                <th>Codigo</th>
+                <th>ID</th>
                 <th>Consecutivo</th>
                 <th>Nivel Academico</th>
                 <th>Detalle</th>

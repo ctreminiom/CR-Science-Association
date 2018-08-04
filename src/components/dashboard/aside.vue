@@ -25,7 +25,7 @@
 
 
                         <li> 
-                            <router-link to="/dashboard/Permisos">
+                            <router-link to="/dashboard/Permiso">
                                 Permisos
                             </router-link>
                         </li>
@@ -66,21 +66,21 @@
                         </li>
 
                         <li>
-                            <router-link to="dashboard/Ramas">
+                            <router-link to="/dashboard/Ramas">
                                 Ramas Cientificas
                             </router-link>
                         </li>
 
 
                         <li>
-                             <router-link to="dashboard/Projects">
+                             <router-link to="/dashboard/Projects">
                                 Proyectos
                             </router-link>
                         </li>
 
 
                         <li>
-                            <router-link to="dashboard/BitacoraCi">
+                            <router-link to="/dashboard/BitacoraCi">
                                 Biacora Cientifica
                             </router-link>
                         </li>
@@ -94,20 +94,19 @@
                         </li>
 
                         <li>
-                             <router-link to="dashboard/Bitacora">
+                             <router-link to="/dashboard/Bitacora">
                                 Bitacoras
                             </router-link>
                         </li>
 
                         <li>
-                            <router-link to="dashboard/Errores">
+                            <router-link to="/dashboard/Errores">
                                 Errores
                             </router-link>
                         </li>
 
-
                         <li>
-                            <router-link to="dashboard/Descargas">
+                            <router-link to="/dashboard/Descargas">
                                 Descargas
                             </router-link>
                         </li>

@@ -6,7 +6,7 @@
 
                         <thead>
                             <tr>
-                                <th>Codigo ID</th>
+                                <th>ID</th>
                                 <th>Consecutivo</th>
                                 <th>Nombre</th>
                                 <th>Prefijo</th>
