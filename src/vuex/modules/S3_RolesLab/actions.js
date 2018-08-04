@@ -2,12 +2,12 @@ import Vue from 'vue'
 
 const actions = {
 
-    fetchErrors(context) {
+    fetchRolesLab(context) {
 
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/errors",
+                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/roles",
                 method: "GET",
 
                 headers: {
@@ -17,7 +17,7 @@ const actions = {
             }
 
             Vue.http(options).then(response => {
-                context.commit("ERRORS", response.body)
+                context.commit("ROLES", response.body)
                 resolve(true)
 
             }, error => {

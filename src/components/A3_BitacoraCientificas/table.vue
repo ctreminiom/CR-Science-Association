@@ -18,8 +18,8 @@
                       <td>{{item.Experimiento}}</td>
                   
                                 <td>
-                                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
-                                    <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
+                                    <a @click="openView()" class="button is-link">Ver</a>
+                  
                                 </td>
 
                             </tr>

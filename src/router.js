@@ -96,17 +96,14 @@ export default new Router({
       {
         path: 'AcademicLevel',
         component: AcademicLevel
-
       },
       {
         path: 'Permiso',
         component: Permiso
-
       },
       {
         path: 'LabRoles',
         component: LabRoles
-
       },
       {
         path: 'Jobs',

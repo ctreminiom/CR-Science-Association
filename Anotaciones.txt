@@ -35,3 +35,7 @@ Del lado del  API
     Ramas Cientificas
     Bitacora Cientificas
     Proyectos
+________
+4/Agosto
+
+Cambiar actions.js, getters.js, mutation.js  al path correcto

@@ -62,7 +62,7 @@
 
                                 <td>{{item.ID}}</td>
                                 <td>{{item.Consecutive}}</td>
-                                <td>{{item.Name}}</td>
+                                <td>{{item.Name}}</td><!--Cambiar-->
 
                             </tr>
 

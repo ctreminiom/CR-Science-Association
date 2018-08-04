@@ -27,7 +27,7 @@ import search from "@/components/S2_Permiso/search.vue";
 import users from "@/components/S2_Permiso/table.vue";
 
 export default {
-  name: "Proyecto",
+  name: "Permiso",
   components: {
     breadcrumbs,
     search,

@@ -1,5 +1,5 @@
 const getters = {
-    users: state => {return state.errors}
+    Level: state => {return state.Level}
 }
 
 export default getters
