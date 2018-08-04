@@ -9,5 +9,29 @@ Eliminar la clase/pagina Tipo de Consecutivos = Porque esta incluida dentro de C
 ________
 28/Julio
 
-Falta validar en los modals que se ingrese toda la informacion
-Falta logica en los botones de los modals
+Falta validar en los modals que se ingrese toda la informacion (o sea que reciba solo numeros o strings)
+Falta logica en los botones de los modals - Done  ✓
+
+________
+1/Agosto
+
+C1_Bitacora/C2_Errores/C3_Descargas
+	Table: Ponerle los TBODY Correctos
+	Cambiar el created()
+
+Cambiar los modals de Create y Edit para las de Administracion
+Hacer el template generico para el delete
+
+Confirmar que SRC->Components->Views esten todos bien
+________
+3/Agosto
+
+
+Del lado del  API
+
+    Bitacora
+    Errores
+    Descargas
+    Ramas Cientificas
+    Bitacora Cientificas
+    Proyectos

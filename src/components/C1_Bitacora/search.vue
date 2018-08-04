@@ -9,6 +9,16 @@
                 </div>
             </div>
         </div>
+        
+    <div class="column is-4">
+            <div class="field">
+                <div class="field">
+                    <p class="control">
+                        <input id="test" class="input" placeholder="Fecha" type="text">
+                    </p>
+                </div>
+            </div>
+        </div>
     
         <div class="column is-12">
             <div class="field">

@@ -20,7 +20,7 @@
                                 <td>{{item.Fecha}}</td>\\Revisar este
                                 <td>{{item.Consecutive}}</td>
                                 <td>{{item.Descripcion}}</td>
-                                <td>{{item.Name}}</td>
+                                <td>{{item.Accion}}</td>
 
 
                             </tr>
