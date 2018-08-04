@@ -138,16 +138,11 @@
 
             <!--***************************INICIO DEL MAIN BOX***************************-->
             <div class="columns">
-                <div class="column">
-                    <a class="button is-dark" onclick="executeModalAdd()">Agregar</a>
+
+                <div class="column is-5">
+                    <a class="button is-dark is-fullwidth" onclick="executeModalAdd()">Agregar</a>
                 </div>
-                <div class="column">
-                    <a class="button is-primary" onclick="executeModalUpdate()">Actualizar</a>
-                </div>
-                <div class="column">
-                    <a class="button is-light" onclick="executeModalClean()">Limpear</a>
-                </div>
-                <div class="column is-10">
+                <div class="column is-7">
                     <div class="field">
                         <div class="field">
                             <p class="control">
@@ -156,9 +151,9 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
-
-
             <!--***************************INICIO DE LA TABLA***************************-->
             <div class="columns">
                 <div class="column is-12">
@@ -182,9 +177,8 @@
                                 <td>
                                     <div class="field is-grouped">
                                         <p class="control">
-                                            <a class="button is-link" data-target="modal">
-                                                Guardar / Editar
-                                            </a>
+                                            <a onclick="executeModalEdit()" class="button is-link">Editar/Guardar</a>
+                                            
                                         </p>
                                         <p class="control">
                                             <a class="button is-danger">
@@ -223,9 +217,9 @@
                         </div>
 
                         <div class="field">
-                            <label class="label">Usuario</label>
+                            <label class="label">Prefijo</label>
                             <div class="control">
-                                    <textarea class="textarea" placeholder="svonschroter"></textarea>
+                                <input class="input is-small" type="text" placeholder="Prefijo">
                             </div>
                         </div>
 
@@ -239,36 +233,147 @@
                     <footer class="modal-card-foot">
                         <button class="button is-black">Save changes</button>
                         <button onclick="executeModalAdd()" class="button">Cancel</button>
+                        <button onclick="executeModalAdd()" class="button">Clean</button>
                     </footer>
                 </div>
             </div>
         </div>
 
+        <div id="ver" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Informacion de la bitacora</p>
+                    <button onclick="executeModalEdit()" class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+    
+                    <div class="field">
+                        <label class="label">Experimento</label>
+                        <label class="text">-R5</label>
+                    </div>
+    
+                    <div class="field">
+                        <label class="label">Usuario</label>
+                        <label class="text">-svonschroter</label>
+                    </div>
+    
+                    <div class="field">
+                        <label class="label">Notas</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Texto"></textarea>
+                        </div>
+                    </div>
+    
+                    <div class="file has-name is-boxed">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="resume">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Elejir un archivo
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                Firma.png
+                            </span>
+                        </label>
+                    </div>
+    
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-black">Save changes</button>
+                    <button onclick="executeModalEdit()" class="button">Cancel</button>
+                </footer>
+            </div>
 
 
-            <!--***************************INICIO DEL MODAL***************************-->
+
+        <!--***************************INICIO DEL MODAL***************************-->
+
+        <div id="da" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Crear nueva Rama Cientifica</p>
+                    <button onclick="executeModalAdd()" class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+
+                    <div class="field">
+                        <label class="label">Experimento</label>
+                        <div class="control">
+                            <input class="input is-small" type="text" placeholder="Nombre del Experimento">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Usuario</label>
+                        <div class="control">
+                            <input class="input is-small" type="text" placeholder="Nombre del Usuario">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Notas</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Texto"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="file has-name is-boxed">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="resume">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Elejir un archivo
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                Firma.png
+                            </span>
+                        </label>
+                    </div>
+
+                    <footer class="modal-card-foot">
+                        <button class="button is-black">Save changes</button>
+                        <button onclick="executeModalEdit()" class="button">Cancel</button>
+                    </footer>
+            </div>
+        </div>
 
 
+        <!--***************************FIN DEL MODAL***************************-->
 
-            <!--***************************FIN DEL MODAL***************************-->
+        <!--***************************INICIO DE LOS SCRIPTS***************************-->
+        <script>
+            function executeModalUpdate() {
+                var element = document.getElementById("test");
+                element.classList.toggle("is-active");
+            }
+            function executeModalClean() {
+                var element = document.getElementById("test");
+                element.classList.toggle("is-active");
+            }
+            function executeModalAdd() {
+                var element = document.getElementById("da");
+                element.classList.toggle("is-active");
+            }
 
-            <!--***************************INICIO DE LOS SCRIPTS***************************-->
-            <script>
-                function executeModalUpdate() {
-                    var element = document.getElementById("test");
-                    element.classList.toggle("is-active");
-                }
-                function executeModalClean() {
-                    var element = document.getElementById("test");
-                    element.classList.toggle("is-active");
-                }
-                function executeModalAdd() {
-                    var element = document.getElementById("test");
-                    element.classList.toggle("is-active");
-                }
+            function executeModalEdit() {
+                var element = document.getElementById("da");
+                element.classList.toggle("is-active");
+            }
 
-            </script>
-            <!--***************************FIN DE LOS SCRIPT***************************-->
+        </script>
+
+
+        <!--***************************FIN DE LOS SCRIPT***************************-->
 </body>
 
 </html>
