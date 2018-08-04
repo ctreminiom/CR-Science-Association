@@ -46,9 +46,6 @@ export default {
       viewActive: ""
     };
   },
-  components: {
-      test,Add
-  },
 
   created() {
 
