@@ -25,7 +25,7 @@
 
 
                         <li> 
-                            <router-link to="/dashboard/Permisos">
+                            <router-link to="/dashboard/permiso">
                                 Permisos
                             </router-link>
                         </li>
@@ -66,21 +66,21 @@
                         </li>
 
                         <li>
-                            <router-link to="dashboard/Ramas">
+                            <router-link to="/dashboard/ramas">
                                 Ramas Cientificas
                             </router-link>
                         </li>
 
 
                         <li>
-                             <router-link to="dashboard/Projects">
+                             <router-link to="/dashboard/Projects">
                                 Proyectos
                             </router-link>
                         </li>
 
 
                         <li>
-                            <router-link to="dashboard/BitacoraCi">
+                            <router-link to="/dashboard/BitacoraCi">
                                 Biacora Cientifica
                             </router-link>
                         </li>

@@ -141,7 +141,7 @@ export default new Router({
     component: users,
   },
   {
-    path: '/dashboard/Permiso',
+    path: '/dashboard/permiso',
      name: 'Permiso',
     component: Permiso
    },
@@ -177,7 +177,7 @@ export default new Router({
     component: BitacoraCi
   },
   {
-    path: '/dashboard/Ramas',
+    path: '/dashboard/ramas',
     name: 'Ramas',
     component: Ramas
   },
