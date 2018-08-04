@@ -35,8 +35,8 @@
 
 
 <script>
-import Remove from "@/components/A3_BitacorasCientificas/Modals/delete.vue";
-import Open from "@/components/A3_BitacorasCientificas/Modals/edit.vue";
+import Remove from "@/components/A3_BitacoraCientificas/Modals/delete.vue";
+import Open from "@/components/A3_BitacoraCientificas/Modals/edit.vue";
 
 export default {
   data() {

@@ -66,7 +66,9 @@
                         </li>
 
                         <li>
-                            <a class="">Ramas Cientificas</a>
+                            <router-link to="dashboard/Ramas">
+                                Ramas Cientificas
+                            </router-link>
                         </li>
 
 
@@ -78,7 +80,9 @@
 
 
                         <li>
-                            <a class="">Bitacoras Cientificas</a>
+                            <router-link to="dashboard/BitacoraCi">
+                                Biacora Cientifica
+                            </router-link>
                         </li>
 
                     </ul>
@@ -90,7 +94,7 @@
                         </li>
 
                         <li>
-                             <router-link to="dashboard/Bitacoras">
+                             <router-link to="dashboard/Bitacora">
                                 Bitacoras
                             </router-link>
                         </li>

@@ -23,20 +23,16 @@ import Jobs from './views/Jobs.vue'
 import Consecutives from './views/Consecutives.vue'
 import AcademicLevel from './views/AcademicLevel.vue'
 
+import Ramas from './views/Ramas.vue'
+import BitacoraCi from './views/BitacoraCi.vue'
 import Projects from './views/Proyecto.vue'
+
 
 import Bitacora from './views/Bitacora.vue'
 import Descargas from './views/Descargas.vue'
 import Errores from './views/Errores.vue'
 
 
-//                          ------OLD ROUNTING------
-//import consecutives from './components/dashboard/Consecutivos/table.vue'
-//import AcademicLevel from './components/dashboard/NivelAcademico/table.vue'
-//import Projects from './components/dashboard/Proyectos/table.vue'
-//import Permisos from './components/dashboard/Permiso/table.vue'
-//import LabRoles from './components/dashboard/RolesLab/table.vue'
-//import Jobs from './components/dashboard/Puesto/table.vue'
 
 
 
@@ -109,10 +105,20 @@ export default new Router({
         path: 'Jobs',
         component: Jobs
       },
+//
       {
         path: 'Projects',
         component: Projects
       },
+      {
+        path: 'BitacoraCi',
+        component: BitacoraCi
+      },
+      {
+        path: 'Ramas',
+        component: Ramas
+      },
+//
       {
         path: 'Bitacora',
         component: Bitacora
@@ -135,12 +141,12 @@ export default new Router({
     component: users,
   },
   {
-    path: 'dashboard/Permisos',
-     name: 'Permisos',
+    path: '/dashboard/Permiso',
+     name: 'Permiso',
     component: Permiso
    },
    {
-    path: 'dashboard/LabRoles',
+    path: '/dashboard/LabRoles',
     name: 'LabRoles',
     component: LabRoles
   },
@@ -159,26 +165,35 @@ export default new Router({
     name: 'AcademicLevel',
     component: AcademicLevel
   },
-  
+//
   {
-    path: 'dashboard/Projects',
+    path: '/dashboard/Projects',
     name: 'Projects',
     component: Projects
-
   },
-
   {
-    path: 'dashboard/Bitacora',
+    path: '/dashboard/BitacoraCi',
+    name: 'BitacoraCi',
+    component: BitacoraCi
+  },
+  {
+    path: '/dashboard/Ramas',
+    name: 'Ramas',
+    component: Ramas
+  },
+//
+  {
+    path: '/dashboard/Bitacora',
     name: 'Bitacora',
     component: Bitacora
   },
   {
-    path: 'dashboard/Descargas',
+    path: '/dashboard/Descargas',
     name: 'Descargas',
     component: Descargas
   },
   {
-    path: 'dashboard/Errores',
+    path: '/dashboard/Errores',
     name: 'Errores',
     component: Errores
   },
