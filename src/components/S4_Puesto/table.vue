@@ -38,8 +38,8 @@
 
 
 <script>
-import Add from "./create.vue";
-import test from "./edit.vue";
+import Add from "./Modals/create.vue";
+import test from "./Modals/edit.vue";
 
 export default {
   data() {

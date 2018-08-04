@@ -51,9 +51,6 @@ export default {
       viewActive: ""
     };
   },
-  components: {
-      test,Add
-  },
   mounted() {
     var options = {
       url: "http://192.168.43.192:8080/api/v1/module/consecutives",
