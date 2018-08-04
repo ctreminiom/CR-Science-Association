@@ -53,7 +53,7 @@ Hacer funcion de clear para todos los modals que sea necesario
 
 
 Carlos:
-Terminar el API.
+Terminar el API. --> Hacerle la logica de los permisos en el aside.
 
 
 Alejandro:
