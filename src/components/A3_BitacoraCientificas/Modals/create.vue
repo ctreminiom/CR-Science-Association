@@ -1,54 +1,97 @@
 <template>
-
                      <div>
-                        <div id="NewProject" class="modal" :class="open">
+        <div class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Nuevo Proyecto</p>
+                                  <p class="modal-card-title">Crear Bitacora</p>
                                   <button @click="close()"  class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
                   
-                  
-                                  <div class="field">
-                                      <label class="label">Nombre de Proyecto</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Descripcion</label>
-                                          <div class="control">
-                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
-                                              <!--<input v-model="desc" class="input " type="text" placeholder="Text input" rows="10">-->
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Rama Cientifica</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select>
-                                                        <option v-for="item in data00" :key="item.ID">
-                                                            {{item.Grade}}
-                                                        </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
-                  
-                              </section>
-                              <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button> <!--Validar todos los fields-->
-                                  <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
-                              </footer>
-                          </div>
-                      </div>
-                  </div>
+                                  <div class="field is-horizontal">
 
+                        <div class="field-label is-normal">
+                            <label class="label">Experimento</label>
+                        </div>
+
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Nombre del Experimento">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                     </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+
+                        <div class="field-label is-normal">
+                            <label class="label">Usuario</label>
+                        </div>
+
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" placeholder="Nombre de Usuario">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                     </span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+
+                        <div class="text">
+                            <label class="label">Notas</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="field is-horizontal">
+
+                        <div class="field-label is-normal">
+                            <label class="label">Firma</label>
+                        </div>
+
+                        <div class="field-body">
+                            <div class="control">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="resume">
+                                    <span class="file-cta">
+
+                                        <span class="file-icon">
+                                            <i class="fas fa-upload"></i>
+                                        </span>
+                                        
+                                        <span class="file-label">
+                                            Choose a file…
+                                        </span>
+
+                                        <span class="file-name">
+                                        Screen Shot 2017-07-29 at 15.54.25.png
+                                        </span>
+
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success">Save changes</button>
+                    <button @click="close()" class="button">Cancel</button>
+                </footer>
+            </div>
+        </div>
+    </div>
 </template>
 
 
@@ -56,33 +99,11 @@
 <script>
 export default {
   props: ["open"],
-  data() {
-    return {
-      data00: null,
-      name: "",
-      desc: "",
 
-    };
-  },
   methods: {
     close() {
-      this.$emit("closeModal");
+      this.$emit("close");
     }
-  },
-  mounted() {
-    var options = { 
-      url: "http://localhost:8080/api/v1/module/academic/level", //*******Cambiarlo al correcto path de RAMA CIENTIFICA********
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data00 = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
   }
 };
 </script>
@@ -90,12 +111,4 @@ export default {
 
 
 <style scoped>
-html,
-body {
-  font-family: "Open Sans", serif;
-  font-size: 14px;
-  line-height: 1.5;
-  height: 100%;
-  background-color: #fff;
-}
 </style>

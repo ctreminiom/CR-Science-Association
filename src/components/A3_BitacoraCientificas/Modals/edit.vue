@@ -1,11 +1,11 @@
 <template>
 
                      <div>
-                        <div id="NewProject" class="modal" :class="open">
+                        <div id="NuevaBitacora" class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Proyecto</p>
+                                  <p class="modal-card-title">BitacoraExperimental</p>
                                   <button @click="close()"  class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
