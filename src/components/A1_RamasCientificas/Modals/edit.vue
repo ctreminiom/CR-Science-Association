@@ -1,57 +1,42 @@
 <template>
-
                      <div>
-                        <div id="NewProject" class="modal" :class="open">
+                        <div class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Proyecto</p>
-                                  <button @click="close()"  class="delete" aria-label="close"></button>
+                                  <p class="modal-card-title">Rama Cientifica</p>
+                                  <button @click="close()" class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
                   
-                                <div class="control">
-                                    <label class="label">Creador</label>
-                                     <input class="input" type="text" placeholder="ctreminion" disabled>
-                                </div>
-
-                                <div class="control">
-                                    <label class="label">Creado en</label>
-                                     <input class="input" type="text" placeholder="25/Jul/2018" disabled>
-                                </div>
-
-                                  <div class="field">
-                                      <label class="label">Nombre de Proyecto</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input is-large" type="text" placeholder="Text input"> <!--Tiene que ser una variable ese textbox-->
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Descripcion</label>
-                                          <div class="control">
-                                              <textarea v-model="desc" class="textarea" placeholder="Descripcion" rows="10"></textarea> <!--Tiene que ser una variable ese textbox-->
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
                   
                                   <div class="field">
                                       <label class="label">Rama Cientifica</label>
                                           <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select>
-                                                       <option v-for="item in data00" :key="item.ID">
-                                                            {{item.Grade}}
-                                                        </option>
-                                                      </select>
-                                                  </div>
+                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
+                                          </div>
+                                  </div>
+
+                                  <div class="field">
+                                      <label class="label">Prefijo</label>
+                                          <div class="control">
+                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
                                           </div>
                                   </div>
                   
+                                  <div class="field">
+                                      <label class="label">Notas</label>
+                                          <div class="control">
+                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
+                                              <!--<input v-model="desc" class="input " type="text" placeholder="Text input" rows="10">-->
+                                          </div>
+                                  </div>                          
+                  
                               </section>
                               <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                  <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
+                                  <button class="button is-success">Guardar Cambios</button>
+                                   <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button> <!--Validar todos los fields-->
+                                  <button @click="close()" class="button is-danger">Cancelar</button>
                               </footer>
                           </div>
                       </div>
@@ -79,7 +64,7 @@ export default {
   },
   mounted() {
     var options = { 
-      url: "http://localhost:8080/api/v1/module/academic/level", //*******Cambiarlo al correcto RAMA CIENTIFICA********
+      url: "http://localhost:8080/dashboard/Ramas", //*******Cambiarlo al correcto path de RAMA CIENTIFICA********
       method: "GET"
     };
 

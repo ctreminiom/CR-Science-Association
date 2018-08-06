@@ -1,64 +1,55 @@
 <template>
+<div id="ver" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Informacion de la bitacora</p>
+                <button onclick="executeModalView()" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
 
-                     <div>
-                        <div id="NuevaBitacora" class="modal" :class="open">
-                          <div class="modal-background"></div>
-                          <div class="modal-card">
-                              <header class="modal-card-head">
-                                  <p class="modal-card-title">BitacoraExperimental</p>
-                                  <button @click="close()"  class="delete" aria-label="close"></button>
-                              </header>
-                              <section class="modal-card-body">
-                  
-                                <div class="control">
-                                    <label class="label">Creador</label>
-                                     <input class="input" type="text" placeholder="ctreminion" disabled>
-                                </div>
+                <div class="field">
+                    <label class="label">Experimento</label>
+                    <label class="text">-R5</label>
+                </div>
 
-                                <div class="control">
-                                    <label class="label">Creado en</label>
-                                     <input class="input" type="text" placeholder="25/Jul/2018" disabled>
-                                </div>
+                <div class="field">
+                    <label class="label">Usuario</label>
+                    <label class="text">-svonschroter</label>
+                </div>
 
-                                  <div class="field">
-                                      <label class="label">Nombre de Proyecto</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input is-large" type="text" placeholder="Text input"> <!--Tiene que ser una variable ese textbox-->
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Descripcion</label>
-                                          <div class="control">
-                                              <textarea v-model="desc" class="textarea" placeholder="Descripcion" rows="10"></textarea> <!--Tiene que ser una variable ese textbox-->
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Rama Cientifica</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select>
-                                                       <option v-for="item in data00" :key="item.ID">
-                                                            {{item.Grade}}
-                                                        </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
-                  
-                              </section>
-                              <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                  <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
-                              </footer>
-                          </div>
-                      </div>
-                  </div>
+                <div class="field">
+                    <label class="label">Notas</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Texto"></textarea>
+                    </div>
+                </div>
 
-</template>
+                <div class="file has-name is-boxed">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Elejir un archivo
+                            </span>
+                        </span>
+                        <span class="file-name">
+                            Firma.png
+                        </span>
+                    </label>
+                </div>
 
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-black">Save changes</button>
+                <button onclick="executeModalView()" class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
+<template>
 
 
 <script>
