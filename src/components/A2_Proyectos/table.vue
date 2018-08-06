@@ -19,7 +19,7 @@
                     <td>{{item.Name}}</td>
                     <td>{{item.Name}}</td> <!--Cambiarlo por la ruta de la rama cientifica-->
                     <td>
-                        <a @click="openView()" class="button is-link">Ver</a>  <!--lo manda a /dashboard/proyecto/ID // Una pagina con toda lo del pryecto--> 
+                        <a @click="openView()" class="button is-link">Ver</a>  <!--lo manda a /dashboard/proyecto/ID //C:\Users\Stefano\Desktop\github\CR-Science-Association\UI-template\ID-Proyectos..html--> 
                         <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
                       
                     </td>

@@ -1,3 +1,4 @@
+<template>
  <div class="columns">
                 <div class="column is-12">
                     <table class="table is-hoverable is-fullwidth">
@@ -39,3 +40,21 @@
 
 
             </div>
+            <template>
+
+            <script>
+export default {
+  props: ["open"],
+
+  methods: {
+    close() {
+      this.$emit("close");
+    }
+  }
+};
+</script>
+
+
+
+<style scoped>
+</style>
