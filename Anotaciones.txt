@@ -51,6 +51,14 @@ Rodrigo:
 Va a hacer todas la validaciones de los campos (formularios) de todo el proyecto. (si es texto o numero etc) eso aplica para todos los forms de modals
 Hacer funcion de clear para todos los modals que sea necesario
 
+
+Carlos:
+Terminar el API. --> Hacerle la logica de los permisos en el aside.
+
+
+Alejandro:
+Refactorizar el codigo de los componestes.
+
 *************A entregar el Lunes*************
 
 
