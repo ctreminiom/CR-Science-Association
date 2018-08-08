@@ -1,5 +1,5 @@
 const getters = {
-    error: state => {return state.error}
+    bitacora: state => {return state.bitacora}
 }
 
 export default getters

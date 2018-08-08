@@ -8,10 +8,10 @@
                             <a>Seguridad</a>
                         </li>
                         <li>
-                            <a>Usuarios</a>
+                            <a>Usuario</a>
                         </li>
                         <li>
-                            <a >Puesto</a>
+                            <a >Puestos</a>
                         </li>
                     </ul>
                 </nav>

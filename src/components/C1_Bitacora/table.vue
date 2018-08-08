@@ -40,39 +40,31 @@
 
 
 export default {
-  data() {
-    return {
-      data: null,
-      addActive: "",
-      viewActive: ""
-    };
-  },
+    data() {
+        return {
 
-  created() {
+        }
+    },
 
-      this.$store.dispatch('lab').then(response => {
-            this.data = this.$store.getters.lab
+    computed: {
+
+        data() {
+            return this.$store.getters.bitacora//REVISAR
+        }
+
+    },
+
+    created() {
+
+        this.$store.dispatch('bitacora').then(response => {
+            this.data = this.$store.getters.bitacora //REVISAR
         }, error => {
             alert("ERROR PIDIENDO LOS USUARIOS")
         })
-  },
 
-  methods: {
-    openCreate() {
-      this.addActive = "is-active";
     },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
-    }
-
-  }
-};
+  
+}
 </script>
 
 

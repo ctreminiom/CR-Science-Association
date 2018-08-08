@@ -22,9 +22,9 @@
 
 
 <script>
-import breadcrumbs from "@/components/C2_Errores/breadcrumbs.vue";
-import search from "@/components/C2_Errores/search.vue";
-import users from "@/components/C2_Errores/table.vue";
+import breadcrumbs from "@/components/C3_Descargas/breadcrumbs.vue";
+import search from "@/components/C3_Descargas/search.vue";
+import users from "@/components/C3_Descargas/table.vue";
 
 export default {
   name: "errors",

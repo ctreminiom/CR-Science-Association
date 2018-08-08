@@ -5,13 +5,13 @@
                 <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
                     <ul>
                         <li>
-                            <a>Home</a>
+                            <a>Seguridad</a>
                         </li>
                         <li>
-                            <a href="#">Dashboard</a>
+                            <a>Usuario</a>
                         </li>
                         <li>
-                            <a href="#">Users</a>
+                            <a>Usuarios</a>
                         </li>
                     </ul>
                 </nav>

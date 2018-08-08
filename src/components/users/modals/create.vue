@@ -1,4 +1,5 @@
 <template>
+<form>
     <div>
         <div class="modal" :class="open">
             <div class="modal-background"></div>
@@ -18,7 +19,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Nombre">
+                                    <input required class="input" type="text" placeholder="Nombre">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                      </span>
@@ -27,7 +28,7 @@
 
                             <div class="field">
                                 <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Apellidos">
+                                    <input required class="input" type="text" placeholder="Apellidos">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                      </span>
@@ -46,7 +47,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Apodo">
+                                    <input required class="input" type="text" placeholder="Apodo">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                      </span>
@@ -65,7 +66,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Contrasena">
+                                    <input required class="input" type="text" placeholder="Contrasena">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                      </span>
@@ -84,7 +85,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control is-expanded has-icons-left">
-                                    <input class="input" type="text" placeholder="Telefono">
+                                    <input required class="input" type="text" placeholder="Telefono">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                      </span>
@@ -104,7 +105,7 @@
                         <div class="field-body">
                             <div class="control">
                                 <div class="select is-rounded">
-                                <select>
+                                <select required>
                                     <option>Select dropdown</option>
                                     <option>With options</option>
                                 </select>
@@ -186,12 +187,14 @@
                     
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button is-success">Save changes</button>
-                    <button @click="close()" class="button">Cancel</button>
+                <button class="button is-success">Save changes</button>
+                <input type="button" name="reset_form" class="button is-warning" value="Reset Form" onclick="this.form.reset();">
+                <button @click="close()" class="button is-danger">Cancel</button>
                 </footer>
             </div>
         </div>
     </div>
+</form>
 </template>
 
 
@@ -206,6 +209,46 @@ export default {
     }
   }
 };
+
+//Clear input
+function clearForm(oForm) {
+    
+  var elements = oForm.elements; 
+    
+  oForm.reset();
+
+  for(i=0; i<elements.length; i++) {
+      
+  field_type = elements[i].type.toLowerCase();
+  
+  switch(field_type) {
+  
+    case "text": 
+    case "password": 
+    case "textarea":
+          case "hidden":   
+      
+      elements[i].value = ""; 
+      break;
+        
+    case "radio":
+    case "checkbox":
+        if (elements[i].checked) {
+          elements[i].checked = false; 
+      }
+      break;
+
+    case "select-one":
+    case "select-multi":
+                elements[i].selectedIndex = -1;
+      break;
+
+    default: 
+      break;
+  }
+    }
+}
+
 </script>
 
 

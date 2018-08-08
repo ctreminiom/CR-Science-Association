@@ -6,24 +6,17 @@
 
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Consecutivo</th>
-                                <th>Nombre</th>
-                                <th>Acciones</th>
+                                <th>Descargas</th>
+                                <th>Fecha</th>
                             </tr>
                         </thead>
 
-                        <tbody v-for="item in data" :key="item.ID">
+                        <tbody v-for="item in data" :key="item.Downloads">
 
                             <tr>
 
-                                <td>{{item.ID}}</td>
-                                <td>{{item.Consecutive}}</td>
-                                <td>{{item.Name}}</td>
-                                <td>
-                                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
-                                    <a class="button is-danger">Eliminar</a>
-                                </td>
+                                <td>{{item.Downloads}}</td>
+                                <td>{{item.Date}}</td>
 
                             </tr>
 
@@ -37,46 +30,34 @@
 
 
 <script>
-import Add from "./create.vue";
-import test from "./edit.vue";
+
 
 export default {
-  data() {
-    return {
-      data: null,
-      addActive: "",
-      viewActive: ""
-    };
-  },
-  components: {
-      test,Add
-  },
+    data() {
+        return {
 
-  created() {
+        }
+    },
 
-      this.$store.dispatch('lab').then(response => {
-            this.data = this.$store.getters.lab
+    computed: {
+
+        data() {
+            return this.$store.getters.download//REVISAR
+        }
+
+    },
+
+    created() {
+
+        this.$store.dispatch('download').then(response => {
+            this.data = this.$store.getters.download //REVISAR
         }, error => {
             alert("ERROR PIDIENDO LOS USUARIOS")
         })
-  },
 
-  methods: {
-    openCreate() {
-      this.addActive = "is-active";
     },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
-    }
-
-  }
-};
+  
+}
 </script>
 
 

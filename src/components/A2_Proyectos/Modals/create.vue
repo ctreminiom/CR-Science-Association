@@ -1,5 +1,5 @@
 <template>
-
+<form>
                      <div>
                         <div id="NewProject" class="modal" :class="open">
                           <div class="modal-background"></div>
@@ -42,13 +42,13 @@
                               </section>
                               <footer class="modal-card-foot">
                                   <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                   <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Limpiar</button> <!--Validar todos los fields-->
+                                  <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
                                   <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
                               </footer>
                           </div>
                       </div>
                   </div>
-
+</form>
 </template>
 
 
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("closeModal");
+      this.$emit("close");
     }
   },
   mounted() {
@@ -85,6 +85,46 @@ export default {
     );
   }
 };
+
+//
+
+function clearForm(oForm) {
+    
+  var elements = oForm.elements; 
+    
+  oForm.reset();
+
+  for(i=0; i<elements.length; i++) {
+      
+  field_type = elements[i].type.toLowerCase();
+  
+  switch(field_type) {
+  
+    case "text": 
+    case "password": 
+    case "textarea":
+          case "hidden":   
+      
+      elements[i].value = ""; 
+      break;
+        
+    case "radio":
+    case "checkbox":
+        if (elements[i].checked) {
+          elements[i].checked = false; 
+      }
+      break;
+
+    case "select-one":
+    case "select-multi":
+                elements[i].selectedIndex = -1;
+      break;
+
+    default: 
+      break;
+  }
+    }
+}
 </script>
 
 

@@ -6,7 +6,7 @@
             <div class="content has-text-centered">
                 <p>
                     <strong>CR-Science</strong> by
-                    <a>Carlos Treminio</a>
+                    <a>Carlos Treminio </a> <a> & </a>
                     <a>Alejandro Azofeifa</a>
                 </p>
           

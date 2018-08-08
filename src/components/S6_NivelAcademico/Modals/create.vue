@@ -1,5 +1,5 @@
 <template>
-
+<form>
             <div>
                 <div id="NewAcademico" class="modal" :class="open">
                           <div class="modal-background"></div>
@@ -15,7 +15,7 @@
                                           <div class="control">
                                                   <div class="select is-rounded">
                                                       <select>
-                                                        <option v-for="item in data00" :key="item.ID">
+                                                        <option required v-for="item in data00" :key="item.ID">
                                                             {{item.Grade}}
                                                         </option>
                                                       </select>
@@ -26,7 +26,7 @@
                                   <div class="field">
                                       <label class="label">Nombre de carrera</label>
                                           <div class="control">
-                                              <input v-model="career" id="myInput" class="input " type="text" placeholder="Text input">
+                                              <input required v-model="career" id="myInput" class="input " type="text" placeholder="Text input">
                                           </div>
                                   </div>
 
@@ -40,7 +40,7 @@
                           </div>
                       </div>
                   </div>
-
+</form>
 </template>
 
 
@@ -77,6 +77,46 @@ export default {
     );
   }
 };
+
+//Clear input
+function clearForm(oForm) {
+    
+  var elements = oForm.elements; 
+    
+  oForm.reset();
+
+  for(i=0; i<elements.length; i++) {
+      
+  field_type = elements[i].type.toLowerCase();
+  
+  switch(field_type) {
+  
+    case "text": 
+    case "password": 
+    case "textarea":
+          case "hidden":   
+      
+      elements[i].value = ""; 
+      break;
+        
+    case "radio":
+    case "checkbox":
+        if (elements[i].checked) {
+          elements[i].checked = false; 
+      }
+      break;
+
+    case "select-one":
+    case "select-multi":
+                elements[i].selectedIndex = -1;
+      break;
+
+    default: 
+      break;
+  }
+    }
+}
+  
 </script>
 
 

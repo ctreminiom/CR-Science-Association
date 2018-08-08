@@ -9,7 +9,7 @@ Eliminar la clase/pagina Tipo de Consecutivos = Porque esta incluida dentro de C
 ________
 28/Julio
 
-Falta validar en los modals que se ingrese toda la informacion (o sea que reciba solo numeros o strings)
+Falta validar en los modals que se ingrese toda la informacion (o sea que reciba solo numeros o strings) ✓
 Falta logica en los botones de los modals - Done  ✓
 
 ________
@@ -47,9 +47,9 @@ Los modals de Create, Delete, Edit para Ramas Cientificas
 La pagina que permite ver todas la bitacora y agregar nueva para Proyectos
 Los modals de Create, Delete, Edit para Bitacora Cientificas
 
-Rodrigo:
-Va a hacer todas la validaciones de los campos (formularios) de todo el proyecto. (si es texto o numero etc) eso aplica para todos los forms de modals
-Hacer funcion de clear para todos los modals que sea necesario
+✓ Rodrigo:
+✓ Va a hacer todas la validaciones de los campos (formularios) de todo el proyecto. (si es texto o numero etc) eso aplica para todos los forms de modals
+✓ Hacer funcion de clear para todos los modals que sea necesario
 
 
 Carlos:
@@ -57,9 +57,32 @@ Terminar el API. --> Hacerle la logica de los permisos en el aside.
 
 
 Alejandro:
-Refactorizar el codigo de los componestes.
+✓ Refactorizar el codigo de los componestes.
 
 *************A entregar el Lunes*************
+_________________________________________________________________________________
+8/7/2018
 
+
+*Revisar:
+-C1_Bitacora/C2_Errores/C3_Descargas = created()
+-Revisar xq carajos Descargas y Error se cagan en todo
+-Error in created hook: "TypeError: Unable to get property 'then' of undefined or null reference"
+
+
+
+Alejandro:
+Hacer las paginas de stefan 
+Hacer todos los modals que hacen falta (edit/view y delete para todos)
+Cambiarle los endpoints a todo
+
+Carlos:
+Idiomas
+Cerrar sesion (boton en el aside)
+
+
+
+                                                Fecha de entrega: Martes 8/7/2018
+_________________________________________________________________________________
 
 

@@ -14,13 +14,13 @@
             <div class="field">
                 <div class="field">
                     <p class="control">
-                        <input id="test" class="input" placeholder="Fecha" type="text">
+                        <input id="test2" class="input" placeholder="Fecha" type="date">
                     </p>
                 </div>
             </div>
         </div>
     
-        <div class="column is-12">
+        <div class="column is-2"> <!--revisar xq esta vara se sigue saliendo del margen-->
             <div class="field">
                 <div class="field">
                     <p class="control">
@@ -29,8 +29,6 @@
                 </div>
             </div>
         </div>
-
-        <Add :open="add_active" @close="close"/>
 
     </div>
 </template>

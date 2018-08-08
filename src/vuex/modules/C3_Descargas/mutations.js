@@ -1,6 +1,6 @@
 const mutations = {
-    ERROR: (state, json) => {
-        state.errors = json
+    DOWNLOAD: (state, json) => {
+        state.download = json
     },
 }
 

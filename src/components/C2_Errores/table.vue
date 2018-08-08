@@ -1,49 +1,6 @@
 <template>
 
-    <div>
-            <div class="row">
-                <div class="card">
-                    <div>
-                        <nav class="breadcrumb" aria-label="breadcrumbs">
-                            <ul>
-                                <li>
-                                    <a>Seguridad</a>
-                                </li>
-                                <li>
-                                    <a href="#">Usuario</a>
-                                </li>
-                                <li>
-                                    <a href="#">Roles de Laboratorio</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-                        <br>
-
-
-            <div class="columns">
-
-                <div class="column is-2">
-                    <a @click="openCreate()" class="button is-dark is-fullwidth">Agregar</a>
-                </div>
-
-                <div class="column is-9">
-                    <div class="field">
-                        <div class="field">
-                            <p class="control">
-                                <input id="test" class="input" placeholder="Find a repository" type="text">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="columns">
-
-                <div class="column is-12">
+ <div class="column is-12">
 
                     <table class="table is-hoverable is-fullwidth">
 
@@ -71,52 +28,39 @@
                     </table>
                 </div>
 
-            </div>
-
-
-    </div>
-
 </template>
 
 
 
 <script>
 
+
 export default {
-  data() {
-    return {
-      data: null,
-      addActive: "",
-      viewActive: ""
-    };
-  },
+    data() {
+        return {
 
+        }
+    },
 
-  created() {
+    computed: {
 
-      this.$store.dispatch('lab').then(response => {
-            this.data = this.$store.getters.lab
+        data() {
+            return this.$store.getters.errores//REVISAR
+        }
+
+    },
+
+    created() {
+
+        this.$store.dispatch('errores').then(response => {
+            this.data = this.$store.getters.errores //REVISAR
         }, error => {
             alert("ERROR PIDIENDO LOS USUARIOS")
         })
-  },
 
-  methods: {
-    openCreate() {
-      this.addActive = "is-active";
     },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
-    }
-
-  }
-};
+  
+}
 </script>
 
 

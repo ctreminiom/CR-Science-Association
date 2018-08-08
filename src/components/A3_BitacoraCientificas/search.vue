@@ -1,8 +1,7 @@
 <template>
     <div class="columns">
-
     
-        <div class="column is-9">
+        <div class="column is-11">
             <div class="field">
                 <div class="field">
                     <p class="control">
@@ -12,35 +11,12 @@
             </div>
         </div>
 
-        <Add :open="add_active" @close="close"/>
-
     </div>
 </template>
 
 
 <script>
-import Add from "@/components/A2_Proyectos/Modals/create.vue"; //Codigo basura de aqui para abajo
 
-export default {
-  data() {
-    return {
-      add_active: ""
-    };
-  },
-
-  components: {
-    Add
-  },
-
-  methods: {
-    open() {
-      this.add_active = "is-active";
-    },
-    close() {
-      this.add_active = "";
-    }
-  }
-};
 </script>
 
 <style scoped>

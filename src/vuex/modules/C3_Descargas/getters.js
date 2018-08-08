@@ -1,5 +1,5 @@
 const getters = {
-    error: state => {return state.error}
+    download: state => {return state.download}
 }
 
 export default getters

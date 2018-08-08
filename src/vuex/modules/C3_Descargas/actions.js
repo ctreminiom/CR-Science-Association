@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 const actions = {
 
-    fetchError(context) {
+    fetchDownload(context) {
 
         return new Promise((resolve, reject) => {
 
@@ -17,7 +17,7 @@ const actions = {
             }
 
             Vue.http(options).then(response => {
-                context.commit("ERROR", response.body)
+                context.commit("DOWNLOAD", response.body)
                 resolve(true)
 
             }, error => {

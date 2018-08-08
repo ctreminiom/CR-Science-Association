@@ -16,7 +16,6 @@
             </div>
         </div>
 
-        <Add :open="add_active" @close="close"/>
 
     </div>
 </template>

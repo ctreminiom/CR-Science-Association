@@ -21,7 +21,7 @@
 
 
 <script>
-import Add from "@/components/A2_Proyectos/Modals/create.vue";
+import Add from "@/components/A1_RamasCientificas/Modals/create.vue";
 
 export default {
   data() {

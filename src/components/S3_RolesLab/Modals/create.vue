@@ -1,6 +1,8 @@
 <template>
 
-<div>
+<form>
+
+  <div>
       <div id="da" class="modal" :class="open">
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -13,13 +15,13 @@
               <div class="field">
                     <label class="label">Nombre de rol</label>
                     <div class="control">
-                    <input v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
+                    <input required v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
                     </div>
             </div>
             <div class="field">
                     <label class="label">Descripcion del rol</label>
                     <div class="control">
-                    <input v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
+                    <input required v-model="career" class="input " id="myInput2" type="text" placeholder="Text input">
                     </div>
             </div>
                                   
@@ -27,17 +29,22 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
-                <button onclick="document.getElementById('myInput').value = ''" id="BTN_Limpiar" class="button is-warning"> Clear</button>
-                <button @click="close()" class="button">Cancel</button>
+                <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
+                <button @click="closdsdse()" class="button is-danger">Cancel</button>
+
             </footer>
         </div>
     </div>
 </div>
+</form>
 </template>
 
 
+<!--EL BOTON DE "SAVE CHANGES" no lo guarda en la DB-->
+
 
 <script>
+
 export default {
   props: ["open"],
   data() {
@@ -55,7 +62,7 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("closeModal");
+      this.$emit("close");
     },
     fetchAcademics() {
       var options = {
@@ -109,9 +116,47 @@ export default {
     this.fetchRoles();
   }
 };
+
+//Clear input
+function clearForm(oForm) {
+    
+  var elements = oForm.elements; 
+    
+  oForm.reset();
+
+  for(i=0; i<elements.length; i++) {
+      
+  field_type = elements[i].type.toLowerCase();
+  
+  switch(field_type) {
+  
+    case "text": 
+    case "password": 
+    case "textarea":
+          case "hidden":   
+      
+      elements[i].value = ""; 
+      break;
+        
+    case "radio":
+    case "checkbox":
+        if (elements[i].checked) {
+          elements[i].checked = false; 
+      }
+      break;
+
+    case "select-one":
+    case "select-multi":
+                elements[i].selectedIndex = -1;
+      break;
+
+    default: 
+      break;
+  }
+    }
+}
+  
 </script>
-
-
 
 <style scoped>
 html,
