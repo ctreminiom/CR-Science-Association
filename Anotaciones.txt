@@ -80,6 +80,7 @@ Carlos:
 Idiomas
 Cerrar sesion (boton en el aside)
 
+http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com
 
 
                                                 Fecha de entrega: Martes 8/7/2018
