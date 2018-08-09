@@ -3,23 +3,21 @@
                 <div class="column is-12">
                     <table class="table is-hoverable is-fullwidth">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Proyecto</th>
-                                <!--<th>Creador</th>-->
-                                <th>Experimento</th>
-                                <th>Acciones</th>
-                            </tr>
+                          <tr>
+                            <th>ID</th>
+                            <th>Objectivo</th>
+                            <th>Descripcion</th>
+                            <th>Accion</th>
+                          </tr>
                         </thead>
                         <tbody>
-
                             <tr>
                               <td>{{item.ID}}</td>
-                              <td>{{item.Name}}</td>
-                              <td>{{item.Experimiento}}</td>
+                              <td>{{item.Objetive}}</td>
+                              <td>{{item.Description}}</td>
                               <td>
-                                <router-link to="/dashboard/BitacoraProyecto" class="button is-link"> Ver </router-link>
-                               
+                                <a @click="removeUser(item.ID)" class="button is-danger">Ver/Editar</a>
+
                               </td>
                             </tr>
 
@@ -27,14 +25,12 @@
                     </table>
                 </div>
 
-<!--Hacer el modals-->
 
 </template>
 
 
 
 <script>
-
 
 
 export default {

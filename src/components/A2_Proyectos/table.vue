@@ -6,7 +6,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Consecutivo</th>
-                        <th>Nombre</th>
+                        <th>Proyecto</th>
                         <th>Rama Cientifica</th>
                         <th>Acciones</th>
                     </tr>
@@ -17,7 +17,7 @@
                     <td>{{item.ID}}</td>
                     <td>{{item.Consecutive}}</td>
                     <td>{{item.Name}}</td>
-                    <td>{{item.Name}}</td> <!--Cambiarlo por la ruta de la rama cientifica-->
+                    <td>{{item.Branch}}</td> <!--Cambiarlo por la ruta de la rama cientifica-->
                     <td>
                         <a @click="openView()" class="button is-link">Ver</a>  <!--lo manda a /dashboard/proyecto/ID //C:\Users\Stefano\Desktop\github\CR-Science-Association\UI-template\ID-Proyectos..html--> 
                         <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
@@ -30,7 +30,7 @@
         </table>
     </div>
 
-<!--Hacer el modals-->
+<!--Hacer el modal-->
 
 </template>
 
@@ -52,10 +52,10 @@ export default {
   },
   created() {
 
-      this.$store.dispatch('Proyecto').then(response => {
-          this.data = this.$store.getters.grants
+      this.$store.dispatch('fetchProyecto').then(response => {
+          this.data = this.$store.getters.proyecto
       }, error => {
-          alert("ERROR PIDINDO LOS PERMISOS")
+          alert("ERROR PROYECTO")
       })
   },
   methods: {

@@ -1,7 +1,8 @@
 <template>
-    <section class="hero white-ter">
+
+    <section background="Capture.PNG" class="hero white-ter">
     
-        <div class="hero-body">
+        <div background="Capture.PNG" class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
     
@@ -44,6 +45,7 @@
             </div>
         </div>
     </section>
+
 </template>
 
 

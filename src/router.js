@@ -20,6 +20,8 @@ import AcademicLevel from './views/AcademicLevel.vue'
 import Ramas from './views/Ramas.vue'
 import BitacoraCi from './views/BitacoraCi.vue'
 import Projects from './views/Proyecto.vue'
+import BitacoraProyecto from './views/BitacoraProyecto.vue'
+
 
 import Bitacora from './views/Bitacora.vue'
 import Descargas from './views/Descargas.vue'
@@ -121,6 +123,10 @@ export default new Router({
         path: 'Errores',
         component: Errores
       },
+      {
+        path: 'BitacoraProyecto',
+        component: BitacoraProyecto
+      }
 
 
     ]
@@ -187,6 +193,13 @@ export default new Router({
     name: 'Errores',
     component: Errores
   },
+
+  //
+  {
+    path: '/dashboard/BitacoraProyecto',
+    name: 'BitacoraProyecto',
+    component: BitacoraProyecto
+  }
 
   ]
 })

@@ -7,7 +7,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/ramas",//Cambiar al path correcto
+                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com//api/v1.2/module/administration/scientific/branches",//Cambiar al path correcto
                 method: "GET",
 
                 headers: {
