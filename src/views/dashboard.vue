@@ -16,15 +16,13 @@
 // @ is an alias to /src
 import Aside from "@/components/dashboard/aside.vue";
 import Content from "@/components/dashboard/content.vue";
-import Footer from "@/components/dashboard/footer.vue";
 
 
 export default {
   name: "dashboard",
   components: {
       Aside,
-      Content,
-      Footer
+      Content
   }
 };
 </script>

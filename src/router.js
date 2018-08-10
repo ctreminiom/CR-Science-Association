@@ -7,10 +7,10 @@ import Resource from 'vue-resource' // Setup HTTP requested funcionality
 
 
 import login from './views/Login.vue'
-import dashboard from './views/Dashboard.vue'
+import dashboard from './views/dashboard.vue'
 //import users from './components/dashboard/users/user.vue'
 
-import users from "./views/user.vue"
+import users from "./views/security/user.vue"
 import Permiso from './views/Permiso.vue'
 import LabRoles from './views/LabRoles.vue'
 import Jobs from './views/Jobs.vue'

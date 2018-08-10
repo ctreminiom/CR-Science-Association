@@ -1,7 +1,5 @@
 <template>
-  <div id="app">
+  <div class="section" id="app">
     <router-view></router-view>
   </div>
 </template>
-
-

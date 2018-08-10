@@ -1,23 +1,18 @@
 <template>
-    <div class="row">
-        <div class="card">
-            <div>
-                <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
-                    <ul>
-                        <li>
-                            <a>Seguridad</a>
-                        </li>
-                        <li>
-                            <a>Usuario</a>
-                        </li>
-                        <li>
-                            <a>Usuarios</a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="box">
+                <div class="level">
+                    <div class="level-left">
+                    <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+                        <ul>
+                            <li><a href="#">Bulma</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Components</a></li>
+                            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 </template>
 
 
@@ -28,23 +23,4 @@ export default {
 </script>
 
 
-
-<style scoped>
-
-ul,
-li {
-  margin-top: 8px;
-}
-
-div[class="card"] {
-  margin-top: 1rem;
-  margin-right: 1rem;
-  padding-top: 0.1rem;
-  padding-left: 1rem;
-  padding-bottom: 15px;
-}
-
-
-
-</style>
 

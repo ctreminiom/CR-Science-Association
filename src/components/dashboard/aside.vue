@@ -1,169 +1,105 @@
 <template>
     
-        <aside class="column is-2 aside hero is-fullheight">
-            <div>
-                <div class="compose has-text-centered">
-                    <a class="button is-danger is-block is-bold">
-                        <span class="compose">Welcome ${USER}</span>
-                    </a>
-                </div>
 
-                <div class="main">
+            <aside class="column is-2">
+                <nav class="menu">
+                    <p class="menu-label">
+                        CR-Science-Association
+                    </p>
 
-                    <p class="menu-label">CR Science Association</p>
-
+                     <p class="menu-label">
+                        ${username}
+                    </p>
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active">Seguridad</a>
+                            <a class="is-active has-background-grey-dark">Seguridad</a>
                         </li>
-
-                        <li> 
-                            <router-link to="/dashboard/users">
-                                Usuarios
-                            </router-link>
+                        <li>
+                            <ul>
+                                <li>
+                                    <router-link to="/dashboard/users">Usuarios</router-link>
+                                </li>
+                                <li>
+                                    <a>Consecutivos</a>
+                                </li>
+                                <li>
+                                    <a>Grados</a>
+                                </li>
+                                <li>
+                                    <a>Roles de Laboratorio</a>
+                                </li>
+                                <li>
+                                    <a>Puestos</a>
+                                </li>
+                                <li>
+                                    <a>Roles</a>
+                                </li>
+                                <li>
+                                    <a>Permisos</a>
+                                </li>
+                            </ul>
                         </li>
-
-
-                        <li> 
-                            <router-link to="/dashboard/Permiso">
-                                Permisos
-                            </router-link>
-                        </li>
-
-                        <li> 
-                            <router-link to="/dashboard/LabRoles">
-                                Roles de Laboratorio
-                            </router-link>
-                        </li>
-
-                        <li> 
-                            <router-link to="/dashboard/Jobs">
-                                Puestos
-                            </router-link>
-                        </li>
-
-
-                        <li> 
-                            <router-link to="/dashboard/consecutives">
-                                Consecutivos
-                            </router-link>
-                        </li>
-
-
-                        <li> 
-                            <router-link to="/dashboard/AcademicLevel">
-                                Niveles Academicos
-                            </router-link>
-                        </li>
-
                     </ul>
 
-                    <br>
-
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active">Administracion</a>
+                            <a class="is-active has-background-grey-dark">Administracion</a>
                         </li>
-
                         <li>
-                            <router-link to="/dashboard/Ramas">
-                                Ramas Cientificas
-                            </router-link>
+                            <ul>
+                                <li>
+                                    <a>Ramas Cientificas</a>
+                                </li>
+                                <li>
+                                    <a>Proyectos</a>
+                                </li>
+                                <li>
+                                    <a>Bitacoras Cientificas</a>
+                                </li>
+                            </ul>
                         </li>
-
-
-                        <li>
-                             <router-link to="/dashboard/Projects">
-                                Proyectos
-                            </router-link>
-                        </li>
-
-
-                        <li>
-                            <router-link to="/dashboard/BitacoraCi">
-                                Biacora Cientifica
-                            </router-link>
-                        </li>
-
                     </ul>
 
 
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active">Consultas</a>
+                            <a class="is-active has-background-grey-dark">Consultas</a>
                         </li>
-
                         <li>
-                             <router-link to="/dashboard/Bitacora">
-                                Bitacoras
-                            </router-link>
+                            <ul>
+                                <li>
+                                    <a>Bitacoras</a>
+                                </li>
+                                <li>
+                                    <a>Descargas</a>
+                                </li>
+                                <li>
+                                    <a>Errores</a>
+                                </li>
+                            </ul>
                         </li>
-
-                        <li>
-                            <router-link to="/dashboard/Errores">
-                                Errores
-                            </router-link>
-                        </li>
-
-                        <li>
-                            <router-link to="/dashboard/Descargas">
-                                Descargas
-                            </router-link>
-                        </li>
-
                     </ul>
 
-                </div>
-            </div>
-        </aside>
+
+                    <p class="menu-label">
+                        System
+                    </p>
+                       <a class="button is-danger is-outlined is-fullwidth">
+                                <span class="icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+
+                                <span>Sign out</span>
+                        </a>
+
+
+                </nav>
+            </aside>
 
 </template>
 
 
 
 <script>
-export default {
-    data() {
-        return {
-            data: null
-        }
-    }
-};
+export default {};
 </script>
-
-
-
-<style scoped>
-html,
-body {
-  font-family: "Open Sans", serif;
-  font-size: 14px;
-  line-height: 1.5;
-  height: 100%;
-}
-ul,
-li {
-  margin-top: 1px;
-}
-.aside {
-  display: block;
-  background-color: #f9f9f9;
-  border-right: 1px solid #dedede;
-}
-.aside .compose {
-  height: 40px;
-  margin: 0 -10px;
-  padding: 10px 30px;
-}
-.aside .compose .button {
-  color: #f6f7f7;
-}
-.aside .compose .button .compose {
-  font-size: 14px;
-  font-weight: 700;
-}
-.aside .main {
-  padding: 20px;
-  color: #6f7b7e;
-}
-</style>

@@ -7,13 +7,8 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1.2/module/users",
+                url : "http://ec2-18-222-31-81.us-east-2.compute.amazonaws.com:8080/api/v1.2/module/users",
                 method: "GET",
-
-                headers: {
-                    Authorization:
-                    "Bearer " + localStorage.getItem("token")
-                }
             }
 
             Vue.http(options).then(response => {
@@ -22,6 +17,7 @@ const actions = {
 
             }, error => {
                 reject(false)
+                console.log(error)
 
             })
 

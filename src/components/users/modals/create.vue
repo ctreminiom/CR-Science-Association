@@ -174,10 +174,6 @@
                                             Choose a file…
                                         </span>
 
-                                        <span class="file-name">
-                                        Screen Shot 2017-07-29 at 15.54.25.png
-                                        </span>
-
                                     </span>
                                 </label>
                             </div>
@@ -189,7 +185,7 @@
                 <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
                 <input type="button" name="reset_form" class="button is-warning" value="Reset Form" onclick="this.form.reset();">
-                <button @click="close()" class="button is-danger">Cancel</button>
+                <a @click="close()" class="button is-danger">Cancel</a>
                 </footer>
             </div>
         </div>
@@ -205,7 +201,7 @@ export default {
 
   methods: {
     close() {
-      this.$emit("close");
+      this.$emit("close_create_modal");
     }
   }
 };
