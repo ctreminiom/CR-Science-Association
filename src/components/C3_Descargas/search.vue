@@ -1,6 +1,10 @@
 <template>
 
-    <div class="columns">
+
+
+</template>
+
+<!--    <div class="columns">
         <div class="column is-2">
             
             <input id="datepicker" class="input" type="date">
@@ -18,9 +22,7 @@
         </div>
 
     </div>
-
-</template>
-
+    -->
 
 <style scoped>
 </style>
