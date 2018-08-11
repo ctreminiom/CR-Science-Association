@@ -13,33 +13,47 @@
 
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active has-background-grey-dark">Seguridad</a>
+                            <a class="is-active has-background-grey-dark">
+                                <p v-text="$ml.with('VueJS').get('aside.module.security')"></p>
+                            </a>
                         </li>
                         <li>
                             <ul>
 
                                 <li>
-                                    <router-link to="/dashboard/users">Usuarios</router-link>
+                                    <router-link to="/dashboard/users">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.users')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li> 
-                                    <router-link to="/dashboard/Permiso"> Permisos</router-link>
+                                    <router-link to="/dashboard/Permiso">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.grants')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li> 
-                                    <router-link to="/dashboard/LabRoles">Roles de Laboratorio</router-link>
+                                    <router-link to="/dashboard/LabRoles">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.laboratory')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li> 
-                                    <router-link to="/dashboard/Jobs">Puestos </router-link>
+                                    <router-link to="/dashboard/Jobs">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.job')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li> 
-                                    <router-link to="/dashboard/consecutives">Consecutivos</router-link>
+                                    <router-link to="/dashboard/consecutives">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.consecutives')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li> 
-                                    <router-link to="/dashboard/AcademicLevel">Niveles Academicos</router-link>
+                                    <router-link to="/dashboard/AcademicLevel">
+                                    <p v-text="$ml.with('VueJS').get('aside.security.education')"></p>
+                                    </router-link>
                                 </li>
 
                             </ul>
@@ -48,20 +62,29 @@
 
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active has-background-grey-dark">Administracion</a>
+                            <a class="is-active has-background-grey-dark">
+                                <p v-text="$ml.with('VueJS').get('aside.module.administrator')"></p>
+                            </a>
                         </li>
                         <li>
                             <ul>
                                 <li>
-                                    <router-link to="/dashboard/Ramas">Ramas Cientificas</router-link>
+                                    <router-link to="/dashboard/Ramas">
+                                     <p v-text="$ml.with('VueJS').get('aside.administration.scientific')"></p>
+                                    </router-link>
                                   </li>
 
                                 <li>
-                                    <router-link to="/dashboard/Projects"> Proyectos</router-link>
+                                    <router-link to="/dashboard/Projects">
+                                     <p v-text="$ml.with('VueJS').get('aside.administration.project')"></p>
+                                    
+                                    </router-link>
                                 </li>
 
                                 <li>
-                                    <router-link to="/dashboard/BitacoraCi"> Biacora Cientifica</router-link>
+                                    <router-link to="/dashboard/BitacoraCi">
+                                     <p v-text="$ml.with('VueJS').get('aside.administration.experimental')"></p>
+                                    </router-link>
                                 </li>
                             </ul>
                         </li>
@@ -70,20 +93,28 @@
 
                     <ul class="menu-list">
                         <li>
-                            <a class="is-active has-background-grey-dark">Consultas</a>
+                            <a class="is-active has-background-grey-dark">
+                                 <p v-text="$ml.with('VueJS').get('aside.module.queries')"></p>
+                            </a>
                         </li>
                         <li>
                             <ul>
                                 <li>
-                                    <router-link to="/dashboard/Bitacora">Bitacorasu</router-link>
+                                    <router-link to="/dashboard/Bitacora">
+                                     <p v-text="$ml.with('VueJS').get('aside.queries.activity')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li>
-                                    <router-link to="/dashboard/Errores">Errores</router-link>
+                                    <router-link to="/dashboard/Errores">
+                                     <p v-text="$ml.with('VueJS').get('aside.queries.error')"></p>
+                                    </router-link>
                                 </li>
 
                                 <li>
-                                    <router-link to="/dashboard/Descargas">Descargas</router-link>
+                                    <router-link to="/dashboard/Descargas">
+                                     <p v-text="$ml.with('VueJS').get('aside.queries.download')"></p>
+                                    </router-link>
                                 </li>
                             </ul>
                         </li>
@@ -98,7 +129,9 @@
                                     <i class="fas fa-sign-out-alt"></i>
                                 </span>
 
-                                <span>Sign out</span>
+                                <span>
+                                    <p v-text="$ml.with('VueJS').get('buttons.logout')"></p>
+                                </span>
                         </a>
 
 
@@ -110,5 +143,19 @@
 
 
 <script>
-export default {};
+import { MLBuilder } from 'vue-multilanguage'
+
+
+export default {
+
+computed: {
+
+    security() {
+        return new MLBuilder("aside.module.security")
+    }
+}
+
+
+
+};
 </script>

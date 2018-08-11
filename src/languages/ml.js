@@ -8,76 +8,78 @@ export default new MLCreate({
     save: process.env.NODE_ENV === 'production',
     languages: [
         new MLanguage('english').create({
+            msg: 'You have',
 
-            aside: {
-                module: {
-                    security: "Security",
-                    administration: "Administration",
-                    queries: "Queries",
+            aside:{
+                module:{
+                    security:'Security',
+                    administrator:'Administrator',
+                    queries:'Queries'
                 },
-
-                security: {
-                    users: "Users",
-                    consecutives: "Consecutives",
-                    grades: "Grades",
-                    laboratory: "Laboratory Roles",
-                    job: "Jobs",
-                    roles: "Roles",
-                    grants: "Grants",
+                security:{
+                    users:'Users',
+                    grants:'Grants',
+                    laboratory:'Laboratory Role',
+                    job:'Jobs',
+                    consecutives:'Consecutives',
+                    education:'Education Level'
                 },
-
-                administration: {
-                    scientificBranch: "Scientifics Branches",
-                    project: "Projects",
-                    scientificLog: "Scientifics Logs"
+                administration:{
+                    scientific:'Scientific Branches',
+                    project: 'Projects',
+                    experimental: 'Experimental Logs'
                 },
-
-                queries: {
-                    activities: "Activities",
-                    download: "Downloads",
-                    error: "Errors",
-                },
-
-
-
-                content: {
-                    users: {
-                        table: {
-                            id: "ID",
-                            consecutive: "Consecutive",
-                            name: "Name",
-                            lastName: "Last Name",
-                            username: "Username",
-                            actions: {
-                                row: "Actions",
-                                button: {
-                                    view: "View",
-                                    Password: "Password",
-                                    Delete: "Delete",
-                                }
-                            }
-                        },
-
-                        breadCrumb: {
-                            dashboard: "Dashboard",
-                            user: "User"
-                        },
-
-
-                    }
+                queries:{
+                    activity:'Activities',
+                    error: 'Errors',
+                    download: 'Download'
                 }
-
-
-
-
             },
 
-            msg: 'You have'
+            buttons:{
+                logout:'Sign Out'
+            },
+
+            title:'CR-Science-Association'
+
+
+
         }),
 
         new MLanguage('portuguese').create({
-            title: 'Oi {0}!',
-            msg: 'Você tem {f} amigos e {l} curtidas'
+            msg: 'Você tem {f} amigos e {l} curtidas',
+            aside:{
+                module:{
+                    security:'Security',
+                    administrator:'Administrator',
+                    queries:'Queries'
+                },
+                security:{
+                    users:'Users',
+                    grants:'Grants',
+                    laboratory:'Laboratory Role',
+                    job:'Jobs',
+                    consecutives:'Consecutives',
+                    education:'Education Level'
+                },
+                administration:{
+                    scientific:'Scientific Branches',
+                    project: 'Projects',
+                    experimental: 'Experimental Logs'
+                },
+                queries:{
+                    activity:'Activities',
+                    error: 'Errors',
+                    download: 'Download'
+                },
+
+                buttons:{
+                    logout:'Sign Out'
+                },
+
+                title:'CR-Science-Association'
+    
+            }
         })
     ]
 })
