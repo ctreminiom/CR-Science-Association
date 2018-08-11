@@ -1,6 +1,22 @@
 <template>
 
+
 <div class="column is-12">
+
+    <div class="columns">
+    
+        <div class="column is-12">
+            <div class="field">
+                <div class="field">
+                    <p class="control">
+                        <input id="test" class="input" placeholder="Find a repository" type="text">
+                    </p>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
 
     <table class="table is-hoverable is-fullwidth">
 
@@ -20,13 +36,14 @@
                 <td>{{item.User}}</td>
                 <td>{{item.Role}}</td>
                 <td>
-                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
+                    <a @click="open_view_modal(item)" class="button is-link">Ver/ Editar</a>
                 </td>
             </tr>
 
         </tbody>
 
     </table>
+            <View :open="add_active_view" :user="id" @close_view_modal="close_view_modal"/>
  </div>
 <!---->
 </template>
@@ -35,39 +52,34 @@
 
 <script>
 
-import open from "@/components/S2_Permiso/Modals/edit.vue";
+import View from "@/components/S2_Permiso/Modals/edit.vue";
 
 export default {
   data() {
     return {
+      id: "",
       data: null,
-      addActive: "",
-      viewActive: ""
+      add_active_view: ""
+   
     };
   },
   components: {
-      open
+      View
   },
   created() {
 
-      this.$store.dispatch('grants').then(response => {
+      this.$store.dispatch('fetchGrants').then(response => {
           this.data = this.$store.getters.grants
       }, error => {
-          alert("ERROR PIDINDO LOS PERMISOS")
+          alert("ERROR PIDIENDO LOS PERMISOS")
       })
   },
   methods: {
-    openAdd() {
-      this.addActive = "is-active";
+    add_active_view() {
+      this.add_active_view = "is-active";
     },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
+    close_delete_modal() {
+      this.close_delete_modal = "";
     }
 
   }

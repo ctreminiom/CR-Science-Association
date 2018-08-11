@@ -10,33 +10,38 @@
                      <p class="menu-label">
                         ${username}
                     </p>
+
                     <ul class="menu-list">
                         <li>
                             <a class="is-active has-background-grey-dark">Seguridad</a>
                         </li>
                         <li>
                             <ul>
+
                                 <li>
                                     <router-link to="/dashboard/users">Usuarios</router-link>
                                 </li>
-                                <li>
-                                    <a>Consecutivos</a>
+
+                                <li> 
+                                    <router-link to="/dashboard/Permiso"> Permisos</router-link>
                                 </li>
-                                <li>
-                                    <a>Grados</a>
+
+                                <li> 
+                                    <router-link to="/dashboard/LabRoles">Roles de Laboratorio</router-link>
                                 </li>
-                                <li>
-                                    <a>Roles de Laboratorio</a>
+
+                                <li> 
+                                    <router-link to="/dashboard/Jobs">Puestos </router-link>
                                 </li>
-                                <li>
-                                    <a>Puestos</a>
+
+                                <li> 
+                                    <router-link to="/dashboard/consecutives">Consecutivos</router-link>
                                 </li>
-                                <li>
-                                    <a>Roles</a>
+
+                                <li> 
+                                    <router-link to="/dashboard/AcademicLevel">Niveles Academicos</router-link>
                                 </li>
-                                <li>
-                                    <a>Permisos</a>
-                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -48,13 +53,15 @@
                         <li>
                             <ul>
                                 <li>
-                                    <a>Ramas Cientificas</a>
-                                </li>
+                                    <router-link to="/dashboard/Ramas">Ramas Cientificas</router-link>
+                                  </li>
+
                                 <li>
-                                    <a>Proyectos</a>
+                                    <router-link to="/dashboard/Projects"> Proyectos</router-link>
                                 </li>
+
                                 <li>
-                                    <a>Bitacoras Cientificas</a>
+                                    <router-link to="/dashboard/BitacoraCi"> Biacora Cientifica</router-link>
                                 </li>
                             </ul>
                         </li>
@@ -68,13 +75,15 @@
                         <li>
                             <ul>
                                 <li>
-                                    <a>Bitacoras</a>
+                                    <router-link to="/dashboard/Bitacora">Bitacorasu</router-link>
                                 </li>
+
                                 <li>
-                                    <a>Descargas</a>
+                                    <router-link to="/dashboard/Errores">Errores</router-link>
                                 </li>
+
                                 <li>
-                                    <a>Errores</a>
+                                    <router-link to="/dashboard/Descargas">Descargas</router-link>
                                 </li>
                             </ul>
                         </li>

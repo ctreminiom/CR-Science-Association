@@ -11,21 +11,20 @@ import dashboard from './views/dashboard.vue'
 //import users from './components/dashboard/users/user.vue'
 
 import users from "./views/security/user.vue"
-import Permiso from './views/Permiso.vue'
-import LabRoles from './views/LabRoles.vue'
-import Jobs from './views/Jobs.vue'
-import Consecutives from './views/Consecutives.vue'
-import AcademicLevel from './views/AcademicLevel.vue'
+import Permiso from './views/security/Permiso.vue'
+import LabRoles from './views/security/LabRoles.vue'
+import Jobs from './views/security/Jobs.vue'
+import Consecutives from './views/security/Consecutives.vue'
+import AcademicLevel from './views/security/AcademicLevel.vue'
 
-import Ramas from './views/Ramas.vue'
-import BitacoraCi from './views/BitacoraCi.vue'
-import Projects from './views/Proyecto.vue'
-import BitacoraProyecto from './views/BitacoraProyecto.vue'
+import Ramas from './views/administracion/Ramas.vue'
+import BitacoraCi from './views/administracion/BitacoraCi.vue'
+import Projects from './views/administracion/Proyecto.vue'
+import BitacoraProyecto from './views/administracion/BitacoraProyecto.vue'
 
-
-import Bitacora from './views/Bitacora.vue'
-import Descargas from './views/Descargas.vue'
-import Errores from './views/Errores.vue'
+import Bitacora from './views/consultas/Bitacora.vue'
+import Descargas from './views/consultas/Descargas.vue'
+import Errores from './views/consultas/Errores.vue'
 
 
 Vue.use(Resource)
