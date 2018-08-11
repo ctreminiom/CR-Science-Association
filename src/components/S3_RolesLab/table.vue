@@ -18,9 +18,7 @@
                 <td>{{item.Consecutive}}</td>
                 <td>{{item.Name}}</td>
                 <td>
-                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
-                    <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
-                    
+                    <a @click="open(item)" class="button is-danger">Eliminar</a>
                 </td>
 
             </tr>
@@ -28,6 +26,7 @@
         </tbody>
 
     </table>
+    <delete :open="deleteActive" :user="id" @close_delete_lab_modal="close_delete_lab_modal"/>
 </div>
 </template>
 
@@ -36,44 +35,34 @@
 <script>
 
 import Delete from "@/components/S3_RolesLab/Modals/delete.vue";
-import Open from "@/components/S3_RolesLab/Modals/edit.vue";
-
-
 export default {
   data() {
     return {
       data: null,
-      addActive: "",
-      viewActive: ""
+      deleteActive: "",
+      id: "",
     };
   },
   components: {
-      Delete,Open
+      Delete
   },
 
   created() {
-
-      this.$store.dispatch('lab').then(response => {
-            this.data = this.$store.getters.lab
+      this.$store.dispatch('fetchRolesLab').then(response => {
+            this.data = this.$store.getters.RolesLab
         }, error => {
-            alert("ERROR PIDIENDO LOS USUARIOS")
+            alert("ERROR PIDIENDO LOS ROLES")
         })
   },
 
   methods: {
-    openCreate() {
-      this.addActive = "is-active";
+    open(id) {
+      this.deleteActive = "is-active";
+      this.id = id;
     },
-    openView() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeView() {
-      this.viewActive = "";
+    close_delete_lab_modal() {
+      this.deleteActive = "";
     }
-
   }
 };
 </script>

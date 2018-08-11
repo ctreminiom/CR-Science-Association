@@ -15,22 +15,15 @@
               <div class="field">
                     <label class="label">Nombre de rol</label>
                     <div class="control">
-                    <input required v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
+                    <input class="input " id="myInput" type="text" placeholder="Text input" v-model="name">
                     </div>
             </div>
-            <div class="field">
-                    <label class="label">Descripcion del rol</label>
-                    <div class="control">
-                    <input required v-model="career" class="input " id="myInput2" type="text" placeholder="Text input">
-                    </div>
-            </div>
-                                  
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
+                <a @click="save(name)" class="button is-success">Save changes</a>
                 <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
-                <button @click="closdsdse()" class="button is-danger">Cancel</button>
+                <button @click="close()" class="button is-danger">Cancel</button>
 
             </footer>
         </div>
@@ -54,66 +47,26 @@ export default {
       roles: null,
       role_selected: '',
       name: "",
-      last_name: "",
-      phone: "",
-      username: "",
-      password: ""
     };
   },
   methods: {
     close() {
       this.$emit("close");
     },
-    fetchAcademics() {
-      var options = {
-        url: "http://localhost:8080/api/v1/module/academic/level",
-        method: "GET"
-      };
+    save() {
 
-      this.$http(options).then(
-        response => {
-          this.academic = response.body;
-        },
-        response => {
-          alert("NO");
-        }
-      );
-    },
-    fetchLaboratories() {
-      var options = {
-        url: "http://localhost:8080/api/v1/module/jobs",
-        method: "GET"
-      };
+      var name = this.name
+      this.$http.post('http://18.222.31.81:8080/api/v1.2/module/laboratory/roles', {"name": name}).then(response => {
+        console.log("CREATE")
+        this.close()
+      }, error => {
+        console.log("NO")
+      });
 
-      this.$http(options).then(
-        response => {
-          this.laboratory = response.body;
-        },
-        response => {
-          alert("NO");
-        }
-      );
-    },
-    fetchRoles() {
-      var options = {
-        url: "http://localhost:8080/api/v1/module/user/roles",
-        method: "GET"
-      };
-
-      this.$http(options).then(
-        response => {
-          this.roles = response.body;
-        },
-        response => {
-          alert("NO");
-        }
-      );
     }
+
   },
   created() {
-    this.fetchAcademics();
-    this.fetchLaboratories();
-    this.fetchRoles();
   }
 };
 

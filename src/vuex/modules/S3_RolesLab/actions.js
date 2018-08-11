@@ -7,7 +7,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1.2/module/laboratory/roles",
+                url : "http://18.222.31.81:8080/api/v1.2/module/laboratory/roles",
                 method: "GET",
 
                 headers: {
@@ -17,7 +17,7 @@ const actions = {
             }
 
             Vue.http(options).then(response => {
-                context.commit("ROLES", response.body)
+                context.commit("LAB", response.body)
                 resolve(true)
 
             }, error => {

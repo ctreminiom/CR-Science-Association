@@ -1,6 +1,6 @@
 const mutations = {
-    ROLES: (state, json) => {
-        state.users = json
+    LAB: (state, json) => {
+        state.lab = json
     },
 }
 
