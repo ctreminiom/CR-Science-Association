@@ -6,32 +6,21 @@
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Detalles de Permiso</p>
+                                  <p class="modal-card-title">Detalles de {{user.ID}}</p>
                                   <button @click="close()" class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
                   
                   
                                   <div class="field">
-                                      <label class="label">ID</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input"  type="text" placeholder="Text input">
-                                          </div>
+                                      <label class="label">Nombre</label>
+                                        <p>{{user.User}}</p>
                                   </div>
 
                                   <div class="field">
                                       <label class="label">Nombre</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input"  type="text" placeholder="Text input">
-                                          </div>
+                                        <p>{{user.Role}}</p>
                                   </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Fecha de creacion</label>
-                                          <div class="control">
-                                              <input  v-model="name" class="input"  type="text" placeholder="Text input">
-                                          </div>
-                                  </div>                  
                   
                               </section>
                               <footer class="modal-card-foot">
