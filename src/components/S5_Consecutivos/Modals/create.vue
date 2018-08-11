@@ -79,10 +79,18 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("close_create_modal");
+      this.$emit("close_create_modal_CONSECUTIVO");
     },
     save() {
-      //
+    
+      var name = this.name
+      this.$http.post('http://18.222.31.81:8080/api/v1.2/module/consecutives', {"name": name}).then(response => {
+        console.log("CONSECUTIVO CREADO")
+        this.close()
+      }, error => {
+        console.log("ERROR NO SE CREO")
+      });
+
     }
   },
 

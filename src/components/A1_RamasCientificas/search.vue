@@ -1,5 +1,7 @@
 <template>
+
     <div class="columns">
+
         <div class="column is-2">
             <a @click="open()" class="button is-dark is-fullwidth">Agregar</a>
         </div>

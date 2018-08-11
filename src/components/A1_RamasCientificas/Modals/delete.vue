@@ -1,61 +1,47 @@
-<!--
 <template>
- <div class="columns">
-                <div class="column is-12">
-                    <table class="table is-hoverable is-fullwidth">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Caja de Codigo</th>
-                                <th>Nombre</th>
-                                <th>Prefijo</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+<form>
+    <div>
+        <div class="modal" :class="open">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Eliminar la rama cientifica -> {{user.ID}}</p>
+                    <a @click="close()" class="delete" aria-label="close"></a>
+                </header>
+                <section class="modal-card-body">
 
-                            <tr>
-                                <td>1</td>
-                                <td>99</td>
-                                <td>Proyecto</td>
-                                <td>PRO</td>
-                                <td>
-                                    <div class="field is-grouped">
-                                        <p class="control">
-                                            <a onclick="executeModalEdit()" class="button is-link">Editar/Guardar</a>
-                                            
-                                        </p>
-                                        <p class="control">
-                                            <a href=\"delete=".$row['id']."\" class="button is-danger">
-                                                Eliminar
-                                            </a>
-                                        </p>
-                                    </div>
-                                </td>
-                              
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
+                    <p>
+                        {{user}}
+                    </p>
+                    
+                </section>
+                <footer class="modal-card-foot">
+                <a class="button is-success">Save changes</a>
+                 <a @click="close()" class="button is-danger">Cancel</a>
+                </footer>
             </div>
-            <template>
+        </div>
+    </div>
+</form>
+</template>
 
-            <script>
-export default {
-  props: ["open"],
 
-  methods: {
-    close() {
-      this.$emit("close");
+
+<script>
+    export default {
+        props: ["open", "user"],
+
+
+        methods: {
+            close() {
+                this.$emit("close_delete_modal")
+            }
+        }
+    
     }
-  }
-};
 </script>
 
 
-
 <style scoped>
+    
 </style>
