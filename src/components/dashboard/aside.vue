@@ -130,7 +130,7 @@
                                 </span>
 
                                 <span>
-                                    <p v-text="$ml.with('VueJS').get('buttons.logout')"></p>
+                                    asds
                                 </span>
                         </a>
 

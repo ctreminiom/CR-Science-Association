@@ -35,7 +35,17 @@
                             </div>
     
                             <div class="control">
+                                
                                 <a @click="login" class="button is-dark">Outlined</a>
+
+<a
+	v-for="lang in $ml.list"
+	:key="lang"
+	@click="$ml.change(lang)"
+	v-text="lang"
+/>
+
+
                             </div>
                         </form>
                     </div>
@@ -51,6 +61,8 @@
 
 
 <script>
+
+import { MLBuilder } from 'vue-multilanguage'
     export default {
         data() {
             return {

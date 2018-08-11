@@ -36,11 +36,22 @@ export default new MLCreate({
                 }
             },
 
-            buttons:{
-                logout:'Sign Out'
-            },
 
-            title:'CR-Science-Association'
+            title:'CR-Science-Association',
+
+            module:{
+                users:{
+                    table:{
+                        header:{
+                            consecutive:'Consecutive',
+                            name:'name',
+                            lastname:'Lastname',
+                            username: 'username',
+                            actions:'Actions'
+                        }
+                    }
+                }
+            }
 
 
 
@@ -50,34 +61,45 @@ export default new MLCreate({
             msg: 'Você tem {f} amigos e {l} curtidas',
             aside:{
                 module:{
-                    security:'Security',
-                    administrator:'Administrator',
-                    queries:'Queries'
+                    security:'Segurança',
+                    administrator:'Administrador',
+                    queries:'Consultas'
                 },
                 security:{
-                    users:'Users',
+                    users:'Usuários',
                     grants:'Grants',
-                    laboratory:'Laboratory Role',
+                    laboratory:'Papel de Laboratório',
                     job:'Jobs',
                     consecutives:'Consecutives',
                     education:'Education Level'
                 },
                 administration:{
-                    scientific:'Scientific Branches',
-                    project: 'Projects',
-                    experimental: 'Experimental Logs'
+                    scientific:'Ramos Científicos',
+                    project: 'Projetos',
+                    experimental: 'Logs experimentais'
                 },
                 queries:{
-                    activity:'Activities',
-                    error: 'Errors',
+                    activity:'Atividades',
+                    error: 'Erros',
                     download: 'Download'
                 },
 
-                buttons:{
-                    logout:'Sign Out'
-                },
 
-                title:'CR-Science-Association'
+                title:'CR-Science-Association',
+
+                module:{
+                    users:{
+                        table:{
+                            header:{
+                                consecutive:'Consecutive',
+                                name:'name',
+                                lastname:'Lastname',
+                                username: 'username',
+                                actions:'Actions'
+                            }
+                        }
+                    }
+                }
     
             }
         })
