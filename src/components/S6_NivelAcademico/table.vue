@@ -7,8 +7,9 @@
             <tr>
                 <th>ID</th>
                 <th>Consecutivo</th>
-                <th>Nivel Academico</th>
-                <th>Detalle</th>
+                <th>Grado</th>
+                <th>Name</th>
+                <th>Description</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -19,16 +20,18 @@
                 <td>{{item.ID}}</td>
                 <td>{{item.Consecutive}}</td>
                 <td>{{item.Grade}}</td>
+                <td>{{item.Name}}</td>
                 <td>{{item.Description}}</td>
                 <td>
-                    <a @click="openEdit()" class="button is-link">Ver/ Editar</a>
-                    <a class="button is-danger">Eliminar</a>
+                    <a @click="open(item)" class="button is-link">Ver/ Editar</a>
+                    <a @click="open(item)" class="button is-danger">Eliminar</a>
                 </td>
 
             </tr>
 
     </tbody>
 
+   <delete :open="active" :user="id" @close_test="close_test"/>
     </table>
 </div>
 
@@ -37,49 +40,38 @@
 
 
 <script>
-import Add from "@/components/S6_NivelAcademico/Modals/delete.vue";
-import test from "@/components/S6_NivelAcademico/Modals/edit.vue";
+import Delete from "@/components/S6_NivelAcademico/Modals/delete.vue";
 
 export default {
   data() {
     return {
       data: null,
-      addActive: "",
-      viewActive: ""
+      active: "",
+      id: ""
     };
   },
   components: {
-      test,Add
-  },
-  mounted() {
-    var options = {
-      url: "http://192.168.43.192:8080/api/v1/module/academic/level",
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
+    Delete
   },
   methods: {
-    openCreate() {
-      this.addActive = "is-active";
+    open(id) {
+      this.active = "is-active";
+      this.id = id;
     },
-    openEdit() {
-      this.viewActive = "is-active";
-    },
-    close() {
-      this.addActive = "";
-    },
-    closeEdit() {
-      this.viewActive = "";
+    close_test() {
+      this.active = "";
     }
+  },
 
+  created() {
+    this.$store.dispatch("fetchEducationLevel").then(
+      response => {
+        this.data = this.$store.getters.education;
+      },
+      error => {
+        alert("ERROR PIDIENDO LOS ROLES");
+      }
+    );
   }
 };
 </script>

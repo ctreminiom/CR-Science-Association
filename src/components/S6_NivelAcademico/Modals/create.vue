@@ -26,7 +26,7 @@
                                   <div class="field">
                                       <label class="label">Nombre de carrera</label>
                                           <div class="control">
-                                              <input required v-model="career" id="myInput" class="input " type="text" placeholder="Text input">
+                                              <input required  id="myInput" class="input " type="text" placeholder="Text input">
                                           </div>
                                   </div>
 
@@ -60,21 +60,6 @@ export default {
     close() {
       this.$emit("closeModal");
     }
-  },
-  mounted() {
-    var options = { 
-      url: "http://localhost:8080/api/v1/module/academic/level", //*******Cambiarlo al correcto path de RAMA CIENTIFICA********
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data00 = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
   }
 };
 
