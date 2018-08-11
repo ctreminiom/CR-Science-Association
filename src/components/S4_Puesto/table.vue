@@ -4,7 +4,7 @@
 
     <div class="columns">
         <div class="column is-2">
-            <a @click="open_create_modal()" class="button is-success is-fullwidth">Agregar</a>
+            <a @click="open_create_modal_PUESTO()" class="button is-success is-fullwidth">Agregar</a>
         </div>    
         <div class="column is-9">
             <div class="field">
@@ -39,17 +39,17 @@
                 <td>{{item.Description}}</td>
                 <td>{{item.Lab}}</td>
                 <td>
-                    <a @click="open_view_modal(item)" class="button is-link">Ver/ Editar</a>
-                    <a @click="open_delete_modal(item)" class="button is-danger">Eliminar</a>
+                    <a @click="open_view_modal_PUESTO(item)" class="button is-link">Ver/ Editar</a>
+                    <a @click="open_delete_modal_PUESTO(item)" class="button is-danger">Eliminar</a>
                 </td>
             </tr>
 
         </tbody>
 
     </table>
-              <Delete :open="add_active_delete" :user="id" @close_delete_modal="close_delete_modal"/>
-              <View :open="add_active_view" :user="id" @close_password_modal="close_view_modal"/>
-              <Create :open="add_active_create" @close="close_create_modal"/>
+              <Delete :open="add_active_delete_PUESTO" :user="id" @close_delete_modal="close_delete_modal_PUESTO"/>
+              <View :open="add_active_view_PUESTO" :user="id" @close_password_modal="close_view_modal_PUESTO"/>
+              <Create :open="add_active_create_PUESTO" @close="close_create_modal_PUESTO"/>
 </div>
 
 </template>
@@ -67,9 +67,9 @@ export default {
   data() {
     return {
 
-        add_active_delete: "",
-        add_active_view: "",
-        add_active_create:"",
+        add_active_delete_PUESTO: "",
+        add_active_view_PUESTO: "",
+        add_active_create_PUESTO:"",
         id: "",
         data: null
     };
@@ -87,28 +87,28 @@ export default {
   },
 
   methods: {
-    open_create_modal(id) {
-      this.add_active_create = "is-active";
+    open_create_modal_PUESTO(id) {
+      this.add_active_create_PUESTO = "is-active";
       this.id = id;
     },
-    open_view_modal(id) {
-      this.add_active_view = "is-active";
+    open_view_modal_PUESTO(id) {
+      this.add_active_view_PUESTO = "is-active";
       this.id = id;
     },
-    open_delete_modal(id) {
-      this.add_active_delete = "is-active";
+    open_delete_modal_PUESTO(id) {
+      this.add_active_delete_PUESTO = "is-active";
       this.id = id;
     },
 
-    close_view_modal() {
-      this.add_active_view = "";
+    close_view_modal_PUESTO() {
+      this.add_active_view_PUESTO = "";
     },
-    close_delete_modal() {
-      this.add_active_delete = "";
+    close_delete_modal_PUESTO() {
+      this.add_active_delete_PUESTO = "";
     },
-    close_create_modal()
+    close_create_modal_PUESTO()
     {
-      this.add_active_create = "";
+      this.add_active_create_PUESTO = "";
     }
   }
 

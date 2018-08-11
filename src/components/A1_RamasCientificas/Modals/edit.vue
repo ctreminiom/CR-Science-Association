@@ -11,23 +11,23 @@
                   
                   
                                   <div class="field">
-                                      <label class="label">Rama Cientifica</label>
+                                      <label class="label">Nombre de Rama Cientifica</label>
                                           <div class="control">
-                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
+                                              <input required v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
                                           </div>
                                   </div>
 
                                   <div class="field">
                                       <label class="label">Prefijo</label>
                                           <div class="control">
-                                              <input  v-model="name" class="input" id="myInput" type="text" placeholder="Text input">
+                                              <input required v-model="name" class="input" id="myInput2" type="text" placeholder="Text input">
                                           </div>
                                   </div>
                   
                                   <div class="field">
                                       <label class="label">Notas</label>
                                           <div class="control">
-                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
+                                              <textarea required class="textarea" id="myInput4" placeholder="Descripcion" rows="10"></textarea>
                                               <!--<input v-model="desc" class="input " type="text" placeholder="Text input" rows="10">-->
                                           </div>
                                   </div>                          

@@ -74,7 +74,13 @@ export default {
       this.$emit("close_create_modal");
     },
     save() {
-//
+     var name = this.name
+      this.$http.post('http://18.222.31.81:8080/api/v1.2/module/jobs', {"name": name}).then(response => {
+        console.log("CREATE")
+        this.close()
+      }, error => {
+        console.log("NO")
+      });
     },
     
     /*fetchAcademics() {

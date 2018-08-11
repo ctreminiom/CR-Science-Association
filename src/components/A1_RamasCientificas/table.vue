@@ -1,6 +1,25 @@
 <template>
 
     <div class="column is-12">
+          <div class="columns">
+
+        <div class="column is-2">
+            <a @click="open_create_modal()" class="button is-success is-fullwidth">Agregar</a>
+        </div>
+    
+        <div class="column is-9">
+            <div class="field">
+                <div class="field">
+                    <p class="control">
+                        <input id="test" class="input" placeholder="Find a repository" type="text">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <Add :open="add_active" @close="close"/>
+
+    </div>
         <table class="table is-hoverable is-fullwidth">
             <thead>
                             <tr>
@@ -17,10 +36,10 @@
                     <td>{{item.ID}}</td>
                     <td>{{item.Consecutive}}</td>
                     <td>{{item.Name}}</td>
-                    <td>{{item.Prefix}}</td> <!--Cambiarlo por la ruta de la rama cientifica-->
+                    <td>{{item.Prefix}}</td>
                     <td>
-                        <a @click="openView(item.ID)" class="button is-link">Ver/ Editar</a>
-                        <a @click="removeUser(item.ID)" class="button is-danger">Eliminar</a>
+                    <a @click="open_view_modal(item)" class="button is-link">Ver/ Editar</a>
+                    <a @click="open_delete_modal(item)" class="button is-danger">Eliminar</a>
                       
                     </td>
                 </tr>
@@ -28,6 +47,8 @@
             </tbody>
 
         </table>
+
+
     </div>
 <!--Hacer el modals-->
 
@@ -36,42 +57,57 @@
 
 
 <script>
-import Remove from "@/components/A1_RamasCientificas/Modals/delete.vue";
-import Open from "@/components/A1_RamasCientificas/Modals/edit.vue";
+
+import Delete from "@/components/A1_RamasCientificas/Modals/delete.vue";
+import View from "@/components/A1_RamasCientificas/Modals/edit.vue";
+import Create from "@/components/A1_RamasCientificas/Modals/create.vue";
 
 export default {
   data() {
     return {
-      data: null,
-      addActive: "",
-      viewActive: ""
+        add_active_delete: "",
+        add_active_view: "",
+        add_active_create:"",
+        id: "",
+        data: null
+
     };
   },
   components: {
-      Remove,Open
+      Delete,View,Create
   },
   created() {
 
-      this.$store.dispatch('Proyecto').then(response => {
+      this.$store.dispatch('fetchRamas').then(response => {
           this.data = this.$store.getters.grants
       }, error => {
-          alert("ERROR PIDINDO LOS PERMISOS")
+          alert("ERROR PIDINDO LAS RAMAS CIENTIFICAS")
       })
   },
   methods: {
-    openAdd() {
-      this.addActive = "is-active";
+    open_create_modal(id) {
+      this.add_active_create = "is-active";
+      this.id = id;
     },
-    openView() {
-      this.viewActive = "is-active";
+    open_view_modal(id) {
+      this.add_active_view = "is-active";
+      this.id = id;
     },
-    close() {
-      this.addActive = "";
+    open_delete_modal(id) {
+      this.add_active_delete = "is-active";
+      this.id = id;
     },
-    closeView() {
-      this.viewActive = "";
-    }
 
+    close_view_modal() {
+      this.add_active_view = "";
+    },
+    close_delete_modal() {
+      this.add_active_delete = "";
+    },
+    close_create_modal()
+    {
+      this.add_active_create = "";
+    }
   }
 };
 </script>

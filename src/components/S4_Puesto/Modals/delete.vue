@@ -34,7 +34,7 @@
 
         methods: {
             close() {
-                this.$emit("close_delete_modal")
+                this.$emit("close_delete_modal_PUESTO")
             }
         }
     
