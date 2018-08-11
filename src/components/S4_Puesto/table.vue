@@ -2,6 +2,22 @@
 
  <div class="column is-12">
 
+    <div class="columns">
+        <div class="column is-2">
+            <a @click="open_create_modal()" class="button is-success is-fullwidth">Agregar</a>
+        </div>    
+        <div class="column is-9">
+            <div class="field">
+                <div class="field">
+                    <p class="control">
+                        <input id="test" class="input" placeholder="Find a repository" type="text">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <table class="table is-hoverable is-fullwidth">
 
         <thead>
@@ -23,14 +39,17 @@
                 <td>{{item.Description}}</td>
                 <td>{{item.Lab}}</td>
                 <td>
-                    <a @click="openView()" class="button is-link">Ver/ Editar</a>
-                    <a class="button is-danger">Eliminar</a>
+                    <a @click="open_view_modal(item)" class="button is-link">Ver/ Editar</a>
+                    <a @click="open_delete_modal(item)" class="button is-danger">Eliminar</a>
                 </td>
             </tr>
 
         </tbody>
 
     </table>
+              <Delete :open="add_active_delete" :user="id" @close_delete_modal="close_delete_modal"/>
+              <View :open="add_active_view" :user="id" @close_password_modal="close_view_modal"/>
+              <Create :open="add_active_create" @close="close_create_modal"/>
 </div>
 
 </template>
@@ -38,50 +57,61 @@
 
 
 <script>
-import Add from "./Modals/create.vue";
-import test from "./Modals/edit.vue";
+
+import Delete from "@/components/S4_Puesto/Modals/delete.vue";
+import View from "@/components/S4_Puesto/Modals/edit.vue";
+import Create from "@/components/S4_Puesto/Modals/create.vue";
+
 
 export default {
   data() {
     return {
-      data: null,
-      addActive: "",
-      viewActive: ""
+
+        add_active_delete: "",
+        add_active_view: "",
+        add_active_create:"",
+        id: "",
+        data: null
     };
   },
   components: {
-      test,Add
+      Delete,View,Create
   },
-  mounted() {
-    var options = {
-      url: "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1/module/jobs",
-      method: "GET"
-    };
+    created() {
 
-    this.$http(options).then(
-      response => {
-        this.data = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
+      this.$store.dispatch('fetchJobs').then(response => {
+          this.data = this.$store.getters.grants
+      }, error => {
+          alert("ERROR PIDIENDO LOS TRABAJOS")
+      })
   },
+
   methods: {
-    openCreate() {
-      this.addActive = "is-active";
+    open_create_modal(id) {
+      this.add_active_create = "is-active";
+      this.id = id;
     },
-    openView() {
-      this.viewActive = "is-active";
+    open_view_modal(id) {
+      this.add_active_view = "is-active";
+      this.id = id;
     },
-    close() {
-      this.addActive = "";
+    open_delete_modal(id) {
+      this.add_active_delete = "is-active";
+      this.id = id;
     },
-    closeView() {
-      this.viewActive = "";
-    }
 
+    close_view_modal() {
+      this.add_active_view = "";
+    },
+    close_delete_modal() {
+      this.add_active_delete = "";
+    },
+    close_create_modal()
+    {
+      this.add_active_create = "";
+    }
   }
+
 };
 </script>
 

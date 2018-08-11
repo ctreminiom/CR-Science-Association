@@ -1,64 +1,34 @@
 <template>
-
                      <div>
-                        <div id="NewProject" class="modal" :class="open">
+                        <div class="modal" :class="open">
                           <div class="modal-background"></div>
                           <div class="modal-card">
                               <header class="modal-card-head">
-                                  <p class="modal-card-title">Consecutivo</p>
-                                  <button @click="close()"  class="delete" aria-label="close"></button>
+                                  <p class="modal-card-title">Detalles del consecutivo {{user.ID}}</p>
+                                  <button @click="close()" class="delete" aria-label="close"></button>
                               </header>
                               <section class="modal-card-body">
                   
-                                <div class="field">
-                                      <label class="label">Tipo de Consecutivo</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select>
-                                                        <option v-for="item in data00" :key="item.ID">
-                                                            {{item.Grade}}
-                                                        </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
                   
                                   <div class="field">
                                       <label class="label">Prefijo</label>
-                                          <div class="control">
-                                              <input  v-model="prefix" class="input " type="text" placeholder="Text input">
-                                          </div>
+                                        <p>{{user.Prefix}}</p>
+                                  </div>
+
+                                  <div class="field">
+                                      <label class="label">Rango Incial y Final</label>
+                                        <p>{{user.Initial}} </p>
+                                        <p>{{user.Final}} </p>
+                                  </div>
+
+                                <div class="field">
+                                      <label class="label">Desc.</label>
+                                        <p>{{user.Description}}</p>
                                   </div>
                   
-                                  <div class="field">
-                                      <label class="label">Descripcion</label>
-                                          <div class="control">
-                                              <textarea class="textarea" placeholder="Descripcion" rows="10"></textarea>
-                                              <input v-model="desc" class="input " type="text" placeholder="Text input">
-                                          </div>
-                                  </div>
-                  
-                                  <div class="field">
-                                      <label class="label">Rango</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select> <!--Estas opciones se pueden poner en una tabla-->
-                                                        <option>1-100 </option>
-                                                        <option>1-1000 </option>
-                                                        <option>1-10000 </option>
-                                                        <option>1-100000 </option>
-                                                      </select>
-                                                  </div>
-                                          </div>
-                                  </div>
-
-                                
-
-
                               </section>
                               <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
-                                  <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
+                                  <button @click="close()" class="button is-warning">Cerrar</button>
                               </footer>
                           </div>
                       </div>

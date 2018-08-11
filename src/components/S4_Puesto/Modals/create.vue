@@ -20,7 +20,7 @@
             <div class="field">
                     <label class="label">Descripcion del puesto</label>
                     <div class="control">
-                    <input required v-model="career" class="input " id="myInput" type="text" placeholder="Text input">
+                    <input required v-model="career" class="input " id="myInput2" type="text" placeholder="Text input">
                     </div>
             </div>
 
@@ -40,7 +40,7 @@
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
+                <button @click="save()" class="button is-success">Save changes</button>
                 <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
                 <button @click="close()" class="button is-danger">Cancel</button>
             </footer>
@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  props: ["open"],
+  props: ["open", "user"],
   data() {
     return {
       academic: null,
@@ -68,11 +68,16 @@ export default {
       password: ""
     };
   },
+
   methods: {
     close() {
-      this.$emit("closeModal");
+      this.$emit("close_create_modal");
     },
-    fetchAcademics() {
+    save() {
+//
+    },
+    
+    /*fetchAcademics() {
       var options = {
         url: "http://localhost:8080/api/v1/module/academic/level",
         method: "GET"
@@ -83,10 +88,11 @@ export default {
           this.academic = response.body;
         },
         response => {
-          alert("NO");
+          alert("NO ");
         }
       );
     },
+
     fetchLaboratories() {
       var options = {
         url: "http://localhost:8080/api/v1/module/jobs",
@@ -102,6 +108,7 @@ export default {
         }
       );
     },
+
     fetchRoles() {
       var options = {
         url: "http://localhost:8080/api/v1/module/user/roles",
@@ -116,13 +123,14 @@ export default {
           alert("NO");
         }
       );
-    }
-  },
+    }*/
+
+  },/*
   created() {
     this.fetchAcademics();
     this.fetchLaboratories();
     this.fetchRoles();
-  }
+  }*/
 };
 
 //Clear input

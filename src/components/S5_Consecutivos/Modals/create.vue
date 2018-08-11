@@ -10,9 +10,9 @@
                               </header>
                               <section class="modal-card-body">
                   
-                             <div class="field">
-                                      <label class="label">Tipo de Consecutivo</label>
-                                          <div class="control">
+                             <div required  class="field">
+                                      <label required  class="label">Tipo de Consecutivo</label>
+                                          <div required class="control">
                                                   <div class="select is-rounded">
                                                       <select>
                                                         <option v-for="item in data00" :key="item.ID">
@@ -25,7 +25,7 @@
                   
                                   <div class="field">
                                       <label class="label">Prefijo</label>
-                                          <div class="control">
+                                          <div required  class="control">
                                               <input  v-model="prefix" class="input " id="myInput" type="text" placeholder="Text input">
                                           </div>
                                   </div>
@@ -33,29 +33,28 @@
                                   <div class="field">
                                       <label class="label">Descripcion</label>
                                           <div class="control">
-                                              <textarea class="textarea" id="myInput" placeholder="Descripcion" rows="10"></textarea>
-                                            <!--  <input v-model="desc" class="input " id="myInput" type="text" placeholder="Text input">-->
+                                              <textarea class="textarea" id="myInput2" placeholder="Descripcion" rows="10"></textarea>
                                           </div>
                                   </div>
                   
-                                  <div class="field">
-                                      <label class="label">Rango</label>
-                                          <div class="control">
-                                                  <div class="select is-rounded">
-                                                      <select> <!--Estas opciones se pueden poner en una tabla-->
-                                                        <option>1-100 </option>
-                                                        <option>1-1000 </option>
-                                                        <option>1-10000 </option>
-                                                        <option>1-100000 </option>
-                                                      </select>
-                                                  </div>
+                                  <div required class="field">
+                                      <label class="label">Rango Incial</label>
+                                          <div required  class="control">
+                                              <input  v-model="prefix" class="input " id="myInput2" type="number" placeholder="Number">
+                                          </div>
+                                  </div>
+
+                                    <div required class="field">
+                                      <label class="label">Rango Final</label>
+                                          <div required  class="control">
+                                              <input  v-model="prefix" class="input " id="myInput6" type="number" placeholder="Number">
                                           </div>
                                   </div>
 
                   
                               </section>
                               <footer class="modal-card-foot">
-                                  <button id="BTN_Guardar" class="button is-success">Save changes</button>
+                                  <button @click="save()" class="button is-success">Save changes</button>
                                   <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
                                   <button @click="close()" id="BTN_Cerrar" class="button is-danger">Cancel</button>
                               </footer>
@@ -69,7 +68,7 @@
 
 <script>
 export default {
-  props: ["open"],
+  props: ["open", "user"],
   data() {
     return {
       data00: null,
@@ -80,24 +79,13 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("closeModal");
+      this.$emit("close_create_modal");
+    },
+    save() {
+      //
     }
   },
-  mounted() {
-    var options = { 
-      url: "http://localhost:8080/api/v1/module/academic/level", //*******Cambiarlo al correcto path de RAMA CIENTIFICA********
-      method: "GET"
-    };
 
-    this.$http(options).then(
-      response => {
-        this.data00 = response.body;
-      },
-      response => {
-        alert("NO");
-      }
-    );
-  }
 };
 
 
