@@ -1,5 +1,9 @@
 <template>
-    <div class="columns">
+   
+</template>
+
+
+<!-- <div class="columns">
     <div class="column is-4">
             <div class="field">
                 <div class="field">
@@ -20,7 +24,7 @@
             </div>
         </div>
     
-        <div class="column is-2"> <!--revisar xq esta vara se sigue saliendo del margen-->
+        <div class="column is-2"> <!--revisar xq esta vara se sigue saliendo del margen-
             <div class="field">
                 <div class="field">
                     <p class="control">
@@ -30,9 +34,7 @@
             </div>
         </div>
 
-    </div>
-</template>
-
+    </div>-->
 
 <style scoped>
 </style>
