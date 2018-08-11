@@ -7,7 +7,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1.2/module/jobs",
+                url : "http://localhost:8080/api/v1.2/module/jobs",
                 method: "GET",
 
                 headers: {

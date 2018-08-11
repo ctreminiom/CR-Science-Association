@@ -1,6 +1,6 @@
 const mutations = {
-    LEVEL: (state, json) => {
-        state.level = json
+    EDUCATION: (state, json) => {
+        state.education = json
     },
 }
 

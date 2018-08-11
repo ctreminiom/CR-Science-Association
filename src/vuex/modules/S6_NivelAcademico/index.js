@@ -4,7 +4,7 @@ import mutations from './mutations'
 
 
 const state = {
-    Level: null
+    education: null
 }
 
 

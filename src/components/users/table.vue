@@ -94,16 +94,16 @@ export default {
     };
   },
 
-  created() {
-    this.$store.dispatch("fetchUsers").then(
-      response => {
-        this.data = this.$store.getters.users;
-      },
-      error => {
-        alert("ERROR PIDIENDO LOS USUARIOS");
-      }
-    );
-  },
+created() {
+  this.$store.dispatch("fetchUsers").then(
+    response => {
+      this.data = this.$store.getters.users;
+    },
+    error => {
+      alert("ERROR PIDIENDO LOS USUARIOS");
+    }
+  );
+},
   components: {
     Create,
     Delete,

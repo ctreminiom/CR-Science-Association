@@ -1,5 +1,5 @@
 const getters = {
-    Jobs: state => {return state.Jobs}
+    jobs: state => {return state.jobs}
 }
 
 export default getters

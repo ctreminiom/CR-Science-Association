@@ -1,5 +1,5 @@
 const getters = {
-    Level: state => {return state.Level}
+    education: state => {return state.education}
 }
 
 export default getters

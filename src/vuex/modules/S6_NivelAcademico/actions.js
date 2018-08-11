@@ -2,12 +2,12 @@ import Vue from 'vue'
 
 const actions = {
 
-    fetchALevel(context) {
+    fetchEducationLevel(context) {
 
         return new Promise((resolve, reject) => {
 
             let options = {
-                url : "http://ec2-18-217-36-47.us-east-2.compute.amazonaws.com/api/v1.2/module/education/levels",
+                url : "http://localhost:8080/api/v1.2/module/education/levels",
                 method: "GET",
 
                 headers: {
@@ -17,7 +17,7 @@ const actions = {
             }
 
             Vue.http(options).then(response => {
-                context.commit("LEVEL", response.body)
+                context.commit("EDUCATION", response.body)
                 resolve(true)
 
             }, error => {
