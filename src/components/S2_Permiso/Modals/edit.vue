@@ -37,33 +37,10 @@
 <script>
 export default {
   props: ["open", "user"],
-  data() {
-    return {
-      data00: null,
-      name: "",
-      desc: "",
-
-    };
-  },
   methods: {
     close() {
-      this.$emit("close_view_modal");
+      this.$emit("close_delete_modal");
     }
-  },
-  mounted() {
-    var options = { 
-      url: "http://localhost:8080/api/v1.2/module/grants", //*******Cambiarlo al correcto path de RAMA CIENTIFICA********
-      method: "GET"
-    };
-
-    this.$http(options).then(
-      response => {
-        this.data00 = response.body;
-      },
-      response => {
-        alert("Error al cargar la informacion del permiso");
-      }
-    );
   }
 };
 </script>

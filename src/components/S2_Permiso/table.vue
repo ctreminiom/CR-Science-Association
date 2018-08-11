@@ -36,14 +36,14 @@
                 <td>{{item.User}}</td>
                 <td>{{item.Role}}</td>
                 <td>
-                    <a @click="open_view_modal(item)" class="button is-link">Ver/ Editar</a>
+                    <a @click="open(item)" class="button is-link">Ver/ Editar</a>
                 </td>
             </tr>
 
         </tbody>
 
     </table>
-            <View :open="add_active_view" :user="id" @close_view_modal="close_view_modal"/>
+            <TEST :open="add_active_view" :user="id" @close_delete_modal="close_delete_modal"/>
  </div>
 <!---->
 </template>
@@ -52,7 +52,7 @@
 
 <script>
 
-import View from "@/components/S2_Permiso/Modals/edit.vue";
+import TEST from "@/components/S2_Permiso/Modals/edit.vue";
 
 export default {
   data() {
@@ -64,7 +64,7 @@ export default {
     };
   },
   components: {
-      View
+      TEST
   },
   created() {
 
@@ -75,11 +75,13 @@ export default {
       })
   },
   methods: {
-    add_active_view() {
+    open(id) {
       this.add_active_view = "is-active";
+      this.id = id
+
     },
     close_delete_modal() {
-      this.close_delete_modal = "";
+      this.add_active_view = "";
     }
 
   }
