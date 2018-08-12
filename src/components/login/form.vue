@@ -1,101 +1,67 @@
 <template>
+    <div class="container">
+        <div class="columns">
 
-    <section background="Capture.PNG" class="hero white-ter">
-    
-        <div background="Capture.PNG" class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
-    
-                    <h3 class="title has-text-grey">{{ title }}</h3>
-    
-                    <div class="box">
-    
-                        <form>
-    
-                            <div class="field">
-                                <div class="control">
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input class="input" type="text" placeholder="Username" v-model="username">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    </p>
-                                </div>
-                            </div>
-    
-                            <div class="field">
-                                <div class="control">
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input class="input" type="password" placeholder="Username" v-model="password">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-unlock-alt"></i>
-                                    </span>
-                                    </p>
-                                </div>
-                            </div>
-    
-                            <div class="control">
-                                
-                                <a @click="login" class="button is-dark">Outlined</a>
+             <div class="column col-4 col-mx-auto">
 
-<a
-	v-for="lang in $ml.list"
-	:key="lang"
-	@click="$ml.change(lang)"
-	v-text="lang"
-/>
+                <div class="card">
+                    <div class="card-body">
 
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input class="form-input" type="text" v-model="user.username">
+                        </div>
 
-                            </div>
-                        </form>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input class="form-input" type="password" v-model="user.password">
+                        </div>
+                        
                     </div>
-    
-    
+                    <div class="card-footer">
+                        <a @click="login()" class="btn btn-success">Login</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
+        </div>
+    </div>
 </template>
 
 
-
 <script>
-
-import { MLBuilder } from 'vue-multilanguage'
-    export default {
-        data() {
-            return {
-                title: "Welcome to the system",
-                username: "",
-                password: ""
-            };
-        },
-    
-        methods: {
-            login() {
-    
-                var user = {
-                    username: this.username,
-                    password: this.password
-                }
-
-                this.$store.dispatch('login', user).then(response => {
-
-                    this.$router.push("/dashboard");
-    
-                }, error => {
-                    alert("Usuario o contrasena incorrectos")
-                })
-    
-    
-            }
-        }
+export default {
+  data() {
+    return {
+      user: {
+        username: "",
+        passoword: ""
+      }
     };
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login", this.user).then(
+        response => {
+          console.log(response);
+
+          this.$notify({
+            group: "foo",
+            type: "success",
+            text: "Login successuffly!"
+          });
+
+          this.$router.push("/dashboard");
+        },
+        error => {
+          this.$notify({
+            group: "foo",
+            type: "error",
+            text: "Invalid username or passoword!"
+          });
+        }
+      );
+    }
+  }
+};
 </script>
-
-
-
-<style scoped>
-    
-</style>

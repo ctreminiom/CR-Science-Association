@@ -3,35 +3,30 @@ import Vue from 'vue'
 
 const actions = {
 
-    login(context, user) {
+    consecutives(context) {
 
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/users/login",
+                url: "http://localhost:8080/api/v1.2/module/consecutives",
                 method: "GET",
 
 
                 headers: {
                     Authorization:
-                        "Basic " +
-                        new Buffer(user.username + ":" + user.password).toString("base64")
+                    "Bearer " + localStorage.getItem("token")
                 }
             }
 
             Vue.http(options).then(response => {
-                context.commit("TOKEN", response.body)
+                context.commit("CONSECUTIVES", response.body)
                 resolve(response)
             }, error => {
                 reject(error)
             })
 
         })
-
-
-
     }
-
 
 }
 

@@ -3,24 +3,23 @@ import Vue from 'vue'
 
 const actions = {
 
-    login(context, user) {
+    educationLevels(context) {
 
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/users/login",
+                url: "http://localhost:8080/api/v1.2/module/education/levels",
                 method: "GET",
 
 
                 headers: {
                     Authorization:
-                        "Basic " +
-                        new Buffer(user.username + ":" + user.password).toString("base64")
+                    "Bearer " + localStorage.getItem("token")
                 }
             }
 
             Vue.http(options).then(response => {
-                context.commit("TOKEN", response.body)
+                context.commit("EDUCATION", response.body)
                 resolve(response)
             }, error => {
                 reject(error)
