@@ -10,7 +10,7 @@
     <li class="breadcrumb-item">
         <router-link to="/dashboard/module/security/laboratory/role">
             <i class="fas fa-microscope"></i>
-            Laboratory Role
+            Laboratory Roles
         </router-link>
     </li>
 </ul>
