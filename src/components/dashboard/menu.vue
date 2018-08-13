@@ -21,39 +21,39 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="#">
+                        <router-link to="/dashboard/module/security/grants">
                             <i class="fas fa-braille"></i>
                             Grants
-                        </a>
+                        </router-link>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#">
+                         <router-link to="/dashboard/module/security/grades">
                             <i class="fas fa-graduation-cap"></i>
                             Grades
-                        </a>
+                        </router-link>
                     </li>
 
 
                     <li class="menu-item">
-                        <a href="#">
+                        <router-link to="/dashboard/module/security/education/level">
                             <i class="fas fa-award"></i>
                             Education Level
-                        </a>
+                        </router-link>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#">
-                            <i class="fas fa-microscope"></i>
+                        <router-link to="/dashboard/module/security/laboratory/role">
+                             <i class="fas fa-microscope"></i>
                             Laboratory Role
-                        </a>
+                        </router-link>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#">
+                        <router-link to="/dashboard/module/security/jobs">
                             <i class="fas fa-briefcase"></i>
-                            Job
-                        </a>
+                            Jobs
+                        </router-link>
                     </li>
 
 

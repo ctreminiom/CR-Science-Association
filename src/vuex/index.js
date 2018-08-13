@@ -8,8 +8,13 @@ import roleModule from './modules/role'
 import educationModule from './modules/educationLevel'
 import jobModule from './modules/job'
 
-
 import consecutiveModule from './modules/consecutive'
+import grantModule from './modules/grants'
+
+import gradeModule from './modules/grade'
+import labModule from './modules/laboratoryRole'
+
+
 
 
 
@@ -26,6 +31,9 @@ export default new Vuex.Store({
     education: educationModule,
     job: jobModule,
     consecutive: consecutiveModule,
+    grant: grantModule,
+    grade: gradeModule,
+    lab: labModule,
   }
 
 

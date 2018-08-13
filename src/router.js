@@ -10,6 +10,18 @@ import Dashboard from "./views/system/dashboard.vue"
 
 import User from './views/system/user.vue'
 import Consecutives from './views/system/consecutive.vue'
+import Grants from './views/system/grant.vue'
+
+import Grades from './views/system/grades.vue'
+
+import Education from './views/system/educationLevel.vue'
+
+import Laboratory from './views/system/laboratory.vue'
+
+import Job from './views/system/job.vue'
+
+
+
 
 
 Vue.use(Router);
@@ -32,8 +44,14 @@ const router = new Router({
     {
       path: '/dashboard', component: Dashboard, meta: { requiredsAuth: true },
       children: [
-        {path: 'module/security/users', component: User},
-        {path: 'module/security/consecutives', component: Consecutives },
+        { path: 'module/security/users', component: User },
+        { path: 'module/security/consecutives', component: Consecutives },
+        { path: 'module/security/grants', component: Grants },
+        { path: 'module/security/grades', component: Grades },
+        { path: 'module/security/education/level', component: Education },
+        { path: 'module/security/laboratory/role', component: Laboratory },
+        { path: 'module/security/jobs', component: Job },
+
       ]
     }
 
