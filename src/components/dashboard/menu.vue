@@ -100,24 +100,25 @@
                     <div class="queries">
                         <li class="divider" data-content="QUERIES">
                             <li class="menu-item">
-                                <a href="#">
+                                <router-link to="/dashboard/module/consultas/activities">
                                     <i class="fas fa-exclamation-triangle"></i>
                                     Activities
-                                </a>
+                                </router-link>
+                                
                             </li>
 
                             <li class="menu-item">
-                                <a href="#">
+                                <router-link to="/dashboard/module/consultas/errors">
                                     <i class="fas fa-bug"></i>
                                     Errors
-                                </a>
+                                </router-link>
                             </li>
 
                             <li class="menu-item">
-                                <a href="#">
+                                <router-link to="/dashboard/module/consultas/downloads">
                                     <i class="fas fa-cloud-download-alt"></i>
                                     Downloads
-                                </a>
+                                </router-link>
                             </li>
                     </div>
 
