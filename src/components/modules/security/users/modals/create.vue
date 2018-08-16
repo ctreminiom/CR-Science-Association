@@ -1,15 +1,5 @@
 <template>
-<<<<<<< HEAD
     <div class="modal" :class="open">
-=======
-<form
- id="app"
-  @submit="checkForm"
-  action="https://vuejs.org/"
-  method="post">
-
-    <div class="modal modal-lg" :class="open">
->>>>>>> 65bb551ccc2765af79b18de160a932c0ba170565
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
@@ -19,14 +9,6 @@
             <div class="modal-body">
                 <div class="content">
                 <form class="form-horizontal">
-          <!--Codigo que ensena los errores cuando existe-->
-                    <p v-if="errors.length">
-                    <b>Please correct the following error(s):</b>
-                    <ul>
-                      <li v-for="error in errors">{{ error }}</li>
-                    </ul>
-                    </p>
-          <!--Codigo que ensena los errores cuando existe-->
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
                     <label class="form-label" for="Name">Name</label>
@@ -158,7 +140,6 @@
             </div>
         </div>
 </div>
-</form>
 </template>
 
 
