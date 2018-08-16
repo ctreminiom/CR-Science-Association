@@ -19,7 +19,11 @@ import Education from './views/system/educationLevel.vue'
 import Laboratory from './views/system/laboratory.vue'
 
 import Job from './views/system/job.vue'
+//Consultas
 
+import Activities from "./views/system/Consultas/activities.vue"
+import Downloads from "./views/system/Consultas/downloads.vue"
+import Errores from "./views/system/Consultas/errors.vue"
 
 
 
@@ -52,6 +56,10 @@ const router = new Router({
         { path: 'module/security/laboratory/role', component: Laboratory },
         { path: 'module/security/jobs', component: Job },
 
+        { path: 'module/consultas/downloads', component: Downloads},
+        { path: 'module/consultas/activities', component: Activities},
+        { path: 'module/consultas/errors', component: Errores},
+        
       ]
     }
 

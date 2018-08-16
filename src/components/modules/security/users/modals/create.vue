@@ -1,5 +1,15 @@
 <template>
+<<<<<<< HEAD
     <div class="modal" :class="open">
+=======
+<form
+ id="app"
+  @submit="checkForm"
+  action="https://vuejs.org/"
+  method="post">
+
+    <div class="modal modal-lg" :class="open">
+>>>>>>> 65bb551ccc2765af79b18de160a932c0ba170565
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
@@ -8,59 +18,66 @@
             </div>
             <div class="modal-body">
                 <div class="content">
-
                 <form class="form-horizontal">
+          <!--Codigo que ensena los errores cuando existe-->
+                    <p v-if="errors.length">
+                    <b>Please correct the following error(s):</b>
+                    <ul>
+                      <li v-for="error in errors">{{ error }}</li>
+                    </ul>
+                    </p>
+          <!--Codigo que ensena los errores cuando existe-->
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Name</label>
+                    <label class="form-label" for="Name">Name</label>
                     </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Name" v-model="user.name">
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="text" id="Name" placeholder="Name" v-model="user.name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Surname</label>
+                    <label class="form-label" for="Surname">Surname</label>
                     </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Surname" v-model="user.surname">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Second Surname</label>
-                    </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Second Surname" v-model="user.secondSurname">
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="text" id="Surname" placeholder="Surname" v-model="user.surname">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Username</label>
+                    <label class="form-label" for="SecondS">Second Surname</label>
                     </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Username" v-model="user.username">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Password</label>
-                    </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Password" v-model="user.password">
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="text" id="SecondS" placeholder="Second Surname" v-model="user.secondSurname">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Phone</label>
+                    <label class="form-label" for="Username">Username</label>
                     </div>
-                    <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Password" v-model="user.phone">
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="text" id="Username" placeholder="Username" v-model="user.username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-3 col-sm-12">
+                    <label class="form-label" for="Password">Password</label>
+                    </div>
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="password" id="Password" placeholder="Password" v-model="user.password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-3 col-sm-12">
+                    <label class="form-label" for="Phone">Phone</label>
+                    </div>
+                    <div required class="col-9 col-sm-12">
+                    <input required class="form-input" type="number" id="Phone" placeholder="Password" v-model="user.phone">
                     </div>
                 </div>
 
@@ -70,7 +87,7 @@
                     </div>
 
                     <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.role">
+                        <select required class="form-select" v-model="selected.role">
                             <option v-for="item in json.role" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -85,7 +102,7 @@
                     </div>
 
                      <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.education">
+                        <select required class="form-select" v-model="selected.education">
                             <option v-for="item in json.education" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -100,7 +117,7 @@
                     </div>
 
                     <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.job">
+                        <select required class="form-select" v-model="selected.job">
                             <option v-for="item in json.job" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -117,7 +134,7 @@
                     </div>
 
                     <div class="col-9 col-sm-12">
-                         <input class="form-file" type="file" name="resume" @change="processFile($event)">
+                         <input required class="form-file" type="file" name="resume" @change="processFile($event)">
                     </div>
                     
                 </div>
@@ -128,9 +145,20 @@
             </div>
             <div class="modal-footer">
                 <button @click="save()" class="btn btn-primary">Create</button>
+                <input type="button" name="reset_form" class="button is-warning" value="Clear fields" onclick="this.form.reset();">
+
+  <p>
+    <input
+      type="submit"
+      value="Validar cambios"
+      class="button is-link is-outlined"
+    >
+  </p>
+
             </div>
         </div>
 </div>
+</form>
 </template>
 
 
@@ -277,6 +305,86 @@ export default {
     );
   }
 };
+
+//funcion limpiar campos
+function clearForm(oForm) {
+    
+  var elements = oForm.elements; 
+    
+  oForm.reset();
+  for(i=0; i<elements.length; i++) {
+      
+  field_type = elements[i].type.toLowerCase();
+  
+  switch(field_type) {
+  
+    case "text": 
+    case "password": 
+    case "textarea":
+          case "hidden":   
+      
+      elements[i].value = ""; 
+      break;
+        
+    case "radio":
+    case "checkbox":
+        if (elements[i].checked) {
+          elements[i].checked = false; 
+      }
+      break;
+    case "select-one":
+    case "select-multi":
+                elements[i].selectedIndex = -1;
+      break;
+    default: 
+      break;
+  }
+    }
+}
+
+//funcion validar todos los campos
+const app = new Vue({
+  el: '#app',
+  data: {
+    errors: [],
+        Name: null,
+        Surname: null,
+        SecondS: null,
+        Phone: null,
+        Username: null,
+        Password: null,
+  },
+  methods:{
+    checkForm: function (e) {
+      if (this.Name && this.Surname && this.Phone && this.SecondS && this.Username && this.Password ) { //revisar si si lo que esta ingrsando es el id u otro parametro
+        return true;
+      }
+
+      this.errors = [];
+
+      if (!this.Name) {
+        this.errors.push('Name required.');
+      }
+      if (!this.Surname) {
+        this.errors.push('Lastname required.');
+      }
+      if (!this.SecondS) {
+        this.errors.push('Second Lastname required.');
+      }
+      if (!this.Phone) {
+        this.errors.push('Lastname required.');
+      }
+      if (!this.Username) {
+        this.errors.push('Username required.');
+      }
+      if (!this.Password) {
+        this.errors.push('Password required.');
+      }
+
+      e.preventDefault();
+    }
+  }
+})
 </script>
 
 
