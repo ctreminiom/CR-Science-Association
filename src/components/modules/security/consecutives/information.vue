@@ -10,6 +10,9 @@
             <div class="colunm col-3">
                 <input class="form-input" type="text" placeholder="search">
             </div>
+            <div class="colunm col-3">
+                <button @click="openCreateModal_Consecutives()" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
 
     </div>
@@ -36,7 +39,7 @@
                     <td>{{consecutive.Consecutive}}</td>
                     <td>
                         <div class="btn-group btn-group-block">
-                        <button @click="openViewModal(user)" class="btn btn-success">View</button>
+                        <button @click="openViewModal_Consecutives(user)" class="btn btn-success">View</button>
                         <button class="btn btn-primary">Edit</button>
                         </div> 
                     </td>
@@ -47,7 +50,7 @@
 
     </div>
     </div>
-    <view-data :open="active_view" :user="consecutive" @close="closeViewModal()"/>
+    <view-data :open="active_view" :user="consecutive" @close="closeViewModal_Consecutives()"/>
 
     </ul>
     
@@ -55,7 +58,8 @@
 
 
 <script>
-import viewData from '@/components/modules/security/consecutives/modals/view.vue';
+import viewData_Consecutives from '@/components/modules/security/consecutives/modals/view.vue';
+import createData_Jobs from '@/components/modules/security/consecutives/modals/create.vue';
 
 export default {
   data() {
@@ -89,16 +93,23 @@ export default {
   },
 
   methods: {
-    openViewModal(user) {
+    openViewModal_Consecutives(user) {
       this.active_view = "active";
       this.user = user;
     },
-
-    closeViewModal() {
+    closeViewModal_Consecutives() {
       this.active_view = "";
+    },
+
+    openCreateModal_Consecutives(user) {
+      this.active_create = "active";
+      this.user = user;
+    },
+    closeCreateModal_Consecutives(){
+      this.active_create = "";
     }
   },
 
-  components: {viewData}
+  components: {viewData_Consecutives, createData_Consecutives}
 };
 </script>

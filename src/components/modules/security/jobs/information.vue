@@ -10,6 +10,9 @@
             <div class="colunm col-3">
                 <input class="form-input" type="text" placeholder="search">
             </div>
+            <div class="colunm col-3">
+                <button @click="openCreateModal_Jobs()" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
 
     </div>
@@ -44,20 +47,22 @@
 
     </div>
     </div>
-    <view-data :open="active_view" :user="job" @close="closeViewModal()"/>
-
+    <view-data :open="active_view" :user="job" @close="closeViewModal_Jobs()"/>
+    <create-data :open="active_create" @close="closeCreateModal_Jobs()"/>
     </ul>
     
 </template>
 
 
 <script>
-import viewData from '@/components/modules/security/consecutives/modals/view.vue';
+import viewData_Jobs from '@/components/modules/security/consecutives/modals/view.vue';
+import createData_Jobs from '@/components/modules/security/consecutives/modals/create.vue';
 
 export default {
   data() {
     return {
       active_view: "",
+      active_create: "",
       job: "",
       jobs: null
     };
@@ -86,16 +91,23 @@ export default {
   },
 
   methods: {
-    openViewModal(user) {
+    openViewModal_Jobs(user) {
       this.active_view = "active";
       this.user = user;
     },
-
-    closeViewModal() {
+    closeViewModal_Jobs() {
       this.active_view = "";
+    },
+
+    openCreateModal_Jobs(user) {
+      this.active_create = "active";
+      this.user = user;
+    },
+    closeCreateModal_Jobs(){
+      this.active_create = "";
     }
   },
 
-  components: {viewData}
+  components: {viewData_Jobs, createData_Jobs}
 };
 </script>

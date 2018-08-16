@@ -10,6 +10,9 @@
             <div class="colunm col-3">
                 <input class="form-input" type="text" placeholder="search">
             </div>
+            <div class="colunm col-3">
+                <button @click="openCreateModal_EducationLevel" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
 
     </div>
@@ -49,20 +52,22 @@
 
     </div>
     </div>
-    <view-data :open="active_view" :user="education" @close="closeViewModal()"/>
-
+    <view-data :open="active_view" :user="education" @close="closeViewModal_EducationLevel()"/>
+    <create-data :open="active_create" @close="closeCreateModal_EducationLevel()"/>
     </ul>
     
 </template>
 
 
 <script>
-import viewData from '@/components/modules/security/educationLevel/modals/view.vue';
+import viewData_EducationLevel from '@/components/modules/security/educationLevel/modals/view.vue';
+import createData_EducationLevel from '@/components/modules/security/educationLevel/modals/create.vue';
 
 export default {
   data() {
     return {
       active_view: "",
+      active_create: "",
       education: "",
       level: null
     };
@@ -91,16 +96,24 @@ export default {
   },
 
   methods: {
-    openViewModal(user) {
+    openViewModal_EducationLevel(user) {
       this.active_view = "active";
       this.user = user;
     },
 
-    closeViewModal() {
+    closeViewModal_EducationLevel() {
       this.active_view = "";
+    },
+
+    openCreateModal_EducationLevel(user) {
+      this.active_create = "active";
+      this.user = user;
+    },
+    closeCreateModal_EducationLevel(){
+      this.active_create = "";
     }
   },
 
-  components: {viewData}
+  components: {viewData_EducationLevel, createData_EducationLevel}
 };
 </script>

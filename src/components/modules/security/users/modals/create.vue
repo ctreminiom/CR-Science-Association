@@ -1,4 +1,5 @@
 <template>
+<form>
     <div class="modal" :class="open">
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
@@ -132,7 +133,7 @@
   <p>
     <input
       type="submit"
-      value="Validar cambios"
+      value="Validar cambios TEST"
       class="button is-link is-outlined"
     >
   </p>
@@ -140,6 +141,7 @@
             </div>
         </div>
 </div>
+</form>
 </template>
 
 
