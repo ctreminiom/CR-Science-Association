@@ -1,5 +1,5 @@
 <template>
-    <div class="modal modal-lg" :class="open">
+    <div class="modal" :class="open">
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
@@ -112,6 +112,8 @@
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
                         <label class="form-label">Sign</label>
+                        <a @click="close()" class="btn btn-clear float-right" aria-label="Close"></a>
+
                     </div>
 
                     <div class="col-9 col-sm-12">
@@ -186,48 +188,33 @@ export default {
 
       formData.append("sign", this.user.sign, this.user.sign.name);
 
-      this.$http
-        .post("http://localhost:8080/api/v1.2/module/users", formData)
-        .then(
-          response => {
-            this.close();
+      let options = {
+        url: "http://localhost:8080/api/v1.2/module/users",
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token")
+        }
+      };
 
-            this.$notify({
-              group: "foo",
-              type: "success",
-              text: "User created!"
-            });
+      this.$http(options).then(
+        response => {
 
-            this.$store.dispatch("roles").then(
-              response => {
-                this.$notify({
-                  group: "foo",
-                  type: "success",
-                  text: "Role loaded!"
-                });
-                this.json.role = this.$store.getters.roles;
-              },
-              error => {
-                console.log(error);
-                this.$notify({
-                  group: "foo",
-                  type: "error",
-                  text: "Error feching de roles!"
-                });
-              }
-            );
-          },
+          this.$notify({
+            group: "foo",
+            type: "success",
+            text: "User created!"
+          });
+        },
+        error => {
+          this.$notify({
+            group: "foo",
+            type: "error",
+            text: error.body
+          });
+        }
+      );
 
-          response => {
-            console.log(response);
-
-            this.$notify({
-              group: "foo",
-              type: "error",
-              text: response.body
-            });
-          }
-        );
     }
   },
 

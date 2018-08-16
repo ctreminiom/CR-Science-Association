@@ -41,7 +41,7 @@
                     <td>
                         <div class="btn-group btn-group-block">
                         <button @click="openViewModal(user)" class="btn btn-success">View</button>
-                        <button class="btn btn-primary">Password</button>
+                        <button @click="openPassowordModal(user)" class="btn btn-primary">Password</button>
                         <button class="btn btn-error">Delete</button>
                         </div> 
                     </td>
@@ -50,14 +50,12 @@
             </tbody>
         </table>
 
-
-
-        
-
     </div>
     </div>
     <view-data :open="active_view" :user="user" @close="closeViewModal()"/>
     <create-data :open="active_create" @close="closeCreateModal()"/>
+    <pass-data :open="active_password" :user="user"  @close="closePasswordModal()"/>
+
 
     </ul>
     
@@ -67,6 +65,8 @@
 <script>
 import viewData from '@/components/modules/security/users/modals/view.vue';
 import createData from "@/components/modules/security/users/modals/create.vue";
+import passData from "@/components/modules/security/users/modals/password.vue";
+
 
 export default {
   data() {
@@ -81,7 +81,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("users").then(
+    this.$store.dispatch("getUsers").then(
       response => {
           this.$notify({
           group: "foo",
@@ -138,6 +138,6 @@ export default {
     }
   },
 
-  components: {viewData, createData}
+  components: {viewData, createData, passData}
 };
 </script>

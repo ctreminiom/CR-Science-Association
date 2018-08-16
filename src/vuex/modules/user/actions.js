@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 const actions = {
 
-    users(context) {
+    getUsers(context) {
 
         return new Promise((resolve, reject) => {
 
@@ -14,7 +14,7 @@ const actions = {
 
                 headers: {
                     Authorization:
-                    "Bearer " + localStorage.getItem("token")
+                        "Bearer " + localStorage.getItem("token")
                 }
             }
 
@@ -28,13 +28,46 @@ const actions = {
         })
     },
 
-    saveUser(context, data) {
+    createUser(context, data) {
 
         return new Promise((resolve, reject) => {
 
-            console.log(data)
 
-            Vue.http.post("http://localhost:8080/api/v1.2/module/users", data).then(response =>{
+            let options = {
+                url: "http://localhost:8080/api/v1.2/module/users",
+                method: "POST",
+                body: data,
+                headers: {
+                    Authorization:
+                        "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+
+            Vue.http(options).then(response => {
+                resolve(response)
+            }, error => {
+                reject(error)
+            })
+
+        })
+    },
+
+    updateUser(context, data) {
+
+        return new Promise((resolve, reject) => {
+
+            let options = {
+                url: `http://localhost:8080/api/v1.2/module/users/update/${data.ID}/password/${data.password}`,
+                method: "PUT",
+
+                headers: {
+                    Authorization:
+                        "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+            Vue.http(options).then(response => {
                 resolve(response)
             }, error => {
                 reject(error)

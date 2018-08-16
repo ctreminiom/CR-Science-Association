@@ -1,5 +1,5 @@
 <template>
-<div class="modal modal-lg" :class="open">
+<div class="modal" :class="open">
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
@@ -84,6 +84,8 @@
                     <div class="form-group">
                         <div class="col-3 col-sm-12">
                         <label class="form-label">Sign</label>
+                <a @click="close()" class="btn btn-clear float-right" aria-label="Close"></a>
+
                         </div>
                         <div class="col-9 col-sm-12">
                             <img v-bind:src="'http://localhost:8080' + user.Sign" width="120px" height="120px">

@@ -30,6 +30,32 @@ const actions = {
 
 
 
+    },
+
+    permissions(context, user) {
+
+        return new Promise((resolve, reject) => {
+
+            let options = {
+                url: "http://localhost:8080/api/v1.2/module/grants/permissions",
+                method: "GET",
+                headers: {
+                    Authorization:
+                        "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+            Vue.http(options).then(response => {
+                context.commit("PERMISSIONS", response.body)
+                resolve(response)
+            }, error => {
+                reject(error)
+            })
+
+        })
+
+
+
     }
 
 
