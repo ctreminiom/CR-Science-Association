@@ -59,9 +59,6 @@
                     </li>
 
                     </div>
-
-
-
                     <div class="administration" v-if="rendering.modules.administration">
                         <li class="divider" data-content="ADMINISTRATION">
                             <li class="menu-item">
