@@ -8,7 +8,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/users",
+                url: "http://18.222.31.81:8080/api/v1.2/module/users",
                 method: "GET",
 
 
@@ -34,7 +34,7 @@ const actions = {
 
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/users",
+                url: "http://18.222.31.81:8080/api/v1.2/module/users",
                 method: "POST",
                 body: data,
                 headers: {
@@ -58,7 +58,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: `http://localhost:8080/api/v1.2/module/users/update/${data.ID}/password/${data.password}`,
+                url: `http://18.222.31.81:8080/api/v1.2/module/users/update/${data.ID}/password/${data.password}`,
                 method: "PUT",
 
                 headers: {

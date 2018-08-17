@@ -8,7 +8,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/education/levels",
+                url: "http://18.222.31.81:8080/api/v1.2/module/education/levels",
                 method: "GET",
 
 
@@ -36,7 +36,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/education/levels",
+                url: "http://18.222.31.81:8080/api/v1.2/module/education/levels",
                 method: "POST",
                 body: {"grade": data.grade ,"name":data.ID, "description": data.description},
                 headers: {
@@ -62,7 +62,7 @@ const actions = {
             console.log(data)
 
             let options = {
-                url: `http://localhost:8080/api/v1.2/module/education/levels/${data}`,
+                url: `http://18.222.31.81:8080/api/v1.2/module/education/levels/${data}`,
                 method: "DELETE",
                 headers: {
                     Authorization:

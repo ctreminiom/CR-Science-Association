@@ -189,7 +189,7 @@ export default {
       formData.append("sign", this.user.sign, this.user.sign.name);
 
       let options = {
-        url: "http://localhost:8080/api/v1.2/module/users",
+        url: "http://18.222.31.81:8080/api/v1.2/module/users",
         method: "POST",
         body: formData,
         headers: {

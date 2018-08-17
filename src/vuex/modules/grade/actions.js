@@ -8,7 +8,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/grades",
+                url: "http://18.222.31.81:8080/api/v1.2/module/grades",
                 method: "GET",
 
 
@@ -34,7 +34,7 @@ const actions = {
         return new Promise((resolve, reject) => {
 
             let options = {
-                url: "http://localhost:8080/api/v1.2/module/grades",
+                url: "http://18.222.31.81:8080/api/v1.2/module/grades",
                 method: "POST",
                 body: {"name":json},
                 headers: {
@@ -61,7 +61,7 @@ const actions = {
             console.log(data)
 
             let options = {
-                url: `http://localhost:8080/api/v1.2/module/grades/${data}`,
+                url: `http://18.222.31.81:8080/api/v1.2/module/grades/${data}`,
                 method: "DELETE",
                 headers: {
                     Authorization:
