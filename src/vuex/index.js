@@ -14,6 +14,12 @@ import grantModule from './modules/grants'
 import gradeModule from './modules/grade'
 import labModule from './modules/laboratoryRole'
 
+import errorModule from './modules/errors'
+
+import activityModule from './modules/activities'
+
+
+
 
 
 
@@ -34,6 +40,8 @@ export default new Vuex.Store({
     grant: grantModule,
     grade: gradeModule,
     lab: labModule,
+    error: errorModule,
+    activities: activityModule,
   }
 
 

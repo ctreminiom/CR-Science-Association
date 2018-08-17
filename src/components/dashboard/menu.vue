@@ -105,17 +105,17 @@
                     <div class="queries" v-if="rendering.modules.query">
                         <li class="divider" data-content="QUERIES">
                             <li class="menu-item">
-                                <a href="#">
+                                <router-link to="/dashboard/module/queries/activities">
                                     <i class="fas fa-exclamation-triangle"></i>
                                     Activities
-                                </a>
+                                </router-link>
                             </li>
 
                             <li class="menu-item">
-                                <a href="#">
+                                <router-link to="/dashboard/module/queries/errors">
                                     <i class="fas fa-bug"></i>
                                     Errors
-                                </a>
+                                </router-link>
                             </li>
 
                             <li class="menu-item">
