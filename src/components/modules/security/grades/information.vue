@@ -10,6 +10,10 @@
             <div class="colunm col-3">
                 <input class="form-input" type="text" placeholder="search">
             </div>
+
+            <div class="colunm col-3">
+                <button @click="openCreateModal()" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
 
     </div>
@@ -34,7 +38,7 @@
                     <td>{{grade.Name}}</td>
                     <td>
                         <div class="btn-group btn-group-block">
-                        <button class="btn btn-primary">View</button>
+                        <button @click="openDeleteModal(grade.ID)" class="btn btn-error">Delete</button>
                         </div> 
                     </td>
 
@@ -44,7 +48,10 @@
 
     </div>
     </div>
-    <view-data :open="active_view" :user="grade" @close="closeViewModal()"/>
+    <create-data :open="active_create" @close="closeCreateModal()"/>
+
+    <delete-data :open="active_delete" :grade="grade" @close="closeDeleteModal()"/>
+
 
     </ul>
     
@@ -52,13 +59,16 @@
 
 
 <script>
-import viewData from '@/components/modules/security/consecutives/modals/view.vue';
+import createData from '@/components/modules/security/grades/modals/create.vue';
+import deleteData from '@/components/modules/security/grades/modals/delete.vue';
+
 
 export default {
   data() {
     return {
-      active_view: "",
-      grade: "",
+      active_delete: "",
+      active_create: "",
+      grade: {id: null},
       grades: null
     };
   },
@@ -86,16 +96,24 @@ export default {
   },
 
   methods: {
-    openViewModal(user) {
-      this.active_view = "active";
-      this.user = user;
+    openDeleteModal(id) {
+      this.active_delete = "active";
+      this.grade.id = id;
     },
 
-    closeViewModal() {
-      this.active_view = "";
+    openCreateModal() {
+        this.active_create = "active"
+    },
+
+    closeDeleteModal() {
+      this.active_delete = "";
+    },
+
+    closeCreateModal(){
+        this.active_create = "";
     }
   },
 
-  components: {viewData}
+  components: {createData, deleteData}
 };
 </script>

@@ -10,6 +10,10 @@
             <div class="colunm col-3">
                 <input class="form-input" type="text" placeholder="search">
             </div>
+
+            <div class="colunm col-3">
+                <button @click="openCreateModal()" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
 
     </div>
@@ -39,7 +43,7 @@
                     <td>{{education.Description}}</td>
                     <td>
                         <div class="btn-group btn-group-block">
-                        <button class="btn btn-primary">View</button>
+                        <button @click="openDeleteModal(education.ID)" class="btn btn-error">Delete</button>
                         </div> 
                     </td>
 
@@ -49,7 +53,10 @@
 
     </div>
     </div>
-    <view-data :open="active_view" :user="education" @close="closeViewModal()"/>
+
+    <create-data :open="active_create" @close="closeCreateModal()"/>
+
+    <delete-data :open="active_delete" :education="education" @close="closeDeleteModal()"/>
 
     </ul>
     
@@ -57,13 +64,16 @@
 
 
 <script>
-import viewData from '@/components/modules/security/educationLevel/modals/view.vue';
+
+import createData from '@/components/modules/security/educationLevel/modals/create.vue';
+import deleteData from '@/components/modules/security/educationLevel/modals/delete.vue';
 
 export default {
   data() {
     return {
-      active_view: "",
-      education: "",
+      active_delete: "",
+      active_create: "",
+      education:{id: null},
       level: null
     };
   },
@@ -91,16 +101,25 @@ export default {
   },
 
   methods: {
-    openViewModal(user) {
-      this.active_view = "active";
-      this.user = user;
+    openDeleteModal(id) {
+      this.active_delete = "active";
+      this.grade.id = id;
     },
 
-    closeViewModal() {
-      this.active_view = "";
+    openCreateModal() {
+        this.active_create = "active"
+    },
+
+    closeDeleteModal() {
+      this.active_delete = "";
+    },
+
+    closeCreateModal(){
+        this.active_create = "";
     }
   },
 
-  components: {viewData}
+  components: {createData, deleteData}
+
 };
 </script>

@@ -27,7 +27,55 @@ const actions = {
 
         })
 
+    },
 
+    createGrade(context, json) {
+
+        return new Promise((resolve, reject) => {
+
+            let options = {
+                url: "http://localhost:8080/api/v1.2/module/grades",
+                method: "POST",
+                body: {"name":json},
+                headers: {
+                    Authorization:
+                    "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+            Vue.http(options).then(response => {
+                resolve(response)
+            }, error => {
+                reject(error)
+            })
+
+        })
+
+    },
+
+
+    deleteGrade(context, data) {
+
+        return new Promise((resolve, reject) => {
+
+            console.log(data)
+
+            let options = {
+                url: `http://localhost:8080/api/v1.2/module/grades/${data}`,
+                method: "DELETE",
+                headers: {
+                    Authorization:
+                    "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+            Vue.http(options).then(response => {
+                resolve(response)
+            }, error => {
+                reject(error)
+            })
+
+        })
 
     }
 
