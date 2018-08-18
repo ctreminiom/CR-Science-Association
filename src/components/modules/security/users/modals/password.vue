@@ -1,6 +1,6 @@
 <template>
 <div class="modal" :class="open">
-    <a href="#" @click="close()" class="modal-overlay" aria-label="Close"></a>
+    <a @click="close()" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
                 <a @click="close()" class="btn btn-clear float-right" aria-label="Close"></a>

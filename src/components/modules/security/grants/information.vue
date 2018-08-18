@@ -19,10 +19,10 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>User</th>
-                    <th>Role</th>
                     <th>Consecutive</th>
-                    <th>Actions</th>
+                    <th>User</th>
+                    <th>Role name</th>
+                    <!--<th>Actions</th>-->
                 </tr>
             </thead>
 
@@ -31,14 +31,16 @@
                 <tr class="">
 
                     <td>{{grant.ID}}</td>
+                    <td>{{grant.Consecutive}}</td>
                     <td>{{grant.User}}</td>
                     <td>{{grant.Role}}</td>
-                    <td>{{grant.Consecutive}}</td>
-                    <td>
+
+                   <!-- <td>
                         <div class="btn-group btn-group-block">
                         <button class="btn btn-primary">View</button>
                         </div> 
                     </td>
+                    No hay nada que ver extra, no hay mas roles que agregar ni tampoco se pueden eliminar los existentes-->
 
                 </tr>
             </tbody>
