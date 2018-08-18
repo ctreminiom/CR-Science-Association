@@ -1,3 +1,4 @@
+<!--Revisar el modal de edit y xq no hace el render correcto-->
 <template>
     <ul class="menu">
     <li class="divider" data-content="USERS"></li>
@@ -37,7 +38,7 @@
                     <td>
                         <div class="btn-group btn-group-block">
                         <button @click="openViewModal(user)" class="btn btn-success">View</button>
-                        <button class="btn btn-primary">Edit</button>
+                        <button @click="openEditModal(user)" class="btn btn-primary">Edit</button>
                         </div> 
                     </td>
 
@@ -48,7 +49,7 @@
     </div>
     </div>
     <view-data :open="active_view" :user="consecutive" @close="closeViewModal()"/>
-
+    <edit-data :open="active_edit" :user="consecutive" @close="closeEditModal()"/>
     </ul>
     
 </template>
@@ -56,6 +57,8 @@
 
 <script>
 import viewData from '@/components/modules/security/consecutives/modals/view.vue';
+import editData from '@/components/modules/security/consecutives/modals/edit.vue';
+
 
 export default {
   data() {
@@ -96,9 +99,18 @@ export default {
 
     closeViewModal() {
       this.active_view = "";
-    }
+    },
+    openEditModal(user) {
+      this.active_edit = "active";
+      this.user = user;
+    },
+
+    closeEditModal() {
+      this.active_edit = "";
+    },
+
   },
 
-  components: {viewData}
+  components: {viewData, editData}
 };
 </script>

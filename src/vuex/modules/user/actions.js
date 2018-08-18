@@ -74,8 +74,32 @@ const actions = {
             })
 
         })
-    }
+    },
 
+    deleteUser(context, data) {
+
+        return new Promise((resolve, reject) => {
+
+            console.log(data)
+
+            let options = {
+                url: `http://18.222.31.81:8080/api/v1.2//module/users/${data}`,
+                method: "DELETE",
+                headers: {
+                    Authorization:
+                    "Bearer " + localStorage.getItem("token")
+                }
+            }
+
+            Vue.http(options).then(response => {
+                resolve(response)
+            }, error => {
+                reject(error)
+            })
+
+        })
+
+    }
 
 
 }
