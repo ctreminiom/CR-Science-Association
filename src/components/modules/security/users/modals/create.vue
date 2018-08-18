@@ -133,10 +133,7 @@
                 </div>
             </div>
 
-            <div class="modal-footer">    
-              <button type="submit" @click="save()" class="btn btn-primary">Create</button>
 
-            </div>
 
 
         </div>
