@@ -8,6 +8,9 @@ import './ml'
 import Notifications from 'vue-notification'
 Vue.use(Notifications)
 
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
 Vue.config.productionTip = false;
 
 new Vue({

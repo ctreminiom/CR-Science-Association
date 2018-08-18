@@ -1,4 +1,6 @@
 <template>
+<form role="form" data-toggle="validator" >
+
     <div class="modal" :class="open">
     <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
@@ -8,69 +10,74 @@
             </div>
             <div class="modal-body">
                 <div class="content">
+                <form class="form-horizontal" role="form" data-toggle="validator" id="app" @submit="save" >
 
-                <form class="form-horizontal">
+                  <button v-on:click="checkForm" class="btn btn-primary" type="submit">Submit form</button> 
+
+
+
+
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Name</label>
+                    <label class="form-label" for="user.name">Name</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Name" v-model="user.name">
+                    <input class="form-input" type="text" placeholder="Name" v-model="user.name" id="user.name"  name="user.name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Surname</label>
+                    <label class="form-label" for="validationDefault02">Surname</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Surname" v-model="user.surname">
+                    <input class="form-input" type="text" placeholder="Surname" v-model="user.surname" id="validationDefault02" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Second Surname</label>
+                    <label class="form-label" for="validationDefault03">Second Surname</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Second Surname" v-model="user.secondSurname">
+                    <input class="form-input" type="text" placeholder="Second Surname" v-model="user.secondSurname" id="validationDefault03" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Username</label>
+                    <label class="form-label" for="validationDefault04">Username</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Username" v-model="user.username">
+                    <input class="form-input" type="text" placeholder="Username" v-model="user.username" id="validationDefault04" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Password</label>
+                    <label class="form-label" for="validationDefault05">Password</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Password" v-model="user.password">
+                    <input class="form-input" data-minlength="6" type="password" placeholder="Password" v-model="user.password" id="validationDefault05" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Phone</label>
+                    <label class="form-label" for="validationDefault06">Phone</label>
                     </div>
                     <div class="col-9 col-sm-12">
-                    <input class="form-input" type="text" id="input-example-1" placeholder="Password" v-model="user.phone">
+                    <input class="form-input" type="number" placeholder="Phone" v-model="user.phone" id="validationDefault06" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Role</label>
+                    <label class="form-label" for="validationDefault07">Role</label>
                     </div>
 
                     <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.role">
+                        <select class="form-select" v-model="selected.role" id="validationDefault07" required>
                             <option v-for="item in json.role" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -81,11 +88,11 @@
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Education Level</label>
+                    <label class="form-label" for="validationDefault08">Education Level</label>
                     </div>
 
                      <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.education">
+                        <select class="form-select" v-model="selected.education" id="validationDefault08" required>
                             <option v-for="item in json.education" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -96,11 +103,11 @@
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                    <label class="form-label" for="input-example-1">Job</label>
+                    <label class="form-label" for="validationDefault09">Job</label>
                     </div>
 
                     <div class="col-9 col-sm-12">
-                        <select class="form-select" v-model="selected.job">
+                        <select class="form-select" v-model="selected.job" id="validationDefault09" required>
                             <option v-for="item in json.job" :value="item.ID" :key="item.ID">
                                 {{item.Name}}
                             </option>
@@ -111,30 +118,36 @@
 
                 <div class="form-group">
                     <div class="col-3 col-sm-12">
-                        <label class="form-label">Sign</label>
+                        <label class="form-label" for="validationDefault10">Sign</label>
                         <a @click="close()" class="btn btn-clear float-right" aria-label="Close"></a>
 
                     </div>
 
                     <div class="col-9 col-sm-12">
-                         <input class="form-file" type="file" name="resume" @change="processFile($event)">
+                      
+                         <input class="form-file" type="file" name="resume" @change="processFile($event)" id="validationDefault10" required>
                     </div>
                     
                 </div>
-
-
                 </form>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button @click="save()" class="btn btn-primary">Create</button>
+
+            <div class="modal-footer">    
+              <button type="submit" @click="save()" class="btn btn-primary">Create</button>
+
             </div>
+
+
         </div>
+
 </div>
+</form>
 </template>
 
 
 <script>
+
 export default {
   props: ["open"],
 
@@ -160,7 +173,7 @@ export default {
         username: "",
         password: "",
         sign: null
-      }
+      },
     };
   },
 
@@ -172,7 +185,7 @@ export default {
       this.user.sign = event.target.files[0];
     },
 
-    save() {
+    save (){
       var formData = new FormData();
 
       formData.append("Name", this.user.name);
@@ -214,8 +227,36 @@ export default {
           });
         }
       );
+    },
+
+    greet: function (event) {
+
+      if (event) {     
+
+       alert('HOLA TEST ' + this.user.name + ' Succesfully saved!' )
+       //save()
+        this.save()
+
+
+      }
+
+    },
+
+    handleProceed() {
+    	this.proceed(this.items)
+    },
+    checkForm: function (e) {
+      if (this.user.name && this.user.surname && this.user.secondSurname && this.user.phone && this.user.username && this.user.password ) {
+        this.save()
+        alert('User ' + this.user.name + ' Succesfully saved!' )
+        return save
+        return this.save()
+        return this.save
+      }
 
     }
+
+
   },
 
   created() {
@@ -277,9 +318,11 @@ export default {
     );
   }
 };
+
+//lIMPIAR CAMPOS
+
+
 </script>
-
-
 
 
 <style>
